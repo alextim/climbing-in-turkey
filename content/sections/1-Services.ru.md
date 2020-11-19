@@ -1,22 +1,22 @@
 ---
 anchor: "Услуги"
 header: "Услуги"
-subheader: "Lorem ipsum dolor sit amet consectetur."
+subheader: "Лорем ипсум долор сит амет сит еу бруте мандамус"
 services: [
   {
     iconName: "ShoppingCartIcon",
-    header: "E-Commerce",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    header: "Те пер магна",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур. Те пер магна перицулис, ин нибх реяуе адолесценс сеа, еос те юсто цоммуне."
   },
   {
     iconName: "LaptopIcon",
-    header: "Responsive Design",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    header: "Поссе фалли",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур. Те пер магна перицулис, ин нибх реяуе адолесценс сеа, еос те юсто цоммуне."
   },
   {
     iconName: "LockIcon",
-    header: "Web Security",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
+    header: "Лорем ипсум",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур. Те пер магна перицулис, ин нибх реяуе адолесценс сеа, еос те юсто цоммуне."
   }
 ]
 ---

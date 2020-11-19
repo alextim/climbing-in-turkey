@@ -1,7 +1,7 @@
 ---
-anchor: "Контакты"
+anchor: Контакты
 header: "Обращайтесь к нам!"
-subheader: "Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!"
+subheader: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур. Те пер магна перицулис, ин нибх реяуе адолесценс сеа, еос те юсто цоммуне."
 phones: [ "+7 908 011-23-04", "+8 444 444-44-44" ]
 email: smelovskayam@gmail.com
 ---

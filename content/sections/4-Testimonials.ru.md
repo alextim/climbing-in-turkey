@@ -1,25 +1,28 @@
 ---
 anchor: "Отзывы"
-header: "Our Amazing Клиенты"
-subheader: "Lorem ipsum dolor sit amet consectetur."
-content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde."
+header: "Наши замечательные клиенты"
+subheader: "Лорем ипсум долор сит амет, сит еу бруте мандамус."
+content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур."
 testimonials: [
   {
-    imageFileName: "team/1.jpg",
-    imageAlt: "alt1",
+    imageFileName: "testimonials/1.jpg",
+    imageAlt: "Лорем ипсум долор сит амет, сит еу бруте мандамус.",
     name: "Kay Garland",
-    content: "Lead Designer",
+    cite: "Москва, Россия",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур.",
   },
   {
-    imageFileName: "team/2.jpg",
-    imageAlt: "alt2",
-    name: "Larry Parker",
-    content: "Lead Marketer",
+    imageFileName: "testimonials/2.jpg",
+    imageAlt: "Лорем ипсум долор сит амет, сит еу бруте мандамус.",
+    name: "Махмуд Аднурган",
+    cite: "Анкара, Турция",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур.",
   },
   {
-    imageFileName: "team/3.jpg",
-    name: "Diana Pertersen",
-    content: "Lead Developer",
+    imageFileName: "testimonials/3.jpg",
+    name: "Диана Пертесен",
+    cite: "Лондон, Великобритания",
+    content: "Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур.",
   },
 ]
 ---
