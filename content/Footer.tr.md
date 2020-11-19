@@ -1,9 +1,8 @@
 ---
 copyright: "Copyright © Start Bootstrap 2020"
 social: {
-  twitter: "#",
-  facebook: "#",
-  medium: "#"
+  instagram: "#",
+  facebook: "smelovskaya.maria",
 }
 privacyText: "プライバシー"
 privacyHref: "#!"

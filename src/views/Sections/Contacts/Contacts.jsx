@@ -5,12 +5,22 @@ import { Row, Col } from "react-bootstrap";
 import Icon from "components/Icon";
 import PageSection from "components/PageSection";
 
-const Contact = ({ className, frontmatter }) => {
+const Phone = ({ phone }) => (
+  <a className="d-block" href={`tel:${phone}`}>
+    {phone}
+  </a>
+);
+
+Phone.propTypes = {
+  phone: PropTypes.string.isRequired,
+};
+
+const Contacts = ({ className, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { anchor, header, subheader, telephone, email } = frontmatter;
+  const { anchor, header, subheader, phones, email } = frontmatter;
 
   return (
     <PageSection className={className} id={anchor}>
@@ -24,9 +34,9 @@ const Contact = ({ className, frontmatter }) => {
       <Row>
         <Col lg={4} className="ml-auto text-center">
           <Icon iconName="PhoneIcon" size="3x" className="text-muted mb-3" />
-          <a className="d-block" href={`tel:${telephone}`}>
-            {telephone}
-          </a>
+          {phones.length > 1 ? phones.map((phone) => <div key={phone}><Phone phone={phone} /></div>) :
+            <Phone phone={phones[0]} />
+          }
         </Col>
         <Col lg={4} className="mr-auto text-center">
           <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
@@ -39,14 +49,14 @@ const Contact = ({ className, frontmatter }) => {
   );
 };
 
-Contact.propTypes = {
+Contacts.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
 };
 
-Contact.defaultProps = {
+Contacts.defaultProps = {
   className: null,
   frontmatter: null,
 };
 
-export default Contact;
+export default Contacts;

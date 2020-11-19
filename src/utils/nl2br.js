@@ -1,7 +1,7 @@
-export default function nl2br(str) {
-  if (typeof str !== "string") {
-    str = str.toString();
+export default function nl2br(s) {
+  if (typeof s !== "string") {
+    s = s.toString();
   }
 
-  return str.replace(/\r\n/g, "<br />").replace(/\n|\r/g, "<br />");
+  return s.replace(/\r\n/g, "<br />").replace(/\n|\r/g, "<br />");
 }

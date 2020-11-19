@@ -1,4 +1,4 @@
 ---
-brand: "Start Bootstrap"
+brand: "Climbing in Turkey"
 menuText: "Menu "
 ---

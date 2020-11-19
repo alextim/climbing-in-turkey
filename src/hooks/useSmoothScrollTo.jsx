@@ -2,12 +2,15 @@ import React from "react";
 
 import { scroller, animateScroll } from "react-scroll";
 
-const DefOptions = {
+
+// const defOptions = {
+const opts = {
   smooth: "easeInOutQuart",
 };
 
-const useSmoothScrollTo = (anchorOrPosition, options = {}) => {
-  const opts = { ...DefOptions, ...options };
+// const useSmoothScrollTo = (anchorOrPosition, options = {}) => {
+const useSmoothScrollTo = (anchorOrPosition) => {
+//  const opts = { ...defOptions, ...options };
 
   const handleScrollTo = React.useCallback(() => {
     switch (typeof anchorOrPosition) {
@@ -21,7 +24,7 @@ const useSmoothScrollTo = (anchorOrPosition, options = {}) => {
       default:
         break;
     }
-  }, [anchorOrPosition, opts]);
+  }, [anchorOrPosition]);
 
   return handleScrollTo;
 };

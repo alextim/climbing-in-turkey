@@ -9,9 +9,8 @@ teamMember: [
     header: "Kay Garland",
     subheader: "Lead Designer",
     social: {
-      twitter: "#",
+      instagram: "#",
       facebook: "#",
-      linkedin: "#"
     }
   },
   {
@@ -19,9 +18,8 @@ teamMember: [
     header: "Larry Parker",
     subheader: "Lead Marketer",
     social: {
-      twitter: "#",
+      instagram: "#",
       facebook: "#",
-      medium: "#"
     }
   },
   {
@@ -29,9 +27,8 @@ teamMember: [
     header: "Diana Pertersen",
     subheader: "Lead Developer",
     social: {
-      twitter: "#",
+      instagram: "#",
       facebook: "#",
-      medium: "#"
     }
   },
 ]

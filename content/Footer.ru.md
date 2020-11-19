@@ -4,8 +4,8 @@ social: {
   instagram: "#",
   facebook: "smelovskaya.maria",
 }
-privacyText: "Privacy Policy"
+privacyText: "Политика конфиденциальности"
 privacyHref: "#!"
-termsText: "Terms of Use"
+termsText: "Условия использования"
 termsHref: "#!"
 ---

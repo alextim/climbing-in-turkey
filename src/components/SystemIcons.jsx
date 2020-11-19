@@ -1,32 +1,23 @@
 import makeFAIcon from "utils/makeFAIcon";
 
-import {
-  faPhone,
-  faEnvelope,
-  faPlus,
-  faBars,
-  faTimes,
-  faGlobe,
-} from "@fortawesome/free-solid-svg-icons";
-import {
-  faTwitter,
-  faFacebookF,
-  faLinkedinIn,
-  faGithubAlt,
-  faMediumM,
-} from "@fortawesome/free-brands-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons/faPhone";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons/faEnvelope";
+import { faPlus } from "@fortawesome/free-solid-svg-icons/faPlus";
+import { faBars } from "@fortawesome/free-solid-svg-icons/faBars";
+import { faTimes } from "@fortawesome/free-solid-svg-icons/faTimes";
+import { faGlobe } from "@fortawesome/free-solid-svg-icons/faGlobe";
+
+import { faInstagram } from "@fortawesome/free-brands-svg-icons/faInstagram";
+import { faFacebookF } from "@fortawesome/free-brands-svg-icons/faFacebookF";
 
 export const PhoneIcon = makeFAIcon(faPhone);
 export const EnvelopIcon = makeFAIcon(faEnvelope);
 export const PlusIcon = makeFAIcon(faPlus);
 export const BarsIcon = makeFAIcon(faBars);
-export const GithubIcon = makeFAIcon(faGithubAlt);
-export const MediumIcon = makeFAIcon(faMediumM);
 export const CloseIcon = makeFAIcon(faTimes);
 export const LanguageIcon = makeFAIcon(faGlobe);
 
-export const TwitterIcon = makeFAIcon(faTwitter);
+export const InstagramIcon = makeFAIcon(faInstagram);
 export const FacebookIcon = makeFAIcon(faFacebookF);
-export const LinkedinIcon = makeFAIcon(faLinkedinIn);
 
 export * from "config/CustomIcons";

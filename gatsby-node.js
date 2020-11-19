@@ -50,11 +50,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }`,
     `
     type Social {
-      twitter: String
+      instagram: String
       facebook: String
-      linkedin: String
-      medium: String
-      github: String
     }
     `,
   ];
@@ -80,7 +77,8 @@ exports.createPages = ({ graphql, actions: { createPage } }) => {
         `,
       ).then(({ errors, data }) => {
         if (errors) {
-          console.log(errors);
+          // eslint-disable-next-line no-console
+          console.error(errors);
           reject(errors);
         }
 

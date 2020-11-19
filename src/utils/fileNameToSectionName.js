@@ -11,14 +11,8 @@ export default function fileNameToSectionName(fileName) {
     return null;
   }
 
-  // remove 1-
-  fileName = fileName.replace(/\d+-/, "");
-  // remove space
-  fileName = fileName.trim();
+  // remove           1-                & space & .xx (language key)
+  fileName = fileName.replace(/\d+-/, "").trim().replace(/\.[a-z]+$/i, "");
   // uppercase first letter
-  fileName = fileName.charAt(0).toUpperCase() + fileName.slice(1);
-  // remove .xx (language key)
-  fileName = fileName.replace(/\.[a-z]+$/i, "");
-
-  return fileName;
+  return fileName.charAt(0).toUpperCase() + fileName.slice(1);
 }

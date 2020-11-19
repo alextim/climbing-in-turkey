@@ -64,10 +64,7 @@ export const query = graphql`
           }
           social {
             facebook
-            github
-            linkedin
-            medium
-            twitter
+            instagram
           }
           subheader
           teamMember {
@@ -75,14 +72,11 @@ export const query = graphql`
             imageFileName
             social {
               facebook
-              github
-              linkedin
-              medium
-              twitter
+              instagram
             }
             subheader
           }
-          telephone
+          phones
           termsHref
           termsText
           title

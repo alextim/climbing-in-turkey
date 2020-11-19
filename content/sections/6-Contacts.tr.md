@@ -1,7 +1,7 @@
 ---
-anchor: "コンタクト"
-header: "連絡方法"
+anchor: "Kişiler"
+header: "Bize Ulaşın!"
 subheader: "次のプロジェクトを私たちに任せていただけませんか？お電話またはメールでお問い合わせください。"
-telephone: 03-0000-0001
-email: contact@yourwebsite.com
+phones: [ "+7 908 011-23-04" ]
+email: smelovskayam@gmail.com
 ---

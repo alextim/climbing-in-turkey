@@ -1,6 +1,6 @@
 ---
-anchor: "サービス"
-header: "サービス"
+anchor: "Hizmetler"
+header: "Hizmetler"
 subheader: "あなたは偶然断然その持通りについて事のためにまかり出ですた。"
 services: [
   {

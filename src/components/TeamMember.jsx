@@ -11,13 +11,10 @@ const TeamMember = ({
   imageAlt,
   header,
   subheader,
-  social: { twitter, facebook, linkedin, github, medium },
+  social: { instagram, facebook },
 }) => {
-  const twitterPart = twitter ? <SocialIcons.Twitter userName={twitter} /> : null;
+  const instagramPart = instagram ? <SocialIcons.Instagram userName={instagram} /> : null;
   const facebookPart = facebook ? <SocialIcons.Facebook userName={facebook} /> : null;
-  const linkedinPart = linkedin ? <SocialIcons.Linkedin userName={linkedin} /> : null;
-  const githubPart = github ? <SocialIcons.Github userName={github} /> : null;
-  const mediumPart = medium ? <SocialIcons.Medium userName={medium} /> : null;
 
   return (
     <div className="team-member">
@@ -29,11 +26,8 @@ const TeamMember = ({
       <h4>{header}</h4>
       <p className="text-muted">{subheader}</p>
       <div>
-        {twitterPart}
+        {instagramPart}
         {facebookPart}
-        {linkedinPart}
-        {githubPart}
-        {mediumPart}
       </div>
     </div>
   );
@@ -45,11 +39,8 @@ TeamMember.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
   social: PropTypes.shape({
-    twitter: PropTypes.string,
+    instagram: PropTypes.string,
     facebook: PropTypes.string,
-    linkedin: PropTypes.string,
-    github: PropTypes.string,
-    medium: PropTypes.string,
   }),
 };
 
@@ -58,11 +49,8 @@ TeamMember.defaultProps = {
   header: "",
   subheader: "",
   social: {
-    twitter: null,
+    instagram: null,
     facebook: null,
-    linkedin: null,
-    github: null,
-    medium: null,
   },
 };
 

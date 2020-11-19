@@ -1,9 +1,5 @@
 function getBaseUrl(defaultLang, lang) {
-  if (defaultLang !== lang) {
-    return `/${lang}/`;
-  }
-
-  return '/';
+  return defaultLang !== lang ? `/${lang}/` :  '/';
 }
 
 module.exports = getBaseUrl;

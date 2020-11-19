@@ -6,22 +6,20 @@ import { Link } from "react-scroll";
 
 import "./NavItem.scss";
 
-const NavItem = ({ to, onClick, children }) => {
-  return (
-    <Nav.Item>
-      <Link
-        className="nav-link cursor-pointer"
-        activeClass="active"
-        to={to}
-        spy
-        smooth="easeInOutQuart"
-        onClick={onClick}
-      >
-        {children || to}
-      </Link>
-    </Nav.Item>
-  );
-};
+const NavItem = ({ to, onClick, children }) => (
+  <Nav.Item>
+    <Link
+      className="nav-link cursor-pointer"
+      activeClass="active"
+      to={to}
+      spy
+      smooth="easeInOutQuart"
+      onClick={onClick}
+    >
+      {children || to}
+    </Link>
+  </Nav.Item>
+);
 
 NavItem.propTypes = {
   to: PropTypes.string,

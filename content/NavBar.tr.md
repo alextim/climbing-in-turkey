@@ -1,4 +1,4 @@
 ---
-brand: "Start Bootstrap"
+brand: "Türkiye'de Tırmanış"
 menuText: "メニュー "
 ---
