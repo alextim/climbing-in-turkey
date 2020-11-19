@@ -1,5 +1,5 @@
 ---
-copyright: "Copyright © Start Bootstrap 2020"
+copyright: "Copyright © Смеловс 2020"
 social: {
   instagram: "#",
   facebook: "smelovskaya.maria",
