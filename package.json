@@ -1,11 +1,11 @@
 {
-  "name": "gatsby-startbootstrap-agency",
+  "name": "masha",
   "description": "gatsby version of startbootstrap-agency with i18n support",
   "version": "0.1.0",
-  "licence": "MIT",
-  "author": "thundermiracle",
+  "license": "MIT",
+  "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
   "bugs": {
-    "url": "https://github.com/thundermiracle/gatsby-startbootstrap-agency/issues"
+    "url": "https://github.com/alextim/masha/issues"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -17,10 +17,10 @@
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-google-analytics": "^2.5.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-i18n": "^1.0.1",
     "gatsby-plugin-manifest": "^2.6.1",
     "gatsby-plugin-offline": "^3.4.0",
-    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.4.0",
     "gatsby-plugin-sass": "^2.5.1",
     "gatsby-plugin-sharp": "^2.8.0",
@@ -60,7 +60,7 @@
     "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "^2.1.2"
   },
-  "homepage": "https://thundermiracle.github.io/gatsby-startbootstrap-agency",
+  "homepage": "https://github.com/alextim/masha",
   "keywords": [
     "gatsby",
     "gatsbyjs",
@@ -71,11 +71,10 @@
     "bootstrap",
     "startbootstrap-agency"
   ],
-  "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thundermiracle/gatsby-startbootstrap-agency.git"
+    "url": "git+https://github.com/alextim/masha.git"
   },
   "scripts": {
     "clean": "gatsby clean",

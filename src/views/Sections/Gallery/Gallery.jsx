@@ -4,16 +4,16 @@ import clsx from "clsx";
 
 import { Row } from "react-bootstrap";
 import SectionHeader from "components/SectionHeader";
-import PortfolioItem from "components/PortfolioItem";
+import GalleryItem from "components/GalleryItem";
 import PageSection from "components/PageSection";
-import "./Portfolio.scss";
+import "./Gallery.scss";
 
-const Portfolio = ({ className, frontmatter }) => {
+const Gallery = ({ className, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, portfolios } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, gallery } = frontmatter;
 
   return (
     <PageSection className={clsx("portfolio-section", className)} id={anchor}>
@@ -21,9 +21,9 @@ const Portfolio = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        {portfolios.map(
+        {gallery.map(
           ({ content, extraInfo, header, imageFileName, imageFileNameDetail, subheader }) => (
-            <PortfolioItem
+            <GalleryItem
               key={header}
               imageFileName={imageFileName}
               header={header}
@@ -45,14 +45,14 @@ const Portfolio = ({ className, frontmatter }) => {
   );
 };
 
-Portfolio.propTypes = {
+Gallery.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
 };
 
-Portfolio.defaultProps = {
+Gallery.defaultProps = {
   className: null,
   frontmatter: null,
 };
 
-export default Portfolio;
+export default Gallery;

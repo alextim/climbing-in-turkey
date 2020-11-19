@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import { Col } from "react-bootstrap";
 import Image from "components/Image";
 import Icon from "components/Icon";
-import PortfolioDetailDialog from "components/PortfolioDetailDialog";
+import GalleryDetailDialog from "components/GalleryDetailDialog";
 
-import "./PortfolioItem.scss";
+import "./GalleryItem.scss";
 
-const PortfolioItem = ({
+const GalleryItem = ({
   imageFileName,
   imageAlt,
   header,
@@ -52,7 +52,7 @@ const PortfolioItem = ({
           {subheader ? <p className="text-muted">{subheader}</p> : null}
         </div>
       </Col>
-      <PortfolioDetailDialog
+      <GalleryDetailDialog
         show={showDetail}
         onHide={handleHideDetail}
         imageFileName={imageFileNameDetail || imageFileName}
@@ -66,7 +66,7 @@ const PortfolioItem = ({
   );
 };
 
-PortfolioItem.propTypes = {
+GalleryItem.propTypes = {
   imageFileName: PropTypes.string.isRequired,
   imageAlt: PropTypes.string,
   header: PropTypes.string.isRequired,
@@ -77,7 +77,7 @@ PortfolioItem.propTypes = {
   extraInfo: PropTypes.any,
 };
 
-PortfolioItem.defaultProps = {
+GalleryItem.defaultProps = {
   imageAlt: "",
   subheader: "",
   content: "",
@@ -86,4 +86,4 @@ PortfolioItem.defaultProps = {
   extraInfo: null,
 };
 
-export default PortfolioItem;
+export default GalleryItem;

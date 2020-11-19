@@ -1,35 +1,23 @@
 ---
-anchor: "チーム"
-header: "チーム"
+anchor: "Görüşler"
+header: "Our Amazing Клиенты"
 subheader: "あなたは偶然断然その持通りについて事のためにまかり出ですた。"
 content: "あなたは偶然断然その持通りについて事のためにまかり出ですた。もう元来を説明心はとうとうこのお話しないななどでいて行くたでは滅亡しましでて、再びにはなったうないです。"
-teamMember: [
+testimonials: [
   {
     imageFileName: "team/1.jpg",
-    header: "Kay Garland",
-    subheader: "Lead Designer",
-    social: {
-      instagram: "#",
-      facebook: "#",
-    }
+    name: "Kay Garland",
+    content: "Lead Designer",
   },
   {
     imageFileName: "team/2.jpg",
-    header: "Larry Parker",
-    subheader: "Lead Marketer",
-    social: {
-      instagram: "#",
-      facebook: "#",
-    }
+    name: "Larry Parker",
+    content: "Lead Marketer",
   },
   {
     imageFileName: "team/3.jpg",
-    header: "Diana Pertersen",
-    subheader: "Lead Developer",
-    social: {
-      instagram: "#",
-      facebook: "#",
-    }
+    name: "Diana Pertersen",
+    content: "Lead Developer",
   },
 ]
 ---
