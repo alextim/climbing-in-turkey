@@ -13,7 +13,7 @@ const ImageCard = ({ className, imageFileName, imageAlt, header, subheader, extr
       <Container>
         <div className="intro-text">
           <div className="intro-lead-in">{subheader}</div>
-          <h1 className="intro-heading text-uppercase">{header}</h1>
+          <div className="intro-heading text-uppercase">{header}</div>
           {extraInfo}
         </div>
       </Container>

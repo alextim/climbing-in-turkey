@@ -43,7 +43,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
       expanded={expanded}
     >
       <Container>
-        <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
+        <Navbar.Brand className="cursor-pointer font-weight-normal" as="h1" onClick={handleBrandClick}>
           {brand}
           { /* <img src="/assets/logo.svg" alt="" height="35" width="62" /> */ }
         </Navbar.Brand>

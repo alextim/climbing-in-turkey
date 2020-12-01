@@ -2,6 +2,6 @@
 header: "Скалолазание в Турции"
 subheader: "Групповые и индивидуальные занятия с гидом"
 imageFileName: "header-bg.jpg"
-jumpToAnchor: "Services"
+jumpToAnchor: "Услуги"
 jumpToAnchorText: "Подробнее"
 ---
