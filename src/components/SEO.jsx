@@ -35,6 +35,11 @@ const SEO = ({ lang, description, meta, keywords, title }) => {
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
+        // TODO Noindex
+        {
+          name: 'robots',
+          content: 'noindex',
+        },
         {
           name: `description`,
           content: metaDescription,
