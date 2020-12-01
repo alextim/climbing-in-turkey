@@ -1,6 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 module.exports = {
-  presets: ["babel-preset-gatsby"],
+  presets: [
+    "babel-preset-gatsby",
+  ],
   plugins: [
     [
       "module-resolver",
