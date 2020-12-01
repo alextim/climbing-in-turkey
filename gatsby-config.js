@@ -58,10 +58,10 @@ module.exports = {
       resolve: "gatsby-plugin-google-fonts",
       options: {
         fonts: [
-          "Montserrat:400,700",
+          // "Montserrat:400,700",
           "Caveat:400",
-          "Vollkorn:400,700,400i,700i",
-          "Roboto+Slab:400,100,300,700",
+          // "Vollkorn:400,700,400i,700i",
+          // "Roboto+Slab:400,100,300,700",
         ],
         display: "swap"
       },
