@@ -45,6 +45,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
       <Container>
         <Navbar.Brand className="cursor-pointer" onClick={handleBrandClick}>
           {brand}
+          { /* <img src="/assets/logo.svg" alt="" height="35" width="62" /> */ }
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
           <span />
