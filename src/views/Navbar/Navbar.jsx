@@ -7,7 +7,6 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 
 import useWindowOnScroll from "hooks/useWindowOnScroll";
 import useSmoothScrollTo from "hooks/useSmoothScrollTo";
-import Icon from "components/Icon";
 import NavItem from "components/NavItem";
 
 import "./Navbar.scss";
@@ -48,7 +47,9 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
           {brand}
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
-          <Icon iconName="BarsIcon" />
+          <span />
+          <span />
+          <span />
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
