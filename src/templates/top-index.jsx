@@ -41,7 +41,6 @@ export const query = graphql`
           imageFileName
           jumpToAnchor
           jumpToAnchorText
-          menuText
           gallery {
             content
             extraInfo

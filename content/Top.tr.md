@@ -1,6 +1,6 @@
 ---
-header: "Turkeyices'da tırmanış rehberi"
-subheader: "Grup ve kişisel dersler"
+header: "Türkiye'de Tırmanış"
+subheader: "Bir rehber eşliğinde grup ve kişisel dersler"
 imageFileName: "header-bg.jpg"
 jumpToAnchor: "サービス"
 jumpToAnchorText: "Daha fazla detay"

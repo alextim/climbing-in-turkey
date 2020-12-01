@@ -13,7 +13,7 @@ import NavItem from "components/NavItem";
 import "./Navbar.scss";
 
 const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
-  const { brand, menuText } = frontmatter;
+  const { brand } = frontmatter;
 
   const handleScrollToTop = useSmoothScrollTo(0);
 
@@ -48,7 +48,6 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
           {brand}
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
-          {menuText}
           <Icon iconName="BarsIcon" />
         </Navbar.Toggle>
         <Navbar.Collapse>
