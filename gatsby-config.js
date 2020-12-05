@@ -81,5 +81,6 @@ module.exports = {
         pagesPaths: ['/content/'],
       },
     },
+    'gatsby-plugin-webpack-bundle-analyser-v2',
   ],
 };

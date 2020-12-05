@@ -30,7 +30,6 @@
     "gatsby-transformer-sharp": "^2.8.0",
     "node-sass": "^4.13.1",
     "prop-types": "^15.7.2",
-    "ramda": "^0.27.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.13.1",
@@ -58,6 +57,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-eslint": "^2.0.8",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.17",
     "prettier": "^2.2.1"
   },
   "homepage": "https://github.com/alextim/masha",
