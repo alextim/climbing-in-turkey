@@ -1,5 +1,5 @@
-const path = require("path");
-const { title, keywords, description, author, defaultLang, trackingId } = require("./config/site");
+const path = require('path');
+const { title, keywords, description, author, defaultLang, trackingId } = require('./config/site');
 
 module.exports = {
   siteMetadata: {
@@ -10,23 +10,23 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "markdown",
+        name: 'markdown',
         path: `${__dirname}/content`,
       },
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "images",
+        name: 'images',
         path: `${__dirname}/content/assets/images`,
       },
     },
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
           /**
@@ -34,7 +34,7 @@ module.exports = {
            *
            *  */
           {
-            resolve: `gatsby-remark-relative-images`,
+            resolve: 'gatsby-remark-relative-images',
           },
           {
             resolve: 'gatsby-remark-images',
@@ -46,39 +46,39 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
         trackingId,
       },
     },
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: title,
-        short_name: "Climbing in Turkiye",
-        start_url: "/",
-        background_color: "#ffffff",
-        theme_color: "#fed136",
-        display: "minimal-ui",
-        icon: "content/assets/icon.png",
+        short_name: 'Climbing in Turkiye',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#fed136',
+        display: 'minimal-ui',
+        icon: 'content/assets/icon.png',
       },
     },
-    "gatsby-plugin-eslint",
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-offline",
+    'gatsby-plugin-eslint',
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-offline',
     {
-      resolve: "gatsby-plugin-sass",
+      resolve: 'gatsby-plugin-sass',
       options: {
         data: `@import "core.scss";`,
-        includePaths: [path.resolve(__dirname, "src/style")],
+        includePaths: [path.resolve(__dirname, 'src/style')],
       },
     },
     {
-      resolve: "gatsby-plugin-i18n",
+      resolve: 'gatsby-plugin-i18n',
       options: {
         langKeyDefault: defaultLang,
         useLangKeyLayout: false,
-        pagesPaths: ["/content/"],
+        pagesPaths: ['/content/'],
       },
     },
   ],

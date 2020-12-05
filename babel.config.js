@@ -1,46 +1,57 @@
 /* eslint-disable no-template-curly-in-string */
 module.exports = {
   presets: [
-    "babel-preset-gatsby",
+    'babel-preset-gatsby',
   ],
   plugins: [
     [
-      "module-resolver",
+      '@babel/plugin-proposal-class-properties',
       {
-        root: ["./"],
+        loose: true,
+      },
+    ],
+    [
+      'module-resolver',
+      {
+        root: ['./'],
         alias: {
-          components: "./src/components",
-          hooks: "./src/hooks",
-          views: "./src/views",
-          context: "./src/context",
-          utils: "./src/utils",
+          components: './src/components',
+          hooks: './src/hooks',
+          views: './src/views',
+          context: './src/context',
+          utils: './src/utils',
 
-          config: "./config",
+          config: './config',
         },
       },
     ],
     [
-      "import",
+      'import',
       {
-        libraryName: "react-bootstrap",
-        libraryDirectory: "",
+        libraryName: 'react-bootstrap',
+        libraryDirectory: '',
         camel2DashComponentName: false,
       },
-      "tree-shaking-react-bootstrap",
+      'tree-shaking-react-bootstrap',
     ],
     [
-      "transform-imports",
-      {
-        "@fortawesome/free-solid-svg-icons": {
-          transform: "@fortawesome/free-solid-svg-icons/${member}",
+      'transform-imports', {
+        /*
+        'react-bootstrap': {
+          transform: 'react-bootstrap/lib/${member}',
+          preventFullImport: true,
+        },
+        */
+        '@fortawesome/free-solid-svg-icons': {
+          transform: '@fortawesome/free-solid-svg-icons/${member}',
           skipDefaultConversion: true,
         },
-        "@fortawesome/free-brands-svg-icons": {
-          transform: "@fortawesome/free-brands-svg-icons/${member}",
+        '@fortawesome/free-brands-svg-icons': {
+          transform: '@fortawesome/free-brands-svg-icons/${member}',
           skipDefaultConversion: true,
         },
         ramda: {
-          transform: "ramda/src/${member}",
+          transform: 'ramda/src/${member}',
           preventFullImport: true,
         },
       },
@@ -48,7 +59,7 @@ module.exports = {
   ],
   env: {
     production: {
-      plugins: ["transform-react-remove-prop-types"],
+      plugins: ['transform-react-remove-prop-types'],
     },
   },
 };
