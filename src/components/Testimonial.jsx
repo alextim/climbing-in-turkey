@@ -1,24 +1,23 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
-import Image from "components/Image";
-
-import "./Testimonial.scss";
+import './Testimonial.scss';
 
 const Testimonial = ({
-  imageFileName,
-  imageAlt,
+  image,
+  alt,
   name,
   cite,
   content,
 }) => {
   return (
     <figure className="team-member">
-      <Image
+      {image && <Img
         className="mx-auto circle rounded-circle"
-        fileName={imageFileName}
-        alt={imageAlt || name || content}
-      />
+        fluid={image}
+        alt={alt || name || content}
+      />}
       <blockquote className="blockquote">
         <p className="text-muted">
           {content}
@@ -38,18 +37,19 @@ const Testimonial = ({
 };
 
 Testimonial.propTypes = {
-  imageFileName: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string,
+  image: PropTypes.object,
+  alt: PropTypes.string,
   name: PropTypes.string,
   cite: PropTypes.string,
   content: PropTypes.string,
 };
 
 Testimonial.defaultProps = {
-  imageAlt: null,
-  name: "",
-  cite: "",
-  content: "",
+  image: undefined,
+  alt: null,
+  name: '',
+  cite: '',
+  content: '',
 };
 
 export default Testimonial;

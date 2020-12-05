@@ -10,6 +10,42 @@ module.exports = {
   },
   plugins: [
     {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "markdown",
+        path: `${__dirname}/content`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/content/assets/images`,
+      },
+    },
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          /**
+           * gatsby-remark-relative-images must go before gatsby-remark-images
+           *
+           *  */
+          {
+            resolve: `gatsby-remark-relative-images`,
+          },
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-google-analytics",
       options: {
         trackingId,
@@ -27,25 +63,8 @@ module.exports = {
         icon: "content/assets/icon.png",
       },
     },
-    "gatsby-transformer-remark",
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "markdown",
-        path: `${__dirname}/content`,
-      },
-    },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "images",
-        path: `${__dirname}/content/assets/images`,
-      },
-    },
     "gatsby-plugin-eslint",
     "gatsby-plugin-react-helmet",
-    "gatsby-transformer-sharp",
-    "gatsby-plugin-sharp",
     "gatsby-plugin-offline",
     {
       resolve: "gatsby-plugin-sass",

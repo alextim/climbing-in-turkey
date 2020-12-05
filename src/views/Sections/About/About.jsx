@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Row, Col } from "react-bootstrap";
-import TimelineItem from "components/TimelineItem";
-import SectionHeader from "components/SectionHeader";
-import PageSection from "components/PageSection";
-import nl2br from "utils/nl2br";
+import { Row, Col } from 'react-bootstrap';
+import TimelineItem from 'components/TimelineItem';
+import SectionHeader from 'components/SectionHeader';
+import PageSection from 'components/PageSection';
+import nl2br from 'utils/nl2br';
 
-import "./About.scss";
+import './About.scss';
 
 const About = ({ className, frontmatter }) => {
   if (!frontmatter) {

@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Row, Col } from "react-bootstrap";
-import Testimonial from "components/Testimonial";
-import SectionHeader from "components/SectionHeader";
-import PageSection from "components/PageSection";
-import "./Testimonials.scss";
+import { Row, Col } from 'react-bootstrap';
+import Testimonial from 'components/Testimonial';
+import SectionHeader from 'components/SectionHeader';
+import PageSection from 'components/PageSection';
+import './Testimonials.scss';
 
 const Testimonials = ({ className, frontmatter }) => {
   if (!frontmatter) {
@@ -26,9 +26,9 @@ const Testimonials = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        {testimonials.map(({ name, ...tmProps }) => (
-          <Col sm={4} key={name}>
-            <Testimonial name={name} {...tmProps} />
+        {testimonials.map(({ name, image, ...rest }) => (
+          <Col md={4} key={name}>
+            <Testimonial name={name} image={image?.mobile?.childImageSharp.fluid} alt={image?.alt} {...rest} />
           </Col>
         ))}
       </Row>

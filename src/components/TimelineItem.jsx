@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-import Image from "components/Image";
+import Image from 'components/Image';
 
-import "./TimelineItem.scss";
+import './TimelineItem.scss';
 
 const TimelineItem = ({
   invert,
@@ -18,7 +18,7 @@ const TimelineItem = ({
   const headerPart = header ? <h4>{header}</h4> : null;
   const subheaderPart = subheader ? <h4 className="subheading">{subheader}</h4> : null;
 
-  const liClassName = clsx("timeline-item", { "timeline-inverted": invert });
+  const liClassName = clsx('timeline-item', { 'timeline-inverted': invert });
 
   return (
     <li className={liClassName}>
@@ -56,12 +56,12 @@ TimelineItem.propTypes = {
 
 TimelineItem.defaultProps = {
   invert: false,
-  imageFileName: "",
-  imageAlt: "",
+  imageFileName: '',
+  imageAlt: '',
   imageContent: null,
-  header: "",
-  subheader: "",
-  content: "",
+  header: '',
+  subheader: '',
+  content: '',
 };
 
 export default TimelineItem;

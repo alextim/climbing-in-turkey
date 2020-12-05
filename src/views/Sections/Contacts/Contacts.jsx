@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Row, Col } from "react-bootstrap";
-import Icon from "components/Icon";
-import PageSection from "components/PageSection";
+import { Row, Col } from 'react-bootstrap';
+import Icon from 'components/Icon';
+import PageSection from 'components/PageSection';
 
 const Phone = ({ phone }) => (
   <a className="d-block" href={`tel:${phone}`}>

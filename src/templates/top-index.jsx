@@ -1,19 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 
-import Navbar from "views/Navbar";
-import Top from "views/Top";
-import Footer from "views/Footer";
-import * as Sections from "views/Sections";
-import SEO from "components/SEO";
-import LanguageSelector from "components/LanguageSelector";
+import Navbar from 'views/Navbar';
+import Top from 'views/Top';
+import Footer from 'views/Footer';
+import * as Sections from 'views/Sections';
+import SEO from 'components/SEO';
+import LanguageSelector from 'components/LanguageSelector';
 
-import "utils/fixFontAwesome";
-import breakDownAllNodes from "utils/breakDownAllNodes";
-import fileNameToSectionName from "utils/fileNameToSectionName";
+import 'utils/fixFontAwesome';
+import breakDownAllNodes from 'utils/breakDownAllNodes';
+import fileNameToSectionName from 'utils/fileNameToSectionName';
 
-import "../style/main.scss";
+import '../style/main.scss';
 
 /**
  * get file name list from content/sections folder
@@ -38,7 +38,23 @@ export const query = graphql`
           copyright
           header
           email
-          imageFileName
+          image {
+            mobile {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            desktop {
+              childImageSharp {
+                fluid(maxWidth: 1920) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
           jumpToAnchor
           jumpToAnchorText
           gallery {
@@ -66,8 +82,16 @@ export const query = graphql`
             name
             cite
             content
-            imageFileName
-            imageAlt
+            image {
+              alt
+              mobile {
+                childImageSharp {
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+            }
           }
           phones
           termsHref
@@ -125,7 +149,7 @@ const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } })
           return SectionComponent ? (
             <SectionComponent
               key={sectionComponentName}
-              className={ind % 2 === 1 ? "bg-light" : null}
+              className={ind % 2 === 1 ? 'bg-light' : null}
               frontmatter={frontmatter}
             />
           ) : null;
@@ -143,8 +167,8 @@ IndexPage.propTypes = {
 
 IndexPage.defaultProps = {
   pathContext: {
-    langKey: "en",
-    defaultLang: "en",
+    langKey: 'en',
+    defaultLang: 'en',
     langTextMap: {},
   },
 };

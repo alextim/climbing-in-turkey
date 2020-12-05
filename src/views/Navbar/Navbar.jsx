@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import clsx from "clsx";
+import clsx from 'clsx';
 
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav } from 'react-bootstrap';
 
-import useWindowOnScroll from "hooks/useWindowOnScroll";
-import useSmoothScrollTo from "hooks/useSmoothScrollTo";
-import NavItem from "components/NavItem";
+import useWindowOnScroll from 'hooks/useWindowOnScroll';
+import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
+import NavItem from 'components/NavItem';
 
-import "./Navbar.scss";
+import './Navbar.scss';
 
 const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
   const { brand } = frontmatter;
@@ -37,7 +37,7 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
 
   return (
     <Navbar
-      className={clsx("navbar-root", { "navbar-shrink": shrink })}
+      className={clsx('navbar-root', { 'navbar-shrink': shrink })}
       expand="lg"
       fixed="top"
       expanded={expanded}

@@ -1,16 +1,16 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Button } from "react-bootstrap";
-import useSmoothScrollTo from "hooks/useSmoothScrollTo";
-import ImageCard from "components/ImageCard";
+import { Button } from 'react-bootstrap';
+import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
+import ImageCard from 'components/ImageCard';
 
 const Top = ({ frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { header, subheader, imageFileName, jumpToAnchor, jumpToAnchorText } = frontmatter;
+  const { header, subheader, image, jumpToAnchor, jumpToAnchorText } = frontmatter;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo(jumpToAnchor);
 
@@ -23,9 +23,13 @@ const Top = ({ frontmatter }) => {
     );
   }
 
+  const { mobile, desktop, alt } = image;
+
   return (
     <ImageCard
-      imageFileName={imageFileName}
+      desktopImage={desktop}
+      mobileImage={mobile}
+      imageAlt={alt}
       header={header}
       subheader={subheader}
       extraInfo={extraInfoPart}
