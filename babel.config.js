@@ -1,7 +1,8 @@
 /* eslint-disable no-template-curly-in-string */
 module.exports = {
   presets: [
-    'babel-preset-gatsby',
+    // 'babel-preset-gatsby',
+    '@babel/preset-react',
   ],
   plugins: [
     [
