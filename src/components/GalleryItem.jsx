@@ -1,12 +1,19 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Col } from "react-bootstrap";
-import Image from "components/Image";
-import Icon from "components/Icon";
-import GalleryDetailDialog from "components/GalleryDetailDialog";
+import { Col } from 'react-bootstrap';
+import Image from 'components/Image';
+import GalleryDetailDialog from 'components/GalleryDetailDialog';
 
-import "./GalleryItem.scss";
+import './GalleryItem.scss';
+import PlusIcon from '../assets/icons/plus.svg';
+
+
+
+const iconStyle = {
+  width: '2rem',
+  height: '2rem',
+};
 
 const GalleryItem = ({
   imageFileName,
@@ -43,7 +50,7 @@ const GalleryItem = ({
           />
           <div className="portfolio-hover">
             <div className="portfolio-hover-content">
-              <Icon iconName="PlusIcon" size="2x" />
+              <PlusIcon style={iconStyle}/>
             </div>
           </div>
         </a>
@@ -78,11 +85,11 @@ GalleryItem.propTypes = {
 };
 
 GalleryItem.defaultProps = {
-  imageAlt: "",
-  subheader: "",
-  content: "",
-  imageFileNameDetail: "",
-  imageAltDetail: "",
+  imageAlt: '',
+  subheader: '',
+  content: '',
+  imageFileNameDetail: '',
+  imageAltDetail: '',
   extraInfo: null,
 };
 

@@ -8,10 +8,6 @@
     "url": "https://github.com/alextim/masha/issues"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.32",
-    "@fortawesome/free-brands-svg-icons": "^5.15.1",
-    "@fortawesome/free-solid-svg-icons": "^5.15.1",
-    "@fortawesome/react-fontawesome": "^0.1.13",
     "bootstrap": "^4.5.3",
     "clsx": "^1.1.1",
     "gatsby": "^2.28.0",
@@ -57,6 +53,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "gatsby-plugin-eslint": "^2.0.8",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.17",
     "prettier": "^2.2.1"
   },

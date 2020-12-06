@@ -41,7 +41,6 @@ module.exports = {
           transform: 'react-bootstrap/lib/${member}',
           preventFullImport: true,
         },
-        */
         '@fortawesome/free-solid-svg-icons': {
           transform: '@fortawesome/free-solid-svg-icons/${member}',
           skipDefaultConversion: true,
@@ -54,6 +53,7 @@ module.exports = {
           transform: 'ramda/src/${member}',
           preventFullImport: true,
         },
+        */
       },
     ],
   ],

@@ -2,8 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { Row, Col } from 'react-bootstrap';
-import Icon from 'components/Icon';
 import PageSection from 'components/PageSection';
+
+import PhoneIcon from '../../../assets/icons/phone.svg';
+import EnvelopeIcon from '../../../assets/icons/envelope.svg';
 
 const Phone = ({ phone }) => (
   <a className="d-block" href={`tel:${phone}`}>
@@ -21,6 +23,10 @@ const Contacts = ({ className, frontmatter }) => {
   }
 
   const { anchor, header, subheader, phones, email } = frontmatter;
+  const iconStyle = {
+    width: '3rem',
+    height: '3rem',
+  };
 
   return (
     <PageSection className={className} id={anchor}>
@@ -33,13 +39,13 @@ const Contacts = ({ className, frontmatter }) => {
       </Row>
       <Row>
         <Col lg={4} className="ml-auto text-center">
-          <Icon iconName="PhoneIcon" size="3x" className="text-muted mb-3" />
+          <PhoneIcon style={iconStyle} className="text-muted mb-3" />
           {phones.length > 1 ? phones.map((phone) => <div key={phone}><Phone phone={phone} /></div>) :
             <Phone phone={phones[0]} />
           }
         </Col>
         <Col lg={4} className="mr-auto text-center">
-          <Icon iconName="EnvelopIcon" size="3x" className="text-muted mb-3" />
+          <EnvelopeIcon style={iconStyle} className="text-muted mb-3" />
           <a className="d-block" href={`mailto:${email}`}>
             {email}
           </a>

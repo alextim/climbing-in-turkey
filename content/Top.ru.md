@@ -4,7 +4,7 @@ subheader: "Групповые и индивидуальные занятия с
 jumpToAnchor: Услуги
 jumpToAnchorText: Подробнее
 image:
-  mobile: ./hero-mobile.jpg
-  desktop: ./hero-desktop.jpg
+  mobile: ./assets/images/top/hero-mobile.jpg
+  desktop: ./assets/images/top/hero-desktop.jpg
   alt: bla-bla
 ---

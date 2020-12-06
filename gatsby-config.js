@@ -69,7 +69,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sass',
       options: {
-        data: `@import "core.scss";`,
+        data: '@import "core.scss";',
         includePaths: [path.resolve(__dirname, 'src/style')],
       },
     },
@@ -79,6 +79,14 @@ module.exports = {
         langKeyDefault: defaultLang,
         useLangKeyLayout: false,
         pagesPaths: ['/content/'],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        },
       },
     },
     'gatsby-plugin-webpack-bundle-analyser-v2',

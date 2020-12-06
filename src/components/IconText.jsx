@@ -1,19 +1,17 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Icon from "components/Icon";
+import './IconText.scss';
 
-import "./IconText.scss";
-
-const IconText = ({ iconName, text }) => (
+const IconText = ({ icon, text }) => (
   <span className="icon-text">
-    <Icon className="icon" iconName={iconName} />
+    {icon}
     {text}
   </span>
 );
 
 IconText.propTypes = {
-  iconName: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
   text: PropTypes.string.isRequired,
 };
 

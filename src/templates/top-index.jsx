@@ -9,7 +9,6 @@ import * as Sections from 'views/Sections';
 import SEO from 'components/SEO';
 import LanguageSelector from 'components/LanguageSelector';
 
-import 'utils/fixFontAwesome';
 import breakDownAllNodes from 'utils/breakDownAllNodes';
 import fileNameToSectionName from 'utils/fileNameToSectionName';
 

@@ -8,7 +8,7 @@ import './ImageCard.scss';
 
 const ImageCard = ({ className, mobileImage, desktopImage, imageAlt, header, subheader, extraInfo }) => (
   <Card className={clsx('image-card bg-dark text-white text-center', className)}>
-    <ArtImage className="image" mobileImage={mobileImage} desktopImage={desktopImage} alt={imageAlt || header || subheader} />
+    <ArtImage className="image" mobileImage={mobileImage} desktopImage={desktopImage} alt={imageAlt || header || subheader} fadeIn={false} loading="eager" />
     <Card.ImgOverlay className="no-padding">
       <Container>
         <div className="intro-text">

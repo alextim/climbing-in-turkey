@@ -1,18 +1,25 @@
-import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-import { Link } from "gatsby";
-import { NavDropdown } from "react-bootstrap";
+import { Link } from 'gatsby';
+import { NavDropdown } from 'react-bootstrap';
 
-import IconText from "components/IconText";
-import getBaseUrl from "utils/getBaseUrl";
+import IconText from 'components/IconText';
+import getBaseUrl from 'utils/getBaseUrl';
 
-import "./LanguageSelector.scss";
+import './LanguageSelector.scss';
 
+import LanguageIcon from '../assets/icons/globe.svg';
+
+const iconStyle = {
+  width: '1rem',
+  height: '1rem',
+  marginRight: '0.5rem',
+};
 const LanguageSelector = ({ defaultLang, langKey, langTextMap }) => (
   <NavDropdown
-    title={<IconText iconName="LanguageIcon" text={langTextMap[langKey]} />}
+    title={<IconText icon={<LanguageIcon style={iconStyle} />} text={langTextMap[langKey]} />}
     id="language-dropdown"
     className="language-selector"
   >
@@ -21,7 +28,7 @@ const LanguageSelector = ({ defaultLang, langKey, langTextMap }) => (
         <Link
           key={key}
           to={getBaseUrl(defaultLang, key)}
-          className={clsx("dropdown-item", { active: key === langKey })}
+          className={clsx('dropdown-item', { active: key === langKey })}
         >
           {langTextMap[key]}
         </Link>
@@ -37,10 +44,10 @@ LanguageSelector.propTypes = {
 };
 
 LanguageSelector.defaultProps = {
-  defaultLang: "en",
-  langKey: "en",
+  defaultLang: 'en',
+  langKey: 'en',
   langTextMap: {
-    en: "English",
+    en: 'English',
   },
 };
 

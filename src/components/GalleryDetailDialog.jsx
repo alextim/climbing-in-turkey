@@ -1,9 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import { Modal, Button } from "react-bootstrap";
-import Image from "components/Image";
-import Icon from "./Icon";
+import { Modal, Button } from 'react-bootstrap';
+import Image from 'components/Image';
+
+import CloseIcon from '../assets/icons/times.svg';
+
+const iconStyle = {
+  width: '1rem',
+  height: '1rem',
+};
 
 const GalleryDetailDialog = ({
   onHide,
@@ -38,7 +44,7 @@ const GalleryDetailDialog = ({
     <Modal.Footer>
       <div className="mx-auto">
         <Button variant="primary" onClick={onHide}>
-          <Icon iconName="CloseIcon" />
+          <CloseIcon style={iconStyle} />
           &nbsp; Close Project
         </Button>
       </div>
@@ -58,11 +64,11 @@ GalleryDetailDialog.propTypes = {
 
 GalleryDetailDialog.defaultProps = {
   onHide: null,
-  imageFileName: "",
+  imageFileName: '',
   imageAlt: null,
-  header: "",
-  subheader: "",
-  content: "",
+  header: '',
+  subheader: '',
+  content: '',
   extraInfo: null,
 };
 
