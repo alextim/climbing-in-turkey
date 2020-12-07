@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import { scroller, animateScroll } from "react-scroll";
+import { scroller, animateScroll } from 'react-scroll';
 
 
 // const defOptions = {
 const opts = {
-  smooth: "easeInOutQuart",
+  smooth: 'easeInOutQuart',
 };
 
 // const useSmoothScrollTo = (anchorOrPosition, options = {}) => {
@@ -14,11 +14,11 @@ const useSmoothScrollTo = (anchorOrPosition) => {
 
   const handleScrollTo = React.useCallback(() => {
     switch (typeof anchorOrPosition) {
-      case "number":
-      case "bigint":
+      case 'number':
+      case 'bigint':
         animateScroll.scrollTo(anchorOrPosition, opts);
         break;
-      case "string":
+      case 'string':
         scroller.scrollTo(anchorOrPosition, opts);
         break;
       default:

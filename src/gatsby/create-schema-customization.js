@@ -75,9 +75,6 @@ module.exports = ({ actions, schema }) => {
         image: {
           type: 'Image',
         },
-        title: {
-          type: 'String',
-        },
         header: {
           type: 'String',
         },
@@ -117,6 +114,9 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'MdFields',
       fields: {
+        partName: {
+          type: 'String',
+        },
         fileName: {
           type: 'String',
         },
@@ -124,6 +124,9 @@ module.exports = ({ actions, schema }) => {
           type: 'String',
         },
         langKey: {
+          type: 'String',
+        },
+        source: {
           type: 'String',
         },
       },

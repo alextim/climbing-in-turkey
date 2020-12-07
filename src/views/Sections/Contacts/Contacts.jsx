@@ -8,6 +8,8 @@ import PageSection from 'components/PageSection';
 import PhoneIcon from '../../../assets/icons/phone.svg';
 import EnvelopeIcon from '../../../assets/icons/envelope.svg';
 
+import useContactData from '../../../hooks/useContactData';
+
 const Phone = ({ phone }) => (
   <a className="d-block" href={`tel:${phone}`}>
     {phone}
@@ -19,11 +21,12 @@ Phone.propTypes = {
 };
 
 const Contacts = ({ className, frontmatter }) => {
+  const { phones, email }  = useContactData();
+  
   if (!frontmatter) {
     return null;
   }
-
-  const { anchor, header, subheader, phones, email } = frontmatter;
+  const { anchor, header, subheader } = frontmatter;
   const iconStyle = {
     width: '3rem',
     height: '3rem',

@@ -4,10 +4,13 @@ import PropTypes from "prop-types";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
+import * as SocialIcons from 'components/SocialIcons';
 
-import * as SocialIcons from "components/SocialIcons";
+import useSocialData from '../../hooks/useSocialData';
 
 const Footer = ({ frontmatter }) => {
+  const { facebook, instagram } = useSocialData();
+  
   if (!frontmatter) {
     return null;
   }
@@ -18,7 +21,6 @@ const Footer = ({ frontmatter }) => {
     privacyText,
     termsHref,
     termsText,
-    social: { facebook, instagram },
   } = frontmatter;
 
   return (

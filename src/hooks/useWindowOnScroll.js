@@ -1,5 +1,5 @@
-import React from "react";
-import { throttle } from "throttle-debounce";
+import React from 'react';
+import { throttle } from 'throttle-debounce';
 
 const useWindowOnScroll = (handleWindowScroll, loadOnceOnMount = true) => {
   const internalHandleScroll = React.useMemo(() => {
@@ -12,9 +12,9 @@ const useWindowOnScroll = (handleWindowScroll, loadOnceOnMount = true) => {
       return undefined;
     }
 
-    window.addEventListener("scroll", internalHandleScroll);
+    window.addEventListener('scroll', internalHandleScroll);
     return () => {
-      window.removeEventListener("scroll", internalHandleScroll);
+      window.removeEventListener('scroll', internalHandleScroll);
       internalHandleScroll.cancel();
     };
   }, [internalHandleScroll]);
