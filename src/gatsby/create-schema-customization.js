@@ -5,6 +5,33 @@ module.exports = ({ actions, schema }) => {
   const { createTypes } = actions;
   const typeDefs = [
     schema.buildObjectType({
+      name: 'Yaml',
+      interfaces: ['Node'],
+      extensions: {
+        infer: false,
+      },
+      fields: {
+        code: {
+          type: 'String',
+        },
+        to: {
+          type: 'String',
+        },
+        title: {
+          type: 'String',
+        },
+        phone: {
+          type: '[String]',
+        },
+        email: {
+          type: '[String]',
+        },
+        fields: {
+          type: 'MdFields',
+        },
+      },
+    }),
+    schema.buildObjectType({
       name: 'MarkdownRemark',
       interfaces: ['Node'],
       extensions: {
@@ -126,7 +153,7 @@ module.exports = ({ actions, schema }) => {
         langKey: {
           type: 'String',
         },
-        source: {
+        type: {
           type: 'String',
         },
       },

@@ -10,14 +10,15 @@ const iconStyle = {
   height: '1rem',
 };
 
-const Instagram = ({ userName }) => (
-  <CircleIcon href={`https://instagram.com/${userName}`} label="Instagram">
+const Instagram = ({ to, title }) => (
+  <CircleIcon href={to} label={title}>
     <InstagramIcon style={iconStyle}/>
   </CircleIcon>
 );
 
 Instagram.propTypes = {
-  userName: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Instagram;

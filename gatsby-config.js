@@ -19,14 +19,14 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'page',
-        path: `${__dirname}/content/page`,
+        name: 'page-part',
+        path: `${__dirname}/content/page-parts`,
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'sections',
+        name: 'section',
         path: `${__dirname}/content/sections`,
       },
     },
@@ -35,6 +35,12 @@ module.exports = {
       options: {
         name: 'images',
         path: `${__dirname}/content/assets/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-yaml',
+      options: {
+        typeName: 'Yaml', // a fixed string
       },
     },
     'gatsby-plugin-sharp',

@@ -6,10 +6,10 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import * as SocialIcons from 'components/SocialIcons';
 
-import useSocialData from '../../hooks/useSocialData';
+import useSocialLinks from '../../hooks/useSocialLinks';
 
 const Footer = ({ frontmatter }) => {
-  const { facebook, instagram } = useSocialData();
+  const socialLinks = useSocialLinks();
   
   if (!frontmatter) {
     return null;
@@ -31,8 +31,8 @@ const Footer = ({ frontmatter }) => {
             {copyright}
           </Col>
           <Col lg={3} className="my-3 my-lg-0">
-            {instagram ? <SocialIcons.Instagram userName={instagram} /> : null}
-            {facebook ? <SocialIcons.Facebook userName={facebook} /> : null}
+            {socialLinks.instagram ? <SocialIcons.Instagram to={socialLinks.instagram.to} title={socialLinks.instagram.title} /> : null}
+            {socialLinks.facebook ? <SocialIcons.Facebook to={socialLinks.facebook.to}  title={socialLinks.facebook.title} /> : null}
           </Col>
           <Col lg={4} className="text-lg-right">
             <a className="mr-3" href={privacyHref}>

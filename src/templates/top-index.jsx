@@ -6,9 +6,9 @@ import Navbar from 'views/Navbar';
 import Top from 'views/Top';
 import Footer from 'views/Footer';
 import * as Sections from 'views/Sections';
-import SEO from 'components/SEO';
+import SEO from 'components/SEO/SEO';
 import LanguageSelector from 'components/LanguageSelector';
-
+import AppContextProvider from '../context';
 import '../style/main.scss';
 
 /**
@@ -16,7 +16,20 @@ import '../style/main.scss';
  */
 export const query = graphql`
   query IndexQuery($langKey: String!) {
-    top: markdownRemark( fields: { langKey: { eq: $langKey }, source: {eq: "page"}, partName: {eq: "Top"} } ) {
+    organization: yaml(fields: { type: { eq: "contacts" } }) {
+      phone
+      email
+    }
+    socialLinks: allYaml(
+      filter: { fields: { type: { eq: "social-links" } } }
+    ) {
+      nodes {
+        code
+        to
+        title
+      }
+    }    
+    top: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "Top"} } ) {
       frontmatter {
         header
         subheader
@@ -41,12 +54,12 @@ export const query = graphql`
         }
       }
     }
-    navbar: markdownRemark( fields: { langKey: { eq: $langKey }, source: {eq: "page"}, partName: {eq: "NavBar"} } ) {
+    navbar: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "NavBar"} } ) {
       frontmatter {
         brand
       }
     }
-    footer: markdownRemark( fields: { langKey: { eq: $langKey }, source: {eq: "page"}, partName: {eq: "Footer"} } ) {
+    footer: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "Footer"} } ) {
       frontmatter {
         copyright
         social {
@@ -60,7 +73,7 @@ export const query = graphql`
       }
     }
     sections: allMarkdownRemark(
-      filter: { fields: { langKey: { eq: $langKey }, source: {eq: "sections"} } }
+      filter: { fields: { langKey: { eq: $langKey }, type: {eq: "section"} } }
       sort: { order: ASC, fields: [fields___fileName] }
     ) {
       nodes {
@@ -114,19 +127,19 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } }) => {
+const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMap } }) => {
   const {
     sections,
     top,
     navbar,
     footer,
+    organization,
+    socialLinks,
   } = data;
-  const keywords = '';
-  const description = '';
-
   const topNode = top || {};
   const navBarNode = navbar || {};
   const footerNode = footer || {};
+
 
   // sections part
   const sectionsNodes = sections?.nodes || [];
@@ -142,8 +155,8 @@ const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } })
   }
 
   return (
-    <>
-      <SEO lang={langKey} title="Top" keywords={keywords} description={description} />
+    <AppContextProvider value={{ organization, socialLinks }}>
+      <SEO lang={langKey} pathname={path} />
       <Navbar
         anchors={anchors}
         frontmatter={navBarNode.frontmatter}
@@ -166,13 +179,14 @@ const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } })
         })
       }
       <Footer frontmatter={footerNode.frontmatter} />
-    </>
+    </AppContextProvider>
   );
 };
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
   pathContext: PropTypes.object,
+  path: PropTypes.string.isRequired,
 };
 
 IndexPage.defaultProps = {

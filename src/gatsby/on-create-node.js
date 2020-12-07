@@ -21,45 +21,65 @@ function fileNameToSectionName(fileName) {
 
 
 module.exports = ({ node, getNode, actions }) => {
-  if (node.internal.type !== 'MarkdownRemark') {
-      return;
+  if (node.internal.type !== 'Yaml' && node.internal.type !== 'MarkdownRemark') {
+    return;
   }
-  const { createNodeField } = actions;
 
+  const { createNodeField } = actions;
   const fileNode = getNode(node.parent);
   const source = fileNode.sourceInstanceName;
 
-  const fileName = path.basename(node.fileAbsolutePath, '.md');
-  let partName;
 
-  if (source === 'sections') {
-    partName = fileNameToSectionName(fileName);
-  } else {
-    partName = fileName.split('.')[0];
+  if (node.internal.type === 'Yaml') {
+    const parsedFilePath = path.parse(fileNode.relativePath);
+
+    const { dir, name } = parsedFilePath;
+
+    const [type, locale] = name.split('.');
+    
+    createNodeField({
+      node,
+      name: 'type',
+      value: type,
+    });
+    return;
   }
 
-  createNodeField({
-    node,
-    name: 'partName',
-    value: partName,
-  });
+  if (node.internal.type === 'MarkdownRemark') {
 
-  createNodeField({
-    node,
-    name: 'fileName',
-    value: fileName,
-  });
 
-  createNodeField({
-    node,
-    name: 'directoryName',
-    value: path.basename(path.dirname(node.fileAbsolutePath)),
-  });
+    const fileName = path.basename(node.fileAbsolutePath, '.md');
+    let partName;
 
-  createNodeField({
-    node,
-    name: 'source',
-    value: source,
-  });
+    if (source === 'section') {
+      partName = fileNameToSectionName(fileName);
+    } else {
+      partName = fileName.split('.')[0];
+    }
+
+    createNodeField({
+      node,
+      name: 'partName',
+      value: partName,
+    });
+
+    createNodeField({
+      node,
+      name: 'fileName',
+      value: fileName,
+    });
+
+    createNodeField({
+      node,
+      name: 'directoryName',
+      value: path.basename(path.dirname(node.fileAbsolutePath)),
+    });
+
+    createNodeField({
+      node,
+      name: 'type',
+      value: source,
+    });
+  }
 
 };

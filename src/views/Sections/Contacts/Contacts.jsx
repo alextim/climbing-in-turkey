@@ -8,7 +8,7 @@ import PageSection from 'components/PageSection';
 import PhoneIcon from '../../../assets/icons/phone.svg';
 import EnvelopeIcon from '../../../assets/icons/envelope.svg';
 
-import useContactData from '../../../hooks/useContactData';
+import useOrganization from '../../../hooks/useOrganization';
 
 const Phone = ({ phone }) => (
   <a className="d-block" href={`tel:${phone}`}>
@@ -21,7 +21,7 @@ Phone.propTypes = {
 };
 
 const Contacts = ({ className, frontmatter }) => {
-  const { phones, email }  = useContactData();
+  const { phone, email }  = useOrganization();
   
   if (!frontmatter) {
     return null;
@@ -44,14 +44,14 @@ const Contacts = ({ className, frontmatter }) => {
       <Row>
         <Col lg={4} className="ml-auto text-center">
           <PhoneIcon style={iconStyle} className="text-muted mb-3" />
-          {phones.length > 1 ? phones.map((phone) => <div key={phone}><Phone phone={phone} /></div>) :
-            <Phone phone={phones[0]} />
+          {phone.length > 1 ? phone.map((e) => <div key={e}><Phone phone={e} /></div>) :
+            <Phone phone={phone[0]} />
           }
         </Col>
         <Col lg={4} className="mr-auto text-center">
           <EnvelopeIcon style={iconStyle} className="text-muted mb-3" />
-          <a className="d-block" href={`mailto:${email}`}>
-            {email}
+          <a className="d-block" href={`mailto:${email[0]}`}>
+            {email[0]}
           </a>
         </Col>
       </Row>

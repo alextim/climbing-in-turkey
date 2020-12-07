@@ -8,14 +8,15 @@ const iconStyle = {
   width: '1rem',
   height: '1rem',
 };
-const Facebook = ({ userName }) => (
-  <CircleIcon href={`https://facebook.com/${userName}`} label="Facebook">
+const Facebook = ({ to, title }) => (
+  <CircleIcon href={to} label={title}>
     <FacebookIcon style={iconStyle} />
   </CircleIcon>
 );
 
 Facebook.propTypes = {
-  userName: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Facebook;
