@@ -1,7 +1,7 @@
 ---
-copyright: "Copyright © Смеловс 2020"
-privacyText: "Политика конфиденциальности"
+copyright: Copyright © Смеловс 2020
+privacyText: Политика конфиденциальности
 privacyHref: "#!"
-termsText: "Условия использования"
+termsText: Условия использования
 termsHref: "#!"
 ---

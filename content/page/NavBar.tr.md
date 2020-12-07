@@ -1,3 +1,3 @@
 ---
-brand: "Türkiye'de Tırmanış"
+brand: Türkiye'de Tırmanış
 ---

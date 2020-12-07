@@ -1,3 +1,3 @@
 ---
-brand: "Climbing in Turkey"
+brand: Climbing in Turkey
 ---

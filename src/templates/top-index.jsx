@@ -16,12 +16,6 @@ import '../style/main.scss';
  */
 export const query = graphql`
   query IndexQuery($langKey: String!) {
-    site {
-      siteMetadata {
-        keywords
-        description
-      }
-    }
     top: markdownRemark( fields: { langKey: { eq: $langKey }, source: {eq: "page"}, partName: {eq: "Top"} } ) {
       frontmatter {
         header
@@ -122,14 +116,13 @@ export const query = graphql`
 
 const IndexPage = ({ data, pathContext: { langKey, defaultLang, langTextMap } }) => {
   const {
-    site: {
-      siteMetadata: { keywords, description },
-    },
     sections,
     top,
     navbar,
     footer,
   } = data;
+  const keywords = '';
+  const description = '';
 
   const topNode = top || {};
   const navBarNode = navbar || {};

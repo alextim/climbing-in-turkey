@@ -1,7 +1,7 @@
 ---
-copyright: "Copyright © Start Bootstrap 2020"
-privacyText: "プライバシー"
+copyright: Copyright © Smelov 2020
+privacyText: プライバシー
 privacyHref: "#!"
-termsText: "利用規約"
+termsText: 利用規約
 termsHref: "#!"
 ---

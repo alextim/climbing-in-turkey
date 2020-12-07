@@ -1,9 +1,12 @@
 const path = require('path');
-
+const i18n = require('../i18n/i18n');
 
 const getBaseUrl = require('../utils/getBaseUrl');
-const { defaultLang, langTextMap = {} } = require('../../config/site');
 
+const langTextMap = i18n.localeCodes.reduce((prev, el) => {
+  prev[el] = i18n.locales[el].localName;
+  return prev;
+}, {});
 /**
  * generate i18n top pages
  */
@@ -29,11 +32,11 @@ module.exports = ({ graphql, actions: { createPage } }) => {
 
         data.allMarkdownRemark.distinct.forEach((langKey) => {
           createPage({
-            path: getBaseUrl(defaultLang, langKey),
+            path: getBaseUrl(i18n.defaultLang, langKey),
             component: topIndex,
             context: {
               langKey,
-              defaultLang,
+              defaultLang: i18n.defaultLang,
               langTextMap,
             },
           });
