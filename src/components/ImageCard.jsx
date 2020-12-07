@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import { Container, Card } from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+
 import ArtImage from 'components/ArtImage';
 import './ImageCard.scss';
 

@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import clsx from 'clsx';
 
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import Navbar from 'react-bootstrap/Navbar';
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
 
 import useWindowOnScroll from 'hooks/useWindowOnScroll';
 import useSmoothScrollTo from 'hooks/useSmoothScrollTo';

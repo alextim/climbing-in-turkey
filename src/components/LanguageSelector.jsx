@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import { Link } from 'gatsby';
-import { NavDropdown } from 'react-bootstrap';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 import IconText from 'components/IconText';
 import getBaseUrl from 'utils/getBaseUrl';

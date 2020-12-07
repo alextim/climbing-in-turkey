@@ -1,13 +1,13 @@
-import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-import { Container } from "react-bootstrap";
+import Container from 'react-bootstrap/Container';
 
-import "./PageSection.scss";
+import './PageSection.scss';
 
 const PageSection = ({ children, className, ...restProps }) => (
-  <section className={clsx("page-section", className)} {...restProps}>
+  <section className={clsx('page-section', className)} {...restProps}>
     <Container>{children}</Container>
   </section>
 );

@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Row, Col } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import TimelineItem from 'components/TimelineItem';
 import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection';

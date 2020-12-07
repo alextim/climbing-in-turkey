@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import clsx from "clsx";
+import React from 'react';
+import PropTypes from 'prop-types';
+import clsx from 'clsx';
 
-import { Col } from "react-bootstrap";
-import "./SectionHeader.scss";
+import Col from 'react-bootstrap/Col';
+import './SectionHeader.scss';
 
 const SectionHeader = ({ header, subheader, className, ...restProps }) => {
   const subheaderPart = subheader ? (
@@ -11,7 +11,7 @@ const SectionHeader = ({ header, subheader, className, ...restProps }) => {
   ) : null;
 
   return (
-    <Col lg={12} className={clsx("section-header", "text-center", className)} {...restProps}>
+    <Col lg={12} className={clsx('section-header', 'text-center', className)} {...restProps}>
       <h2 className="section-heading text-uppercase">{header}</h2>
       {subheaderPart}
     </Col>
@@ -25,8 +25,8 @@ SectionHeader.propTypes = {
 };
 
 SectionHeader.defaultProps = {
-  header: "",
-  subheader: "",
+  header: '',
+  subheader: '',
   className: null,
 };
 

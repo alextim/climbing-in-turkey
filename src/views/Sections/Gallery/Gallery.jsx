@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
-import { Row } from 'react-bootstrap';
+import Row from 'react-bootstrap/Row';
+
 import SectionHeader from 'components/SectionHeader';
 import GalleryItem from 'components/GalleryItem';
 import PageSection from 'components/PageSection';
