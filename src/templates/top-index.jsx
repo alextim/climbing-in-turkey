@@ -19,6 +19,10 @@ export const query = graphql`
     organization: yaml(fields: { type: { eq: "contacts" } }) {
       phone
       email
+      voice {
+        whatsapp
+        telegram
+      }
     }
     socialLinks: allYaml(
       filter: { fields: { type: { eq: "social-links" } } }

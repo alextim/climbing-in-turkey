@@ -5,12 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import Image from 'components/Image';
 
-import CloseIcon from '../assets/icons/times.svg';
-
-const iconStyle = {
-  width: '1rem',
-  height: '1rem',
-};
+import CloseIcon from '../assets/fa/solid/times.svg';
 
 const GalleryDetailDialog = ({
   onHide,
@@ -45,7 +40,7 @@ const GalleryDetailDialog = ({
     <Modal.Footer>
       <div className="mx-auto">
         <Button variant="primary" onClick={onHide}>
-          <CloseIcon style={iconStyle} />
+          <CloseIcon />
           &nbsp; Close Project
         </Button>
       </div>

@@ -6,14 +6,9 @@ import Image from 'components/Image';
 import GalleryDetailDialog from 'components/GalleryDetailDialog';
 
 import './GalleryItem.scss';
-import PlusIcon from '../assets/icons/plus.svg';
+import PlusIcon from '../assets/fa/solid/plus.svg';
 
 
-
-const iconStyle = {
-  width: '2rem',
-  height: '2rem',
-};
 
 const GalleryItem = ({
   imageFileName,
@@ -50,7 +45,7 @@ const GalleryItem = ({
           />
           <div className="portfolio-hover">
             <div className="portfolio-hover-content">
-              <PlusIcon style={iconStyle}/>
+              <PlusIcon className="fa-x2" />
             </div>
           </div>
         </a>

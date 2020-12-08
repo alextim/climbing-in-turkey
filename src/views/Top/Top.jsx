@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Button from 'react-bootstrap/Button';
-import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
+
 import ImageCard from 'components/ImageCard';
+import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
 
 const Top = ({ frontmatter }) => {
   if (!frontmatter) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CircleFAButton from 'components/CircleFAButton2';
+import CircleFAButton from 'components/CircleFAButton';
 import Image from 'components/Image';
 import './ServiceItem.scss';
 

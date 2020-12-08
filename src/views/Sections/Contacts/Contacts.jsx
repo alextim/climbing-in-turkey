@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
 import PageSection from 'components/PageSection';
 
-import PhoneIcon from '../../../assets/icons/phone.svg';
-import EnvelopeIcon from '../../../assets/icons/envelope.svg';
+import PhoneIcon from '../../../assets/fa/solid/phone.svg';
+import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';
 
 import useOrganization from '../../../hooks/useOrganization';
 
@@ -27,10 +27,6 @@ const Contacts = ({ className, frontmatter }) => {
     return null;
   }
   const { anchor, header, subheader } = frontmatter;
-  const iconStyle = {
-    width: '3rem',
-    height: '3rem',
-  };
 
   return (
     <PageSection className={className} id={anchor}>
@@ -43,13 +39,13 @@ const Contacts = ({ className, frontmatter }) => {
       </Row>
       <Row>
         <Col lg={4} className="ml-auto text-center">
-          <PhoneIcon style={iconStyle} className="text-muted mb-3" />
+          <PhoneIcon className="text-muted mb-3 fa-x3" />
           {phone.length > 1 ? phone.map((e) => <div key={e}><Phone phone={e} /></div>) :
             <Phone phone={phone[0]} />
           }
         </Col>
         <Col lg={4} className="mr-auto text-center">
-          <EnvelopeIcon style={iconStyle} className="text-muted mb-3" />
+          <EnvelopeIcon className="text-muted mb-3 fa-x3" />
           <a className="d-block" href={`mailto:${email[0]}`}>
             {email[0]}
           </a>

@@ -26,11 +26,27 @@ module.exports = ({ actions, schema }) => {
         email: {
           type: '[String]',
         },
+        voice: {
+          type: 'Voice',
+        },
         fields: {
           type: 'MdFields',
         },
       },
     }),
+
+    schema.buildObjectType({
+      name: 'Voice',
+      fields: {
+        whatsapp: {
+          type: 'String',
+        },
+        telegram: {
+          type: 'String',
+        },
+      },
+    },
+
     schema.buildObjectType({
       name: 'MarkdownRemark',
       interfaces: ['Node'],

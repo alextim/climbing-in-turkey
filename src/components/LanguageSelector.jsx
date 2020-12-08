@@ -10,16 +10,12 @@ import getBaseUrl from 'utils/getBaseUrl';
 
 import './LanguageSelector.scss';
 
-import LanguageIcon from '../assets/icons/globe.svg';
+import LanguageIcon from '../assets/fa/solid/globe.svg';
 
-const iconStyle = {
-  width: '1rem',
-  height: '1rem',
-  marginRight: '0.5rem',
-};
+
 const LanguageSelector = ({ defaultLang, langKey, langTextMap }) => (
   <NavDropdown
-    title={<IconText icon={<LanguageIcon style={iconStyle} />} text={langTextMap[langKey]} />}
+    title={<IconText icon={<LanguageIcon className="fa mr-2" />} text={langTextMap[langKey]} />}
     id="language-dropdown"
     className="language-selector"
   >
