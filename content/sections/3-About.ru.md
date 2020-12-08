@@ -1,7 +1,7 @@
 ---
-anchor: "Обо мне"
-header: "Обо мне"
-subheader: "Lorem ipsum dolor sit amet consectetur."
+anchor: Обо мне
+header: Обо мне
+subheader: Lorem ipsum dolor sit amet consectetur.
 timeline: [
   {
     imageFileName: "about/1.jpg",

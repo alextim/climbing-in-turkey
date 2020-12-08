@@ -1,7 +1,7 @@
 ---
-anchor: "Benim hakkımda"
-header: "Benim hakkımda"
-subheader: "あなたは偶然断然その持通りについて事のためにまかり出ですた。"
+anchor: Benim hakkımda
+header: Benim hakkımda
+subheader: あなたは偶然断然その持通りについて事のためにまかり出ですた
 timeline: [
   {
     imageFileName: "about/1.jpg",
