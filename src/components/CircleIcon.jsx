@@ -5,7 +5,7 @@ import './CircleIcon.scss';
 
 const CircleIcon = ({ href, label, children }) => (
   <a
-    className="circle-icon"
+    className="circle-icon mx-3"
     href={href}
     target="_blank"
     rel="noopener noreferrer"

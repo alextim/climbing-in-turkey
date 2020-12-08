@@ -7,21 +7,36 @@ import PageSection from 'components/PageSection';
 
 import PhoneIcon from '../../../assets/fa/solid/phone.svg';
 import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';
+import WhatsappIcon from '../../../assets/fa/brand/whatsapp.svg';
+import TelegramIcon from '../../../assets/fa/brand/telegram.svg';
 
+import formatPhoneNumber from '../../../utils/formatPhoneNumber';
 import useOrganization from '../../../hooks/useOrganization';
 
-const Phone = ({ phone }) => (
-  <a className="d-block" href={`tel:${phone}`}>
-    {phone}
-  </a>
+const ContactItem = ({ icon, to, title, text }) => (
+  <Col lg={3} className="d-flex flex-column align-items-center mb-4">
+    {icon}
+    <div>
+      {title && <span className="mr-1 text-muted">{title}:</span>}
+      <a href={to}>
+        {text}
+      </a>
+    </div>
+  </Col>  
 );
-
-Phone.propTypes = {
-  phone: PropTypes.string.isRequired,
+ContactItem.propTypes = {
+  icon: PropTypes.node.isRequired,  
+  to: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  title: PropTypes.string,
 };
+ContactItem.defaultProps = {
+  title: null,
+};
+const iconClass = 'text-muted mb-2 fa-x3';
 
 const Contacts = ({ className, frontmatter }) => {
-  const { phone, email }  = useOrganization();
+  const { phone, email, voice: { whatsapp, telegram } }  = useOrganization();
   
   if (!frontmatter) {
     return null;
@@ -38,18 +53,10 @@ const Contacts = ({ className, frontmatter }) => {
         </Col>
       </Row>
       <Row>
-        <Col lg={4} className="ml-auto text-center">
-          <PhoneIcon className="text-muted mb-3 fa-x3" />
-          {phone.length > 1 ? phone.map((e) => <div key={e}><Phone phone={e} /></div>) :
-            <Phone phone={phone[0]} />
-          }
-        </Col>
-        <Col lg={4} className="mr-auto text-center">
-          <EnvelopeIcon className="text-muted mb-3 fa-x3" />
-          <a className="d-block" href={`mailto:${email[0]}`}>
-            {email[0]}
-          </a>
-        </Col>
+        <ContactItem to={`tel:+${phone[0]}`} icon={<PhoneIcon className={iconClass}  />} text={formatPhoneNumber(phone[0])}/>
+        <ContactItem to={`https://wa.me/${whatsapp}`} icon={<WhatsappIcon className={iconClass} />} title="WhatsApp" text={formatPhoneNumber(whatsapp)}/>
+        <ContactItem to={`https://telegram/me/${telegram}`} icon={<TelegramIcon className={iconClass}  />} title="Telegram" text={telegram} />
+        <ContactItem to={`mailto:${email[0]}`} icon={<EnvelopeIcon className={iconClass} />} text={email[0]}/>
       </Row>
     </PageSection>
   );

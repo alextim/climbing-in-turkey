@@ -66,14 +66,6 @@ export const query = graphql`
     footer: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "Footer"} } ) {
       frontmatter {
         copyright
-        social {
-          facebook
-          instagram
-        }
-        privacyHref
-        privacyText
-        termsHref
-        termsText
       }
     }
     sections: allMarkdownRemark(

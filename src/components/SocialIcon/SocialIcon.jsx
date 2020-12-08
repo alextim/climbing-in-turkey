@@ -8,13 +8,14 @@ import InstagramIcon from '../../assets/fa/brand/instagram.svg';
 import VkIcon from '../../assets/fa/brand/vk.svg';
 
 const Icon = ({ code }) => {
+  const c = 'fa-x2';
   switch (code) {
     case 'instagram':
-      return <InstagramIcon />;
+      return <InstagramIcon className={c} />;
     case 'facebook':
-      return <FacebookIcon />;
+      return <FacebookIcon className={c} />;
     case 'vk':
-      return <VkIcon />;
+      return <VkIcon className={c} />;
     default:
       throw new Error(`Uknownn ${code}`);
   }

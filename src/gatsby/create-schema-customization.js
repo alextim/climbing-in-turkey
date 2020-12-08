@@ -45,7 +45,7 @@ module.exports = ({ actions, schema }) => {
           type: 'String',
         },
       },
-    },
+    }),
 
     schema.buildObjectType({
       name: 'MarkdownRemark',
@@ -66,19 +66,6 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Frontmatter',
       fields: {
-        privacyHref: {
-          type: 'String',
-        },
-        privacyText: {
-          type: 'String',
-        },
-        termsHref: {
-          type: 'String',
-        },
-        termsText: {
-          type: 'String',
-        },
-
         brand: {
           type: 'String',
         },
