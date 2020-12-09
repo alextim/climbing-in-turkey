@@ -170,14 +170,14 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
       <Top frontmatter={topNode.frontmatter} />
       {
         // dynamically import sections
-        sectionsNodes.map(({ frontmatter, html, fields: { partName } }, ind) => {
+        sectionsNodes.map(({ frontmatter, html, fields: { partName } }, i) => {
           const sectionComponentName = partName;
           const SectionComponent = Sections[sectionComponentName];
 
           return SectionComponent ? (
             <SectionComponent
               key={sectionComponentName}
-              className={ind % 2 === 1 ? 'bg-light' : null}
+              className={i % 2 ? 'bg-light' : null}
               frontmatter={frontmatter}
               html={html}
             />

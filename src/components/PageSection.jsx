@@ -6,8 +6,8 @@ import Container from 'react-bootstrap/Container';
 
 import './PageSection.scss';
 
-const PageSection = ({ children, className, ...restProps }) => (
-  <section className={clsx('page-section', className)} {...restProps}>
+const PageSection = ({ children, className, ...rest }) => (
+  <section className={clsx('page-section', className)} {...rest}>
     <Container>{children}</Container>
   </section>
 );

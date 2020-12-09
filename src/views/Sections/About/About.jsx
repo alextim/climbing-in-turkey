@@ -24,16 +24,18 @@ const About = ({ className, html, frontmatter }) => {
       </Row>
       {html && (
         <Row>
-          <div dangerouslySetInnerHTML={{ __html: html }}/>
+          <Col lg={12}>
+            <div dangerouslySetInnerHTML={{ __html: html }} />
+          </Col>
         </Row>
       )}
       {timeline && (
         <Row>
           <Col lg={12}>
             <ul className="timeline">
-              {timeline.map(({ content, header, imageContent, imageFileName, subheader }, ind) => (
+              {timeline.map(({ content, header, imageContent, imageFileName, subheader }, i) => (
                 <TimelineItem
-                  invert={ind % 2 === 1}
+                  invert={i % 2}
                   key={header}
                   imageFileName={imageFileName}
                   header={header}

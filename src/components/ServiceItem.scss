@@ -20,20 +20,24 @@
 }
 
 .service-item-text-part {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
-}
 
-.service-item-odd .service-item-text-part {
   @media (min-width: 768px) {
-    padding-right: 1rem;
-    text-align: right;
-  }
-}
+    &.service-item-text-odd {
+      padding-right: 2rem;
+      padding-left: 1rem;
+      align-items: center;
+      text-align: right;
+    }
 
-.service-item-even .service-item-text-part {
-  @media (min-width: 768px) {
-    padding-left: 1rem;
-    text-align: left;
+    &.service-item-text-even {
+      padding-right: 1rem;
+      padding-left: 2rem;
+      align-items: center;
+      text-align: left;
+    }
   }
 }
 
