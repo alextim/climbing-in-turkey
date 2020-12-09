@@ -23,13 +23,11 @@ const Top = ({ frontmatter }) => {
     );
   }
 
-  const { mobile, desktop, alt } = image;
-
   return (
     <ImageCard
-      desktopImage={desktop}
-      mobileImage={mobile}
-      imageAlt={alt}
+      desktopImage={image.desktop}
+      defaultImage={image.default}
+      imageAlt={image.alt}
       header={header}
       subheader={subheader}
       extraInfo={extraInfoPart}

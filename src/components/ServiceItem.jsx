@@ -1,29 +1,32 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Img from 'gatsby-image';
 
-import CircleFAButton from 'components/CircleFAButton';
-import Image from 'components/Image';
 import './ServiceItem.scss';
 
-const ServiceItem = ({ iconName, imageFileName, header, content }) => (
-  <>
-    {iconName && <CircleFAButton iconName={iconName}/>}
-    {imageFileName && <Image className="service-item-image" fileName={imageFileName} />}
-    <h4 className="service-item-heading">{header}</h4>
-    <p className="text-muted">{content}</p>
-  </>
-);
+const ServiceItem = ({ odd, image, header, content }) => {
+  return (
+    <div className={`service-item service-item-${odd ? 'odd' : 'even'}`}>
+      <div className="service-item-image-part">
+        {image && image.default && <Img className="service-item-image" fluid={image.default.childImageSharp.fluid} alt={image.alt} />}
+      </div>
+      <div className="service-item-text-part">
+        <h4 className="service-item-heading">{header}</h4>
+        <p className="text-muted">{content}</p>
+      </div>
+    </div>
+  );
+};
 
 ServiceItem.propTypes = {
-  iconName: PropTypes.node,
-  imageFileName: PropTypes.string,
+  odd: PropTypes.number.isRequired,
+  image: PropTypes.object,
   header: PropTypes.string,
   content: PropTypes.string,
 };
 
 ServiceItem.defaultProps = {
-  iconName: null,
-  imageFileName: null,
+  image: null,
   header: '',
   content: '',
 };

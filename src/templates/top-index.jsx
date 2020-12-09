@@ -40,7 +40,7 @@ export const query = graphql`
         jumpToAnchor
         jumpToAnchorText
         image {
-          mobile {
+          default {
             childImageSharp {
               fluid(maxWidth: 500) {
                 ...GatsbyImageSharpFluid
@@ -89,8 +89,16 @@ export const query = graphql`
           services {
             content
             header
-            iconName
-            imageFileName
+            image {
+              default {
+                childImageSharp {
+                  fluid(maxWidth: 500) {
+                    ...GatsbyImageSharpFluid
+                  }
+                }
+              }
+              alt
+            }
           }
           testimonials {
             name
@@ -98,7 +106,7 @@ export const query = graphql`
             content
             image {
               alt
-              mobile {
+              default {
                 childImageSharp {
                   fluid(maxWidth: 400) {
                     ...GatsbyImageSharpFluid
@@ -115,6 +123,7 @@ export const query = graphql`
             subheader
           }
         }
+        html
         fields {
           partName
         }
@@ -161,7 +170,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
       <Top frontmatter={topNode.frontmatter} />
       {
         // dynamically import sections
-        sectionsNodes.map(({ frontmatter, fields: { partName } }, ind) => {
+        sectionsNodes.map(({ frontmatter, html, fields: { partName } }, ind) => {
           const sectionComponentName = partName;
           const SectionComponent = Sections[sectionComponentName];
 
@@ -170,6 +179,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
               key={sectionComponentName}
               className={ind % 2 === 1 ? 'bg-light' : null}
               frontmatter={frontmatter}
+              html={html}
             />
           ) : null;
         })

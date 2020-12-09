@@ -1,11 +1,48 @@
 // Styling for the services section
-.service-item-image {
-  width: 128px;
-  height: 128px;
-  margin: auto;
+.service-item {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+
+    &.service-item-odd {
+      flex-direction: row-reverse;
+    }
+  }
 }
 
+.service-item-image-part,
+.service-item-text-part {
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.service-item-text-part {
+  text-align: center;
+}
+
+.service-item-odd .service-item-text-part {
+  @media (min-width: 768px) {
+    padding-right: 1rem;
+    text-align: right;
+  }
+}
+
+.service-item-even .service-item-text-part {
+  @media (min-width: 768px) {
+    padding-left: 1rem;
+    text-align: left;
+  }
+}
+
+/*
+.service-item-image {
+
+}
+*/
 .service-item-heading {
-  margin: 15px 0;
+  margin: 1rem 0;
   text-transform: none;
 }

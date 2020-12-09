@@ -2,33 +2,5 @@
 anchor: Обо мне
 header: Обо мне
 subheader: Lorem ipsum dolor sit amet consectetur.
-timeline: [
-  {
-    imageFileName: "about/1.jpg",
-    header: "2009-2011",
-    subheader: "Our Humble Beginnings",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-  },
-  {
-    imageFileName: "about/2.jpg",
-    header: "March 2011",
-    subheader: "An Agency is Born",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-  },
-  {
-    imageFileName: "about/3.jpg",
-    header: "December 2012",
-    subheader: "Transition to Full Service",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-  },
-  {
-    imageFileName: "about/4.jpg",
-    header: "July 2014",
-    subheader: "Phase Two Expansion",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit."
-  },
-  {
-    imageContent: "Be Part\r\nOf Our\r\nStory!"
-  }
-]
 ---
+Инструктор скалолазания и гид по горным маршрутам Турции и Красноярска. Родом из Красноярска, около 17 лет занимаюсь альпинизмом и скалолазанием. Мастер спорта по альпинизму. Чемпион России по альпинизму и призер чемпионатов России по альпинизму в скальном классе. В настоящее время проживаю в Турции (Гейкбаири, Кемер)

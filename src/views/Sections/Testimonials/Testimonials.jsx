@@ -29,7 +29,7 @@ const Testimonials = ({ className, frontmatter }) => {
       <Row>
         {testimonials.map(({ name, image, ...rest }) => (
           <Col md={4} key={name}>
-            <Testimonial name={name} image={image?.mobile?.childImageSharp.fluid} alt={image?.alt} {...rest} />
+            <Testimonial name={name} image={image?.default?.childImageSharp.fluid} alt={image?.alt} {...rest} />
           </Col>
         ))}
       </Row>

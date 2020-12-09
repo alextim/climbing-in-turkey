@@ -10,7 +10,7 @@ import nl2br from 'utils/nl2br';
 
 import './About.scss';
 
-const About = ({ className, frontmatter }) => {
+const About = ({ className, html, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
@@ -22,27 +22,34 @@ const About = ({ className, frontmatter }) => {
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
-      <Row>
-        <Col lg={12}>
-          <ul className="timeline">
-            {timeline.map(({ content, header, imageContent, imageFileName, subheader }, ind) => (
-              <TimelineItem
-                invert={ind % 2 === 1}
-                key={header}
-                imageFileName={imageFileName}
-                header={header}
-                subheader={subheader}
-                content={content}
-                imageContent={
-                  imageContent ? (
-                    <div dangerouslySetInnerHTML={{ __html: `<h4>${nl2br(imageContent)}</h4>` }} />
-                  ) : null
-                }
-              />
-            ))}
-          </ul>
-        </Col>
-      </Row>
+      {html && (
+        <Row>
+          <div dangerouslySetInnerHTML={{ __html: html }}/>
+        </Row>
+      )}
+      {timeline && (
+        <Row>
+          <Col lg={12}>
+            <ul className="timeline">
+              {timeline.map(({ content, header, imageContent, imageFileName, subheader }, ind) => (
+                <TimelineItem
+                  invert={ind % 2 === 1}
+                  key={header}
+                  imageFileName={imageFileName}
+                  header={header}
+                  subheader={subheader}
+                  content={content}
+                  imageContent={
+                    imageContent ? (
+                      <div dangerouslySetInnerHTML={{ __html: `<h4>${nl2br(imageContent)}</h4>` }} />
+                    ) : null
+                  }
+                />
+              ))}
+            </ul>
+          </Col>
+        </Row>
+      )}  
     </PageSection>
   );
 };
@@ -50,11 +57,13 @@ const About = ({ className, frontmatter }) => {
 About.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
+  html: PropTypes.object,
 };
 
 About.defaultProps = {
   className: null,
   frontmatter: null,
+  html: null,
 };
 
 export default About;

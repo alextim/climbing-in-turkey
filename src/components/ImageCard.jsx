@@ -8,9 +8,9 @@ import Card from 'react-bootstrap/Card';
 import ArtImage from 'components/ArtImage';
 import './ImageCard.scss';
 
-const ImageCard = ({ className, mobileImage, desktopImage, imageAlt, header, subheader, extraInfo }) => (
+const ImageCard = ({ className, defaultImage, desktopImage, imageAlt, header, subheader, extraInfo }) => (
   <Card className={clsx('image-card bg-dark text-white text-center', className)}>
-    <ArtImage className="image" mobileImage={mobileImage} desktopImage={desktopImage} alt={imageAlt || header || subheader} fadeIn={false} loading="eager" />
+    <ArtImage className="image" defaultImage={defaultImage} desktopImage={desktopImage} alt={imageAlt || header || subheader} fadeIn={false} loading="eager" />
     <Card.ImgOverlay className="no-padding">
       <Container>
         <div className="intro-text">
@@ -25,7 +25,7 @@ const ImageCard = ({ className, mobileImage, desktopImage, imageAlt, header, sub
 
 ImageCard.propTypes = {
   className: PropTypes.string,
-  mobileImage: PropTypes.object,
+  defaultImage: PropTypes.object,
   desktopImage: PropTypes.object,
   imageAlt: PropTypes.string,
   header: PropTypes.string,
@@ -35,7 +35,7 @@ ImageCard.propTypes = {
 
 ImageCard.defaultProps = {
   className: null,
-  mobileImage: null,
+  defaultImage: null,
   desktopImage: null,
   imageAlt: null,
   header: '',

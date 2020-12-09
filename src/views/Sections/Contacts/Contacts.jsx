@@ -14,7 +14,7 @@ import formatPhoneNumber from '../../../utils/formatPhoneNumber';
 import useOrganization from '../../../hooks/useOrganization';
 
 const ContactItem = ({ icon, to, title, text }) => (
-  <Col lg={3} className="d-flex flex-column align-items-center mb-4">
+  <Col lg={3} md={6} className="d-flex flex-column align-items-center mb-4">
     {icon}
     <div>
       {title && <span className="mr-1 text-muted">{title}:</span>}

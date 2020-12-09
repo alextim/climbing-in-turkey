@@ -57,6 +57,9 @@ module.exports = ({ actions, schema }) => {
         frontmatter: {
           type: 'Frontmatter',
         },
+        html: {
+          type: 'String',
+        },
         fields: {
           type: 'MdFields',
         },
@@ -204,11 +207,8 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Service',
       fields: {
-        iconName: {
-          type: 'String',
-        },
-        imageFileName: {
-          type: 'String',
+        image: {
+          type: 'Image',
         },
         header: {
           type: 'String',
@@ -234,7 +234,7 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Image',
       fields: {
-        mobile: {
+        default: {
           type: 'File',
           extensions: {
             fileByRelativePath: {},
