@@ -78,6 +78,16 @@ export const query = graphql`
           header
           subheader
           content
+          image {
+            default {
+              childImageSharp {
+                fluid(maxWidth: 500) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            alt
+          }
           gallery {
             content
             extraInfo

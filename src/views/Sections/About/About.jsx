@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Img from 'gatsby-image';
+
 import TimelineItem from 'components/TimelineItem';
 import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection';
@@ -15,20 +17,25 @@ const About = ({ className, html, frontmatter }) => {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, timeline } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, image, timeline } = frontmatter;
 
   return (
     <PageSection className={className} id={anchor}>
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
-      {html && (
-        <Row>
-          <Col lg={12}>
-            <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Row>
+        {image && image.default && (
+          <Col lg={4}>
+            <Img fluid={image.default.childImageSharp.fluid} alt={image.alt} className="about-image mx-auto mb-3" />
           </Col>
-        </Row>
-      )}
+        )}
+        {html && (
+          <Col lg={8}>
+            <div dangerouslySetInnerHTML={{ __html: html }} className="text-justify text-muted" />
+          </Col>
+        )}
+      </Row>
       {timeline && (
         <Row>
           <Col lg={12}>
