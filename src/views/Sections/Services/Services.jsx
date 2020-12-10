@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Row from 'react-bootstrap/Row';
 
-import ServiceItem from 'components/ServiceItem';
+import ServiceItem from 'components/ServiceItemV';
 import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection';
 
@@ -15,9 +16,11 @@ const Services = ({ className, frontmatter }) => {
   return (
     <PageSection className={className} id={anchor}>
       <SectionHeader header={rootHeader} subheader={rootSubHeader} />
-      {services.map((service, i) => (
-        <ServiceItem key={service.header} odd={i % 2} {...service} />
-      ))}
+      <Row>
+        {services.map((service) => (
+          <ServiceItem key={service.header} {...service} />
+        ))}
+      </Row>
     </PageSection>
   );
 };
