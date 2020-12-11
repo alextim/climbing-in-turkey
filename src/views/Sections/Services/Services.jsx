@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 
 import ServiceItem from 'components/ServiceItemV';
 import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection';
+import PageSection from 'components/PageSection/PageSection';
 
 const Services = ({ className, frontmatter }) => {
   if (!frontmatter) {

@@ -89,12 +89,26 @@ export const query = graphql`
             alt
           }
           gallery {
-            content
-            extraInfo
             header
             subheader
-            imageFileNameDetail
-            imageFileName
+            image {
+              default {
+                childImageSharp {
+                  fluid(maxWidth: 400) {
+                    ...GatsbyImageSharpFluid_noBase64
+                  }
+                }
+              }
+              desktop {
+                childImageSharp {
+                  fluid(maxWidth: 1200) {
+                    ...GatsbyImageSharpFluid_noBase64
+                  }
+                }                
+                publicURL
+              }
+              alt
+            }                        
           }
           services {
             content

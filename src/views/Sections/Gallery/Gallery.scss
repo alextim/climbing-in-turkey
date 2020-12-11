@@ -1,6 +1,10 @@
-// Styling for the portfolio section
-.portfolio-section {
+// Styling for the gallery section
+.gallery-section {
   * {
     z-index: 2;
   }
+}
+
+.gallery-container {
+  max-width: 1920px;
 }

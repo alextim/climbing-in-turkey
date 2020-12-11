@@ -7,7 +7,7 @@ import Img from 'gatsby-image';
 
 import TimelineItem from 'components/TimelineItem';
 import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection';
+import PageSection from 'components/PageSection/PageSection';
 import nl2br from 'utils/nl2br';
 
 import './About.scss';
@@ -66,7 +66,7 @@ const About = ({ className, html, frontmatter }) => {
 About.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
-  html: PropTypes.object,
+  html: PropTypes.string,
 };
 
 About.defaultProps = {

@@ -123,23 +123,14 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Gallery',
       fields: {
-        content: {
-          type: 'String',
-        },
-        extraInfo: {
-          type: '[String]',
-        },
         header: {
           type: 'String',
         },
         subheader: {
           type: 'String',
         },
-        imageFileNameDetail: {
-          type: 'String',
-        },
-        imageFileName: {
-          type: 'String',
+        image: {
+          type: 'Image',
         },
       },
     }),
