@@ -3,13 +3,13 @@ anchor: Hizmetler
 header: Hizmetler
 subheader: あなたは偶然断然その持通りについて事のためにまかり出ですた。
 items:
-  - iconName: ShoppingCartIcon
+  - alt: bla
     header: ECサイト
     content: あなたは偶然断然その持通りについて事のためにまかり出ですた。もう元来を説明心はとうとうこのお話しないななどでいて行くたでは滅亡しましでて、再びにはなったうないです。
-  - iconName: LaptopIcon
+  - alt: bla
     header: レスポンシブデザイン
     content: あなたは偶然断然その持通りについて事のためにまかり出ですた。もう元来を説明心はとうとうこのお話しないななどでいて行くたでは滅亡しましでて、再びにはなったうないです。
-  - iconName: LockIcon
+  - alt: bla
     header: ウェブセキュリティ
     content: あなたは偶然断然その持通りについて事のためにまかり出ですた。もう元来を説明心はとうとうこのお話しないななどでいて行くたでは滅亡しましでて、再びにはなったうないです。
 ---

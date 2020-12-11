@@ -17,7 +17,7 @@ const Services = ({ className, frontmatter, images }) => {
     <PageSection className={className} id={anchor}>
       <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       <Row>
-        {items.map(({ header, content, image: { alt } }, index) => (
+        {items.map(({ header, content, alt }, index) => (
           <ServiceItem key={header} header={header} content={content} image={images[index].default} alt={alt}  />
         ))}
       </Row>

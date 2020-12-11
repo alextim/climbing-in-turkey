@@ -27,7 +27,7 @@ const Testimonials = ({ className, frontmatter, images }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        {items.map(({ header, image: { alt }, ...rest }, index) => (
+        {items.map(({ header, alt, ...rest }, index) => (
           <Col md={4} key={header}>
             <Testimonial header={header} image={images[index]?.default?.childImageSharp.fluid} alt={alt} {...rest} />
           </Col>

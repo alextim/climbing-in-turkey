@@ -101,9 +101,7 @@ export const query = graphql`
         subheader
         jumpToAnchor
         jumpToAnchorText
-        image {
-          alt
-        }
+        alt
       }
     }
     navbar: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "NavBar"} } ) {
@@ -126,16 +124,12 @@ export const query = graphql`
           header
           subheader
           content
-          image {
-            alt
-          }
+          alt
           items {
             header
             subheader
             content
-            image {
-              alt
-            }                        
+            alt
           }
         }
         html

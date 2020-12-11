@@ -102,8 +102,8 @@ module.exports = ({ actions, schema }) => {
         items: {
           type: '[Item]',
         },
-        image: {
-          type: 'Image',
+        alt: {
+          type: 'String',
         },
         header: {
           type: 'String',
@@ -131,6 +131,9 @@ module.exports = ({ actions, schema }) => {
         },
         image: {
           type: 'Image',
+        },
+        alt: {
+          type: 'String',
         },
       },
     }),
@@ -170,9 +173,6 @@ module.exports = ({ actions, schema }) => {
           extensions: {
             fileByRelativePath: {},
           },
-        },
-        alt: {
-          type: 'String',
         },
       },
     }),

@@ -10,7 +10,7 @@ const Top = ({ image, frontmatter }) => {
     return null;
   }
 
-  const { header, subheader, image: { alt }, jumpToAnchor, jumpToAnchorText } = frontmatter;
+  const { header, subheader, alt, jumpToAnchor, jumpToAnchorText } = frontmatter;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo(jumpToAnchor);
 

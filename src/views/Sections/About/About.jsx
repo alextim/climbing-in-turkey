@@ -15,7 +15,7 @@ const About = ({ className, html, frontmatter, images }) => {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, image: { alt } } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, alt } = frontmatter;
 
   return (
     <PageSection className={className} id={anchor}>

@@ -39,7 +39,7 @@ const Gallery = ({ className, frontmatter, images }) => {
         <>
           <Row noGutters>
             {items.map(
-              ({ header, subheader, image: { alt } }, index) => (
+              ({ header, subheader, alt }, index) => (
                 <GalleryItem
                   key={header}
                   header={header}
@@ -54,7 +54,7 @@ const Gallery = ({ className, frontmatter, images }) => {
           <GalleryModal show={modalShow} onHide={() => setModal(false, 0)}>
           <GalleryCarousel
             items={
-              items.map(({ image: { alt } }, index) => {
+              items.map(({ alt }, index) => {
                 return {
                   alt,
                   desktop: images[index].desktop,
