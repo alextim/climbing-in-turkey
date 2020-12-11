@@ -3,7 +3,6 @@ anchor: Обо мне
 header: Обо мне
 subheader: Lorem ipsum dolor sit amet consectetur.
 image:
-  default: ../assets/images/about/face.jpg
   alt: bla
 ---
 <p>Инструктор скалолазания и гид по горным маршрутам Турции и Красноярска. </p>

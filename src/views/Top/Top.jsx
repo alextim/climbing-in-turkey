@@ -5,12 +5,12 @@ import Button from 'react-bootstrap/Button';
 import ImageCard from 'components/ImageCard';
 import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
 
-const Top = ({ frontmatter }) => {
+const Top = ({ image, frontmatter }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { header, subheader, image, jumpToAnchor, jumpToAnchorText } = frontmatter;
+  const { header, subheader, image: { alt }, jumpToAnchor, jumpToAnchorText } = frontmatter;
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const scrollToSection = useSmoothScrollTo(jumpToAnchor);
 
@@ -27,7 +27,7 @@ const Top = ({ frontmatter }) => {
     <ImageCard
       desktopImage={image.desktop}
       defaultImage={image.default}
-      imageAlt={image.alt}
+      imageAlt={alt}
       header={header}
       subheader={subheader}
       extraInfo={extraInfoPart}
@@ -37,10 +37,12 @@ const Top = ({ frontmatter }) => {
 
 Top.propTypes = {
   frontmatter: PropTypes.object,
+  image: PropTypes.object,
 };
 
 Top.defaultProps = {
   frontmatter: null,
+  image: null,
 };
 
 export default Top;

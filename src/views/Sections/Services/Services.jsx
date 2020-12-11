@@ -6,19 +6,19 @@ import ServiceItem from 'components/ServiceItemV';
 import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection/PageSection';
 
-const Services = ({ className, frontmatter }) => {
+const Services = ({ className, frontmatter, images }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, services } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, items } = frontmatter;
 
   return (
     <PageSection className={className} id={anchor}>
       <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       <Row>
-        {services.map((service) => (
-          <ServiceItem key={service.header} {...service} />
+        {items.map(({ header, content, image: { alt } }, index) => (
+          <ServiceItem key={header} header={header} content={content} image={images[index].default} alt={alt}  />
         ))}
       </Row>
     </PageSection>
@@ -28,6 +28,9 @@ const Services = ({ className, frontmatter }) => {
 Services.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
+  images: PropTypes.arrayOf(PropTypes.shape({
+    default: PropTypes.object,
+  })).isRequired,
 };
 
 Services.defaultProps = {

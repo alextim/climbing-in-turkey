@@ -29,6 +29,21 @@ module.exports = ({ actions, schema }) => {
         voice: {
           type: 'Voice',
         },
+        top: {
+          type: 'Image',
+        },
+        about: {
+          type: 'Image',
+        },
+        gallery: {
+          type: '[Image]',
+        },
+        testimonials: {
+          type: '[Image]',
+        },
+        services: {
+          type: '[Image]',
+        },
         fields: {
           type: 'MdFields',
         },
@@ -75,12 +90,6 @@ module.exports = ({ actions, schema }) => {
         copyright: {
           type: 'String',
         },
-        email: {
-          type: 'String',
-        },
-        phones: {
-          type: '[String]',
-        },
         anchor: {
           type: 'String',
         },
@@ -90,20 +99,8 @@ module.exports = ({ actions, schema }) => {
         jumpToAnchorText: {
           type: 'String',
         },
-        social: {
-          type: 'Social',
-        },
-        timeline: {
-          type: '[Timeline]',
-        },
-        services: {
-          type: '[Service]',
-        },
-        testimonials: {
-          type: '[Testimonial]',
-        },
-        gallery: {
-          type: '[Gallery]',
+        items: {
+          type: '[Item]',
         },
         image: {
           type: 'Image',
@@ -121,12 +118,15 @@ module.exports = ({ actions, schema }) => {
     }),
 
     schema.buildObjectType({
-      name: 'Gallery',
+      name: 'Item',
       fields: {
         header: {
           type: 'String',
         },
         subheader: {
+          type: 'String',
+        },
+        content: {
           type: 'String',
         },
         image: {
@@ -151,72 +151,6 @@ module.exports = ({ actions, schema }) => {
           type: 'String',
         },
         type: {
-          type: 'String',
-        },
-      },
-    }),
-
-    schema.buildObjectType({
-      name: 'Testimonial',
-      fields: {
-        image: {
-          type: 'Image',
-        },
-        name: {
-          type: 'String',
-        },
-        cite: {
-          type: 'String',
-        },
-        content: {
-          type: 'String',
-        },
-      },
-    }),
-
-    schema.buildObjectType({
-      name: 'Timeline',
-      fields: {
-        content: {
-          type: 'String',
-        },
-        header: {
-          type: 'String',
-        },
-        imageContent: {
-          type: 'String',
-        },
-        imageFileName: {
-          type: 'String',
-        },
-        subheader: {
-          type: 'String',
-        },
-      },
-    }),
-
-    schema.buildObjectType({
-      name: 'Service',
-      fields: {
-        image: {
-          type: 'Image',
-        },
-        header: {
-          type: 'String',
-        },
-        content: {
-          type: 'String',
-        },
-      },
-    }),
-
-    schema.buildObjectType({
-      name: 'Social',
-      fields: {
-        instagram: {
-          type: 'String',
-        },
-        facebook: {
           type: 'String',
         },
       },

@@ -16,6 +16,68 @@ import '../style/main.scss';
  */
 export const query = graphql`
   query IndexQuery($langKey: String!) {
+    images: yaml(fields: { type: { eq: "images" } }) {
+      top {
+        default {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        desktop {
+          childImageSharp {
+            fluid(maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+      about {
+        default {
+          childImageSharp {
+            fluid(maxWidth: 500) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }        
+      }
+      gallery {
+        default {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        desktop {
+          childImageSharp {
+            fluid(maxWidth: 1200) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }                
+          publicURL
+        }
+      }
+      services {
+        default {
+          childImageSharp {
+            fluid(maxWidth: 450) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+      testimonials {
+        default {
+          childImageSharp {
+            fluid(maxWidth: 400) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+      }
+    }    
     organization: yaml(fields: { type: { eq: "contacts" } }) {
       phone
       email
@@ -40,20 +102,6 @@ export const query = graphql`
         jumpToAnchor
         jumpToAnchorText
         image {
-          default {
-            childImageSharp {
-              fluid(maxWidth: 500) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
-          desktop {
-            childImageSharp {
-              fluid(maxWidth: 1920) {
-                ...GatsbyImageSharpFluid_noBase64
-              }
-            }
-          }
           alt
         }
       }
@@ -79,72 +127,15 @@ export const query = graphql`
           subheader
           content
           image {
-            default {
-              childImageSharp {
-                fluid(maxWidth: 500) {
-                  ...GatsbyImageSharpFluid_noBase64
-                }
-              }
-            }
             alt
           }
-          gallery {
+          items {
             header
             subheader
+            content
             image {
-              default {
-                childImageSharp {
-                  fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid_noBase64
-                  }
-                }
-              }
-              desktop {
-                childImageSharp {
-                  fluid(maxWidth: 1200) {
-                    ...GatsbyImageSharpFluid_noBase64
-                  }
-                }                
-                publicURL
-              }
               alt
             }                        
-          }
-          services {
-            content
-            header
-            image {
-              default {
-                childImageSharp {
-                  fluid(maxWidth: 450) {
-                    ...GatsbyImageSharpFluid_noBase64
-                  }
-                }
-              }
-              alt
-            }
-          }
-          testimonials {
-            name
-            cite
-            content
-            image {
-              alt
-              default {
-                childImageSharp {
-                  fluid(maxWidth: 400) {
-                    ...GatsbyImageSharpFluid_noBase64
-                  }
-                }
-              }
-            }
-          }
-          timeline {
-            content
-            header
-            imageContent
-            imageFileName
-            subheader
           }
         }
         html
@@ -158,6 +149,7 @@ export const query = graphql`
 
 const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMap } }) => {
   const {
+    images,
     sections,
     top,
     navbar,
@@ -191,7 +183,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
         frontmatter={navBarNode.frontmatter}
         extraItems={langSelectorPart}
       />
-      <Top frontmatter={topNode.frontmatter} />
+      <Top frontmatter={topNode.frontmatter} image={images.top} />
       {
         // dynamically import sections
         sectionsNodes.map(({ frontmatter, html, fields: { partName } }, i) => {
@@ -201,6 +193,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
           return SectionComponent ? (
             <SectionComponent
               key={sectionComponentName}
+              images={images[sectionComponentName.toLowerCase()]}
               className={i % 2 ? 'bg-light' : null}
               frontmatter={frontmatter}
               html={html}

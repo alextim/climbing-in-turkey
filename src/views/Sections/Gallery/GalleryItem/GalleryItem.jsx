@@ -10,14 +10,14 @@ const GalleryItem = ({
   subheader,
   image,
   index,
-  handlePortfolioClick,
+  handleGalleryClick,
 }) => (
   <Col lg={3} sm={6} className="gallery-item">
     <a
       role="button"
       tabIndex={-1}
       className="gallery-box"
-      onClick={(e) => handlePortfolioClick(e, index)}
+      onClick={(e) => handleGalleryClick(e, index)}
       href={image?.desktop?.publicURL}
     >
         {image && image.default && <Img fluid={image.default.childImageSharp.fluid} alt={image.alt} />}
@@ -38,14 +38,13 @@ GalleryItem.propTypes = {
   subheader: PropTypes.string,
   image: PropTypes.object,
   index: PropTypes.number,
-  handlePortfolioClick: PropTypes.object,
+  handleGalleryClick: PropTypes.func.isRequired,
 };
 
 GalleryItem.defaultProps = {
   subheader: '',
   image: null,
   index: null,
-  handlePortfolioClick: null,
 };
 
 export default GalleryItem;

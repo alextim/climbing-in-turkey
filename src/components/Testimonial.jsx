@@ -7,8 +7,8 @@ import './Testimonial.scss';
 const Testimonial = ({
   image,
   alt,
-  name,
-  cite,
+  header,
+  subheader,
   content,
 }) => {
   return (
@@ -16,7 +16,7 @@ const Testimonial = ({
       {image && <Img
         className="mx-auto circle rounded-circle"
         fluid={image}
-        alt={alt || name || content}
+        alt={alt || header || content}
       />}
       <blockquote className="blockquote">
         <p className="text-muted">
@@ -24,11 +24,11 @@ const Testimonial = ({
         </p>
       </blockquote>
       <figcaption className="blockquote-footer">
-        {name}
-        {cite &&
+        {header}
+        {subheader &&
           <>
             ,{' '}
-            <cite>{cite}</cite>
+            <cite>{subheader}</cite>
           </>
         }
       </figcaption>
@@ -39,16 +39,16 @@ const Testimonial = ({
 Testimonial.propTypes = {
   image: PropTypes.object,
   alt: PropTypes.string,
-  name: PropTypes.string,
-  cite: PropTypes.string,
+  header: PropTypes.string,
+  subheader: PropTypes.string,
   content: PropTypes.string,
 };
 
 Testimonial.defaultProps = {
   image: undefined,
   alt: null,
-  name: '',
-  cite: '',
+  header: '',
+  subheader: '',
   content: '',
 };
 

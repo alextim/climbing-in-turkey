@@ -4,7 +4,5 @@ subheader: Групповые и индивидуальные занятия с 
 jumpToAnchor: Услуги
 jumpToAnchorText: Подробнее
 image:
-  default: ../assets/images/top/sarkit-sm.jpg
-  desktop: ../assets/images/top/sarkit-lg.jpg
   alt: bla-bla
 ---

@@ -6,10 +6,10 @@ import Img from 'gatsby-image';
 
 import './carousel.scss';
 
-const PortfolioCarousel = ({ items, current }) => (
+const GalleryCarousel = ({ items, current }) => (
   <Carousel interval={null} indicators={false} defaultActiveIndex={current} slide={false}>
     {
-      items.map(({ image: { desktop, alt } }, i) =>
+      items.map(({ desktop, alt }, i) =>
         <Carousel.Item key={i}>
           <figure>
             <Img fluid={desktop.childImageSharp.fluid} alt={alt} />
@@ -25,9 +25,9 @@ const PortfolioCarousel = ({ items, current }) => (
   </Carousel>
 );
 
-PortfolioCarousel.propTypes = {
+GalleryCarousel.propTypes = {
   items: PropTypes.array.isRequired,
   current: PropTypes.number.isRequired,
 };
 
-export default PortfolioCarousel;
+export default GalleryCarousel;

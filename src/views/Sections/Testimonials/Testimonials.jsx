@@ -8,7 +8,7 @@ import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection/PageSection';
 import './Testimonials.scss';
 
-const Testimonials = ({ className, frontmatter }) => {
+const Testimonials = ({ className, frontmatter, images }) => {
   if (!frontmatter) {
     return null;
   }
@@ -18,7 +18,7 @@ const Testimonials = ({ className, frontmatter }) => {
     header: rootHeader,
     subheader: rootSubHeader,
     content: rootContent,
-    testimonials,
+    items,
   } = frontmatter;
 
   return (
@@ -27,9 +27,9 @@ const Testimonials = ({ className, frontmatter }) => {
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
-        {testimonials.map(({ name, image, ...rest }) => (
-          <Col md={4} key={name}>
-            <Testimonial name={name} image={image?.default?.childImageSharp.fluid} alt={image?.alt} {...rest} />
+        {items.map(({ header, image: { alt }, ...rest }, index) => (
+          <Col md={4} key={header}>
+            <Testimonial header={header} image={images[index]?.default?.childImageSharp.fluid} alt={alt} {...rest} />
           </Col>
         ))}
       </Row>
@@ -45,6 +45,9 @@ const Testimonials = ({ className, frontmatter }) => {
 Testimonials.propTypes = {
   className: PropTypes.string,
   frontmatter: PropTypes.object,
+  images: PropTypes.arrayOf(PropTypes.shape({
+    default: PropTypes.object,
+  })).isRequired,
 };
 
 Testimonials.defaultProps = {
