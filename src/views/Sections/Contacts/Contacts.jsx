@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import PageSection from 'components/PageSection/PageSection';
+import PageSection from '../../../components/PageSection';
 
 import PhoneIcon from '../../../assets/fa/solid/phone.svg';
 import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';

@@ -5,8 +5,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Img from 'gatsby-image';
 
-import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection/PageSection';
+import SectionHeader from '../../../components/SectionHeader';
+import PageSection from '../../../components/PageSection';
 
 import './About.scss';
 

@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Testimonial from 'components/Testimonial';
 import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection/PageSection';
+import PageSection from 'components/PageSection';
 import './Testimonials.scss';
 
 const Testimonials = ({ className, frontmatter, images }) => {

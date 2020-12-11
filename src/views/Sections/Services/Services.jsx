@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 
-import ServiceItem from 'components/ServiceItemV';
-import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection/PageSection';
+import SectionHeader from '../../../components/SectionHeader';
+import PageSection from '../../../components/PageSection';
+import ServiceItem from './ServiceItem';
 
 const Services = ({ className, frontmatter, images }) => {
   if (!frontmatter) {
