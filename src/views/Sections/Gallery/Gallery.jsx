@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import clsx from 'clsx';
 
 import Row from 'react-bootstrap/Row';
 
@@ -11,7 +10,7 @@ import GalleryModal from './modal';
 import GalleryCarousel from './carousel';
 import './Gallery.scss';
 
-const Gallery = ({ className, frontmatter, images }) => {
+const Gallery = ({ frontmatter, images }) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalCurrent, setModalCurrent] = useState(0);
   
@@ -31,7 +30,7 @@ const Gallery = ({ className, frontmatter, images }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, items } = frontmatter;
 
   return (
-    <PageSection id={anchor} className={clsx('gallery-section', className)} fluid containerClassName="gallery-container p-0">
+    <PageSection id={anchor} className="gallery-section pt-3 pb-0" fluid containerClassName="gallery-container p-0">
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
@@ -71,7 +70,6 @@ const Gallery = ({ className, frontmatter, images }) => {
 };
 
 Gallery.propTypes = {
-  className: PropTypes.string,
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
     default: PropTypes.object,
@@ -80,7 +78,6 @@ Gallery.propTypes = {
 };
 
 Gallery.defaultProps = {
-  className: null,
   frontmatter: null,
 };
 

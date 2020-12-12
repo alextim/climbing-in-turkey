@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Testimonial from 'components/Testimonial';
+
 import SectionHeader from 'components/SectionHeader';
 import PageSection from 'components/PageSection';
-import './Testimonials.scss';
+import Testimonial from './Testimonial';
 
-const Testimonials = ({ className, frontmatter, images }) => {
+const Testimonials = ({ frontmatter, images }) => {
   if (!frontmatter) {
     return null;
   }
@@ -22,9 +22,9 @@ const Testimonials = ({ className, frontmatter, images }) => {
   } = frontmatter;
 
   return (
-    <PageSection className={className} id={anchor}>
+    <PageSection className="bg-secondary text-light" id={anchor}>
       <Row>
-        <SectionHeader header={rootHeader} subheader={rootSubHeader} />
+        <SectionHeader header={rootHeader} subheader={rootSubHeader} subClassName="text-light"/>
       </Row>
       <Row>
         {items.map(({ header, alt, ...rest }, index) => (
@@ -43,7 +43,6 @@ const Testimonials = ({ className, frontmatter, images }) => {
 };
 
 Testimonials.propTypes = {
-  className: PropTypes.string,
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
     default: PropTypes.object,
@@ -51,7 +50,6 @@ Testimonials.propTypes = {
 };
 
 Testimonials.defaultProps = {
-  className: null,
   frontmatter: null,
 };
 

@@ -19,11 +19,11 @@ const Testimonial = ({
         alt={alt || header || content}
       />}
       <blockquote className="blockquote">
-        <p className="text-muted">
+        <p className="text-white">
           {content}
         </p>
       </blockquote>
-      <figcaption className="blockquote-footer">
+      <figcaption className="blockquote-footer text-white">
         {header}
         {subheader &&
           <>

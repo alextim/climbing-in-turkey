@@ -5,15 +5,12 @@ import clsx from 'clsx';
 import Col from 'react-bootstrap/Col';
 import './SectionHeader.scss';
 
-const SectionHeader = ({ header, subheader, className, ...restProps }) => {
-  const subheaderPart = subheader ? (
-    <h3 className="section-subheading text-muted">{subheader}</h3>
-  ) : null;
-
+const SectionHeader = ({ header, subheader, content, className, subClassName, ...rest }) => {
   return (
-    <Col lg={12} className={clsx('section-header', 'text-center', className)} {...restProps}>
+    <Col lg={12} className={clsx('section-header', 'text-center', className)} {...rest}>
       <h2 className="section-heading text-uppercase">{header}</h2>
-      {subheaderPart}
+      {subheader && <h3 className={clsx('section-subheading', subClassName)}>{subheader}</h3>}
+      {content && <div className={clsx('section-content', 'text-justify', subClassName)}>{content}</div>}
     </Col>
   );
 };
@@ -21,13 +18,17 @@ const SectionHeader = ({ header, subheader, className, ...restProps }) => {
 SectionHeader.propTypes = {
   header: PropTypes.string,
   subheader: PropTypes.string,
+  content: PropTypes.string,
   className: PropTypes.string,
+  subClassName: PropTypes.string,
 };
 
 SectionHeader.defaultProps = {
   header: '',
   subheader: '',
+  content: '',
   className: null,
+  subClassName: 'text-muted',
 };
 
 export default SectionHeader;

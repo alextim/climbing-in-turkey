@@ -6,16 +6,16 @@ import SectionHeader from '../../../components/SectionHeader';
 import PageSection from '../../../components/PageSection';
 import ServiceItem from './ServiceItem';
 
-const Services = ({ className, frontmatter, images }) => {
+const Services = ({ frontmatter, images }) => {
   if (!frontmatter) {
     return null;
   }
 
-  const { anchor, header: rootHeader, subheader: rootSubHeader, items } = frontmatter;
+  const { anchor, header: rootHeader, subheader: rootSubHeader, content: rootContent, items } = frontmatter;
 
   return (
-    <PageSection className={className} id={anchor}>
-      <SectionHeader header={rootHeader} subheader={rootSubHeader} />
+    <PageSection className="" id={anchor}>
+      <SectionHeader header={rootHeader} subheader={rootSubHeader} content={rootContent} />
       <Row>
         {items.map(({ header, content, alt }, index) => (
           <ServiceItem key={header} header={header} content={content} image={images[index].default} alt={alt}  />
@@ -26,7 +26,6 @@ const Services = ({ className, frontmatter, images }) => {
 };
 
 Services.propTypes = {
-  className: PropTypes.string,
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
     default: PropTypes.object,
@@ -34,7 +33,6 @@ Services.propTypes = {
 };
 
 Services.defaultProps = {
-  className: null,
   frontmatter: null,
 };
 

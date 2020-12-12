@@ -95,7 +95,7 @@ export const query = graphql`
         title
       }
     }    
-    top: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "Top"} } ) {
+    top: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "Top"} } ) {
       frontmatter {
         header
         subheader
@@ -104,12 +104,12 @@ export const query = graphql`
         alt
       }
     }
-    navbar: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "NavBar"} } ) {
+    navbar: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "NavBar"} } ) {
       frontmatter {
         brand
       }
     }
-    footer: markdownRemark( fields: { langKey: { eq: $langKey }, type: {eq: "page-part"}, partName: {eq: "Footer"} } ) {
+    footer: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "Footer"} } ) {
       frontmatter {
         copyright
       }
@@ -151,16 +151,10 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
     organization,
     socialLinks,
   } = data;
-  const topNode = top || {};
-  const navBarNode = navbar || {};
-  const footerNode = footer || {};
 
-
-  // sections part
-  const sectionsNodes = sections?.nodes || [];
 
   // anchors for NavBar
-  const anchors = sectionsNodes.map((e) => e.frontmatter.anchor).filter((e) => e);
+  const anchors = sections.nodes.map((e) => e.frontmatter.anchor).filter((e) => e);
 
   let langSelectorPart;
   if (langTextMap != null && Object.keys(langTextMap).length > 1) {
@@ -174,28 +168,26 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
       <SEO lang={langKey} pathname={path} />
       <Navbar
         anchors={anchors}
-        frontmatter={navBarNode.frontmatter}
+        frontmatter={navbar.frontmatter}
         extraItems={langSelectorPart}
       />
-      <Top frontmatter={topNode.frontmatter} image={images.top} />
+      <Top frontmatter={top.frontmatter} image={images.top} />
       {
         // dynamically import sections
-        sectionsNodes.map(({ frontmatter, html, fields: { partName } }, i) => {
-          const sectionComponentName = partName;
-          const SectionComponent = Sections[sectionComponentName];
+        sections.nodes.map(({ frontmatter, html, fields: { partName } }) => {
+          const SectionComponent = Sections[partName];
 
           return SectionComponent ? (
             <SectionComponent
-              key={sectionComponentName}
-              images={images[sectionComponentName.toLowerCase()]}
-              className={i % 2 ? 'bg-light' : null}
+              key={partName}
+              images={images[partName.toLowerCase()]}
               frontmatter={frontmatter}
               html={html}
             />
           ) : null;
         })
       }
-      <Footer frontmatter={footerNode.frontmatter} />
+      <Footer frontmatter={footer.frontmatter} />
     </AppContextProvider>
   );
 };
@@ -208,8 +200,8 @@ IndexPage.propTypes = {
 
 IndexPage.defaultProps = {
   pathContext: {
-    langKey: 'en',
-    defaultLang: 'en',
+    langKey: 'ru',
+    defaultLang: 'ru',
     langTextMap: {},
   },
 };

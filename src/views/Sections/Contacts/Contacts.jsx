@@ -35,7 +35,7 @@ ContactItem.defaultProps = {
 };
 const iconClass = 'text-muted mb-2 fa-x3';
 
-const Contacts = ({ className, frontmatter }) => {
+const Contacts = ({ frontmatter }) => {
   const { phone, email, voice: { whatsapp, telegram } }  = useOrganization();
   
   if (!frontmatter) {
@@ -44,7 +44,7 @@ const Contacts = ({ className, frontmatter }) => {
   const { anchor, header, subheader } = frontmatter;
 
   return (
-    <PageSection className={className} id={anchor}>
+    <PageSection className="" id={anchor}>
       <Row className="justify-content-center">
         <Col lg={8} className="text-center">
           <h2 className="mt-0">{header}</h2>
@@ -63,12 +63,10 @@ const Contacts = ({ className, frontmatter }) => {
 };
 
 Contacts.propTypes = {
-  className: PropTypes.string,
   frontmatter: PropTypes.object,
 };
 
 Contacts.defaultProps = {
-  className: null,
   frontmatter: null,
 };
 

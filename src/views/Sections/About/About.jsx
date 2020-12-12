@@ -10,7 +10,7 @@ import PageSection from '../../../components/PageSection';
 
 import './About.scss';
 
-const About = ({ className, html, frontmatter, images }) => {
+const About = ({ html, frontmatter, images }) => {
   if (!frontmatter) {
     return null;
   }
@@ -18,7 +18,7 @@ const About = ({ className, html, frontmatter, images }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, alt } = frontmatter;
 
   return (
-    <PageSection className={className} id={anchor}>
+    <PageSection className="bg-light" id={anchor}>
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
@@ -39,7 +39,6 @@ const About = ({ className, html, frontmatter, images }) => {
 };
 
 About.propTypes = {
-  className: PropTypes.string,
   frontmatter: PropTypes.object,
   html: PropTypes.string,
   images: PropTypes.shape({
@@ -48,7 +47,6 @@ About.propTypes = {
 };
 
 About.defaultProps = {
-  className: null,
   frontmatter: null,
   html: null,
 };
