@@ -22,9 +22,9 @@ const Testimonials = ({ frontmatter, images }) => {
   } = frontmatter;
 
   return (
-    <PageSection className="bg-secondary text-light" id={anchor}>
+    <PageSection className="bg-light" id={anchor}>
       <Row>
-        <SectionHeader header={rootHeader} subheader={rootSubHeader} subClassName="text-light"/>
+        <SectionHeader header={rootHeader} subheader={rootSubHeader}/>
       </Row>
       <Row>
         {items.map(({ header, alt, ...rest }, index) => (

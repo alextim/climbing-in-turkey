@@ -65,6 +65,7 @@ img::-moz-selection {
 .btn-primary {
   background-color: $primary;
   border-color: $primary;
+  border-radius: 10rem;
 
   &:active,
   &:focus,
@@ -98,4 +99,15 @@ img::-moz-selection {
 .fa-x4 {
   width: 4rem;
   height: 4rem;
+}
+
+// Custom horizontal rules
+hr.divider {
+  max-width: 3.25rem;
+  border-width: 0.2rem;
+  border-color: $primary;
+}
+
+hr.light {
+  border-color: $white;
 }

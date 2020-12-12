@@ -14,7 +14,7 @@ const Footer = ({ frontmatter }) => {
   } = frontmatter;
 
   return (
-    <footer className="footer py-3">
+    <footer className="footer py-3 bg-light">
       <Container>
         <Row className="align-items-center text-center my-5">
           <Col>
@@ -23,7 +23,7 @@ const Footer = ({ frontmatter }) => {
         </Row>
         <Row className="align-items-center text-center small">
           <Col className="text-lg-left">
-            &copy;{` ${new Date().getFullYear()} ${copyright}`}
+            Copyright &copy;{` ${new Date().getFullYear()} ${copyright}`}
           </Col>
         </Row>
       </Container>

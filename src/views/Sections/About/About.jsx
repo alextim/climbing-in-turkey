@@ -19,9 +19,7 @@ const About = ({ html, frontmatter, images }) => {
 
   return (
     <PageSection className="bg-light" id={anchor}>
-      <Row>
-        <SectionHeader header={rootHeader} subheader={rootSubHeader} />
-      </Row>
+      <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       <Row>
         {images && images.default && (
           <Col lg={4}>

@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import PageSection from '../../../components/PageSection';
+import Divider from '../../../components/Divider';
 
 import PhoneIcon from '../../../assets/fa/solid/phone.svg';
 import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';
@@ -48,7 +49,7 @@ const Contacts = ({ frontmatter }) => {
       <Row className="justify-content-center">
         <Col lg={8} className="text-center">
           <h2 className="mt-0">{header}</h2>
-          <hr className="divider my-4" />
+          <Divider />
           <p className="text-muted mb-5">{subheader}</p>
         </Col>
       </Row>
