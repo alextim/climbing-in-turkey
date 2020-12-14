@@ -18,14 +18,14 @@ export const query = graphql`
   query IndexQuery($langKey: String!) {
     images: yaml(fields: { type: { eq: "images" } }) {
       top {
-        default {
+        xs {
           childImageSharp {
             fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
-        desktop {
+        xl {
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
@@ -34,7 +34,7 @@ export const query = graphql`
         }
       }
       about {
-        default {
+        xs {
           childImageSharp {
             fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_noBase64
@@ -43,14 +43,14 @@ export const query = graphql`
         }        
       }
       gallery {
-        default {
+        xs {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
-        desktop {
+        xl {
           childImageSharp {
             fluid(maxWidth: 1200) {
               ...GatsbyImageSharpFluid_noBase64
@@ -60,7 +60,7 @@ export const query = graphql`
         }
       }
       services {
-        default {
+        xs {
           childImageSharp {
             fluid(maxWidth: 450) {
               ...GatsbyImageSharpFluid_noBase64
@@ -69,7 +69,7 @@ export const query = graphql`
         }
       }
       testimonials {
-        default {
+        xs {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64

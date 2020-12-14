@@ -40,7 +40,7 @@ const Gallery = ({ frontmatter, images }) => {
                   key={header}
                   header={header}
                   subheader={subheader}
-                  image={{ alt, default: images[index].default }}
+                  image={{ alt, src: images[index].xs }}
                   index={index}
                   handleGalleryClick={handleGalleryClick}
                 />
@@ -53,7 +53,7 @@ const Gallery = ({ frontmatter, images }) => {
               items.map(({ alt }, index) => {
                 return {
                   alt,
-                  desktop: images[index].desktop,
+                  xl: images[index].xl,
                 };
               }) 
             }
@@ -69,8 +69,8 @@ const Gallery = ({ frontmatter, images }) => {
 Gallery.propTypes = {
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
-    default: PropTypes.object,
-    desktop: PropTypes.object,
+    xs: PropTypes.object,
+    xl: PropTypes.object,
   })).isRequired,
 };
 

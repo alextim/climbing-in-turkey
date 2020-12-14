@@ -162,13 +162,13 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Image',
       fields: {
-        default: {
+        xs: {
           type: 'File',
           extensions: {
             fileByRelativePath: {},
           },
         },
-        desktop: {
+        xl: {
           type: 'File',
           extensions: {
             fileByRelativePath: {},

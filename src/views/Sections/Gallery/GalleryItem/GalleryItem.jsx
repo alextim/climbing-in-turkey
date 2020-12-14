@@ -18,9 +18,9 @@ const GalleryItem = ({
       tabIndex={-1}
       className="gallery-box"
       onClick={(e) => handleGalleryClick(e, index)}
-      href={image?.desktop?.publicURL}
+      href={image?.xl?.publicURL}
     >
-        {image && image.default && <Img fluid={image.default.childImageSharp.fluid} alt={image.alt} />}
+        {image && image.src && <Img fluid={image.src.childImageSharp.fluid} alt={image.alt} />}
       <div className="gallery-box-caption">
         <div className="project-category text-white-50">
           {subheader}

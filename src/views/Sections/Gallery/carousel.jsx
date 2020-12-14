@@ -9,10 +9,10 @@ import './carousel.scss';
 const GalleryCarousel = ({ items, current }) => (
   <Carousel interval={null} indicators={false} defaultActiveIndex={current} slide={false}>
     {
-      items.map(({ desktop, alt }, i) =>
+      items.map(({ xl, alt }, i) =>
         <Carousel.Item key={i}>
           <figure>
-            <Img fluid={desktop.childImageSharp.fluid} alt={alt} />
+            <Img fluid={xl.childImageSharp.fluid} alt={alt} />
             <figcaption>
               <div className="bottom-bar">
                 <div className="counter">{i + 1} of {items.length}</div>

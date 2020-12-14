@@ -10,11 +10,11 @@ const Services = ({ frontmatter, images }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, content: rootContent, items } = frontmatter;
 
   return (
-    <PageSection className="" id={anchor}>
+    <PageSection id={anchor}>
       <SectionHeader header={rootHeader} subheader={rootSubHeader} content={rootContent} />
       <Row>
         {items.map(({ header, content, alt }, index) => (
-          <ServiceItem key={header} header={header} content={content} image={images[index].default} alt={alt}  />
+          <ServiceItem key={header} header={header} content={content} image={images[index].xs} alt={alt}  />
         ))}
       </Row>
     </PageSection>
@@ -24,7 +24,7 @@ const Services = ({ frontmatter, images }) => {
 Services.propTypes = {
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
-    default: PropTypes.object,
+    xs: PropTypes.object,
   })).isRequired,
 };
 

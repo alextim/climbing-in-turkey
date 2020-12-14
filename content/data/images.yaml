@@ -1,26 +1,26 @@
 top:
-  default: ../assets/images/top/sarkit-sm.jpg
-  desktop: ../assets/images/top/sarkit-lg.jpg  
+  xs: ../assets/images/top/sarkit-sm.jpg
+  xl: ../assets/images/top/sarkit-lg.jpg  
 about:
-  default: ../assets/images/about/face.jpg
+  xs: ../assets/images/about/face.jpg
 gallery:
-  - default: ../assets/images/gallery/01-thumbnail.jpg
-    desktop: ../assets/images/gallery/01-full.jpg  
-  - default: ../assets/images/gallery/02-thumbnail.jpg
-    desktop: ../assets/images/gallery/02-full.jpg  
-  - default: ../assets/images/gallery/03-thumbnail.jpg
-    desktop: ../assets/images/gallery/03-full.jpg  
-  - default: ../assets/images/gallery/04-thumbnail.jpg
-    desktop: ../assets/images/gallery/04-full.jpg    
-  - default: ../assets/images/gallery/05-thumbnail.jpg
-    desktop: ../assets/images/gallery/05-full.jpg    
-  - default: ../assets/images/gallery/06-thumbnail.jpg
-    desktop: ../assets/images/gallery/06-full.jpg    
+  - xs: ../assets/images/gallery/01-thumbnail.jpg
+    xl: ../assets/images/gallery/01-full.jpg  
+  - xs: ../assets/images/gallery/02-thumbnail.jpg
+    xl: ../assets/images/gallery/02-full.jpg  
+  - xs: ../assets/images/gallery/03-thumbnail.jpg
+    xl: ../assets/images/gallery/03-full.jpg  
+  - xs: ../assets/images/gallery/04-thumbnail.jpg
+    xl: ../assets/images/gallery/04-full.jpg    
+  - xs: ../assets/images/gallery/05-thumbnail.jpg
+    xl: ../assets/images/gallery/05-full.jpg    
+  - xs: ../assets/images/gallery/06-thumbnail.jpg
+    xl: ../assets/images/gallery/06-full.jpg    
 testimonials:
-  - default: ../assets/images/testimonials/1.jpg  
-  - default: ../assets/images/testimonials/2.jpg  
-  - default: ../assets/images/testimonials/3.jpg  
+  - xs: ../assets/images/testimonials/1.jpg  
+  - xs: ../assets/images/testimonials/2.jpg  
+  - xs: ../assets/images/testimonials/3.jpg  
 services:
-  - default: ../assets/images/services/cirali-kabe.jpg
-  - default: ../assets/images/services/20201016_063328.jpg
-  - default: ../assets/images/services/olimpos-la-plaj.jpg
+  - xs: ../assets/images/services/cirali-kabe.jpg
+  - xs: ../assets/images/services/20201016_063328.jpg
+  - xs: ../assets/images/services/olimpos-la-plaj.jpg

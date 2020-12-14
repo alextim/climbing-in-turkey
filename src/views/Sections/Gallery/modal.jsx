@@ -4,7 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 
 import './modal.scss';
 
-const PortfolioModal = ({ show, onHide, children }) => (
+const GalleryModal = ({ show, onHide, children }) => (
   <Modal
     show={show}
     onHide={onHide}
@@ -17,11 +17,10 @@ const PortfolioModal = ({ show, onHide, children }) => (
     </Modal.Body>
   </Modal>
 );
-
-PortfolioModal.propTypes = {
+GalleryModal.propTypes = {
   show: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
 
-export default PortfolioModal;
+export default GalleryModal;

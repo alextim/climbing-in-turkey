@@ -25,8 +25,8 @@ const Top = ({ image, frontmatter }) => {
 
   return (
     <ImageCard
-      desktopImage={image.desktop}
-      defaultImage={image.default}
+      xlImage={image.xl}
+      xsImage={image.xs}
       imageAlt={alt}
       header={header}
       subheader={subheader}

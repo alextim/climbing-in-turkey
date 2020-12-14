@@ -8,7 +8,7 @@ const ServiceItem = ({ odd, image, header, content }) => {
   return (
     <div className={`service-item service-item-${odd ? 'odd' : 'even'}`}>
       <div className="service-item-image-part">
-        {image && image.default && <Img className="service-item-image" fluid={image.default.childImageSharp.fluid} alt={image.alt} />}
+        {image && image.src && <Img className="service-item-image" fluid={image.src.childImageSharp.fluid} alt={image.alt} />}
       </div>
       <div className={`service-item-text-part service-item-text-${odd ? 'odd' : 'even'}`}>
         <div>
