@@ -22,14 +22,14 @@ export const query = graphql`
         sm {
           childImageSharp {
             fluid(maxWidth: 500) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
         xl {
           childImageSharp {
             fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluid_withWebp_noBase64
             }
           }
         }
