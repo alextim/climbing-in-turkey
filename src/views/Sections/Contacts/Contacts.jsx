@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import PageSection from '../../../components/PageSection';
-import Divider from '../../../components/Divider';
 
 import PhoneIcon from '../../../assets/fa/solid/phone.svg';
 import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';
@@ -39,17 +38,13 @@ const iconClass = 'text-muted mb-2 fa-x3';
 const Contacts = ({ frontmatter }) => {
   const { phone, email, voice: { whatsapp, telegram } }  = useOrganization();
   
-  if (!frontmatter) {
-    return null;
-  }
   const { anchor, header, subheader } = frontmatter;
 
   return (
     <PageSection className="" id={anchor}>
       <Row className="justify-content-center">
         <Col lg={8} className="text-center">
-          <h2 className="mt-0">{header}</h2>
-          <Divider />
+          <h2 className="divider mt-0 mb-4">{header}</h2>
           <p className="text-muted mb-5">{subheader}</p>
         </Col>
       </Row>

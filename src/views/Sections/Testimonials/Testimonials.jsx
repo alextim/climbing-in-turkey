@@ -9,10 +9,6 @@ import PageSection from 'components/PageSection';
 import Testimonial from './Testimonial';
 
 const Testimonials = ({ frontmatter, images }) => {
-  if (!frontmatter) {
-    return null;
-  }
-
   const {
     anchor,
     header: rootHeader,

@@ -11,10 +11,6 @@ import PageSection from '../../../components/PageSection';
 import './About.scss';
 
 const About = ({ html, frontmatter, images }) => {
-  if (!frontmatter) {
-    return null;
-  }
-
   const { anchor, header: rootHeader, subheader: rootSubHeader, alt } = frontmatter;
 
   return (

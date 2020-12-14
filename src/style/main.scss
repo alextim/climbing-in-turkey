@@ -102,13 +102,19 @@ img::-moz-selection {
   height: 4rem;
 }
 
-// Custom horizontal rules
-hr.divider {
-  max-width: 3.25rem;
-  border-width: 0.2rem;
-  border-color: $primary;
-}
+.divider {
+  position: relative;
 
-hr.light {
-  border-color: $white;
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    background-color: $primary;
+    bottom: -1rem;
+    height: 0.2rem;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, 0);
+    width: 3.25rem;
+  }
 }

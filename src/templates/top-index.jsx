@@ -174,7 +174,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
       <Top frontmatter={top.frontmatter} image={images.top} />
       {
         // dynamically import sections
-        sections.nodes.map(({ frontmatter, html, fields: { partName } }) => {
+        sections.nodes.filter(({ frontmatter }) => frontmatter).map(({ frontmatter, html, fields: { partName } }) => {
           const SectionComponent = Sections[partName];
 
           return SectionComponent ? (

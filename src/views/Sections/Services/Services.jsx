@@ -7,10 +7,6 @@ import PageSection from '../../../components/PageSection';
 import ServiceItem from './ServiceItem';
 
 const Services = ({ frontmatter, images }) => {
-  if (!frontmatter) {
-    return null;
-  }
-
   const { anchor, header: rootHeader, subheader: rootSubHeader, content: rootContent, items } = frontmatter;
 
   return (

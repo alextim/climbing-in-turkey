@@ -14,9 +14,6 @@ const Gallery = ({ frontmatter, images }) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalCurrent, setModalCurrent] = useState(0);
   
-  if (!frontmatter) {
-    return null;
-  }
   const setModal = (show, index) => {
     setModalCurrent(index);
     setModalShow(show);
