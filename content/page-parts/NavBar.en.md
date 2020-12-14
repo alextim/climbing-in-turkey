@@ -1,3 +1,0 @@
----
-brand: Climbing in Turkey
----

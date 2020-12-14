@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 import Navbar from 'react-bootstrap/Navbar';
@@ -11,25 +11,23 @@ import NavItem from 'components/NavItem';
 
 import './Navbar.scss';
 
-const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
-  const { brand } = frontmatter;
-
+const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
   const handleScrollToTop = useSmoothScrollTo(0);
 
-  const [expanded, setExpanded] = React.useState(false);
-  const toggleMenu = React.useCallback(() => {
+  const [expanded, setExpanded] = useState(false);
+  const toggleMenu = useCallback(() => {
     setExpanded(!expanded);
   }, [expanded]);
-  const closeMenu = React.useCallback(() => {
+  const closeMenu = useCallback(() => {
     setExpanded(false);
   }, []);
-  const handleBrandClick = React.useCallback(() => {
+  const handleBrandClick = useCallback(() => {
     closeMenu();
     handleScrollToTop();
   }, [closeMenu, handleScrollToTop]);
 
-  const [shrink, setShrink] = React.useState(false);
-  const handleWindowScroll = React.useCallback(() => {
+  const [shrink, setShrink] = useState(false);
+  const handleWindowScroll = useCallback(() => {
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     setShrink(scrollTop > 100);
   }, []);
@@ -37,15 +35,14 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
 
   return (
     <Navbar
-      className={clsx('navbar-root', { 'navbar-shrink': shrink })}
+      className={clsx('navbar-root', { 'navbar-shrink': shrink }, {'navbar-expanded': expanded})}
       expand="lg"
       fixed="top"
       expanded={expanded}
     >
       <Container>
-        <Navbar.Brand className="cursor-pointer font-weight-normal" as="h1" onClick={handleBrandClick}>
-          {brand}
-          { /* <img src="/assets/logo.svg" alt="" height="35" width="62" /> */ }
+        <Navbar.Brand className="cursor-pointer pt-0 pb-0" onClick={handleBrandClick}>
+          <img src="/assets/logo.svg" alt={siteShortName} className="navbar-logo" />
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
           <span />
@@ -67,13 +64,12 @@ const MyNavbar = ({ anchors, frontmatter, extraItems }) => {
 
 MyNavbar.propTypes = {
   anchors: PropTypes.arrayOf(PropTypes.string),
-  frontmatter: PropTypes.object,
+  siteShortName: PropTypes.string.isRequired,
   extraItems: PropTypes.any,
 };
 
 MyNavbar.defaultProps = {
   anchors: [],
-  frontmatter: {},
   extraItems: null,
 };
 

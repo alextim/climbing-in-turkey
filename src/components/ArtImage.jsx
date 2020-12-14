@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 
 import Img from "gatsby-image";
 
-const ArtImage = ({ xsImage, xlImage, alt, ...restProps }) => {
-  if (!xsImage || !xlImage) {
+const ArtImage = ({ smImage, xlImage, alt, ...restProps }) => {
+  if (!smImage || !xlImage) {
     return null;
   }
 
   const sources = [
-    xsImage.childImageSharp.fluid,
+    smImage.childImageSharp.fluid,
     {
       ...xlImage.childImageSharp.fluid,
       media: "(min-width: 500px)",
@@ -19,7 +19,7 @@ const ArtImage = ({ xsImage, xlImage, alt, ...restProps }) => {
 };
 
 ArtImage.propTypes = {
-  xsImage: PropTypes.object.isRequired,
+  smImage: PropTypes.object.isRequired,
   xlImage: PropTypes.object.isRequired,
   alt: PropTypes.string,
 };

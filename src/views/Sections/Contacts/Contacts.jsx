@@ -41,7 +41,7 @@ const Contacts = ({ frontmatter }) => {
   const { anchor, header, subheader } = frontmatter;
 
   return (
-    <PageSection className="" id={anchor}>
+    <PageSection id={anchor}>
       <Row className="justify-content-center">
         <Col lg={8} className="text-center">
           <h2 className="divider mt-0 mb-4">{header}</h2>

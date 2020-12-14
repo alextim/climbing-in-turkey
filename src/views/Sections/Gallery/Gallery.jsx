@@ -40,7 +40,7 @@ const Gallery = ({ frontmatter, images }) => {
                   key={header}
                   header={header}
                   subheader={subheader}
-                  image={{ alt, src: images[index].xs }}
+                  image={{ alt, src: images[index].sm }}
                   index={index}
                   handleGalleryClick={handleGalleryClick}
                 />
@@ -69,7 +69,7 @@ const Gallery = ({ frontmatter, images }) => {
 Gallery.propTypes = {
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
-    xs: PropTypes.object,
+    sm: PropTypes.object,
     xl: PropTypes.object,
   })).isRequired,
 };

@@ -6,7 +6,7 @@ import ImageCard from 'components/ImageCard';
 import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
 
 const Top = ({ image, frontmatter }) => {
-  if (!frontmatter) {
+  if (!frontmatter || !image) {
     return null;
   }
 
@@ -26,7 +26,7 @@ const Top = ({ image, frontmatter }) => {
   return (
     <ImageCard
       xlImage={image.xl}
-      xsImage={image.xs}
+      smImage={image.sm}
       imageAlt={alt}
       header={header}
       subheader={subheader}

@@ -17,9 +17,9 @@ const About = ({ html, frontmatter, images }) => {
     <PageSection className="bg-light" id={anchor}>
       <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       <Row>
-        {images && images.xs && (
+        {images && images.sm && (
           <Col lg={4}>
-            <Img fluid={images.xs.childImageSharp.fluid} alt={alt} className="about-image mx-auto mb-3" />
+            <Img fluid={images.sm.childImageSharp.fluid} alt={alt} className="about-image mx-auto mb-3" />
           </Col>
         )}
         {html && (
@@ -36,7 +36,7 @@ About.propTypes = {
   frontmatter: PropTypes.object,
   html: PropTypes.string,
   images: PropTypes.shape({
-    xs: PropTypes.object,
+    sm: PropTypes.object,
   }).isRequired,
 };
 

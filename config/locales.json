@@ -10,10 +10,10 @@
 
     "dateFormat": "dd.MM.yyyy",
 
-    "siteTitle": "Природно-этнографический парк \"Тарутинская степь\"",
+    "siteTitle": "Скалолазание в Турции",
     "siteDescription": "Парк \"Тарутинская степь\" - одна из последних нетронутых степных жемчужин Европы, в которой как в древности обитают дикие куланы, лани, сайгаки и другие животные.",
     "siteHeadline": "Хед лайн sfsdcv ыма ывм ывм ывм ывм ыв м ым ым ы мы м ым м ы мs d",
-    "siteShortName": "Парк \"Тарутинская степь\""
+    "siteShortName": "Скалолазание в Турции"
   },
   "en": {
     "htmlLang": "en",
@@ -25,10 +25,10 @@
 
     "dateFormat": "dd/MM/yyyy",
 
-    "siteTitle": "Natural and Ethnographic Park \"Tarutino Steppe\"",
+    "siteTitle": "Climbing in Turkey",
     "siteDescription": "Park “Tarutyno Steppe” is one of the last untouched steppe pearls of Europe, where wild kulans, fallow deers, saigas and other animals roam free like centuries ago.",
     "siteHeadline": "Headline dcdsc dsc sdc sdc sdc s dc sdc ds c c sdc d sc dc c s cs d",
-    "siteShortName": "Park \"Tarutino Steppe\""
+    "siteShortName": "Climbing in Turkey"
   },
   "tr": {
     "htmlLang": "tr",
@@ -40,9 +40,9 @@
 
     "dateFormat": "dd.MM.yyyy",
 
-    "siteTitle": "Природно-этнографический парк \"Тарутинская степь\"",
+    "siteTitle": "Türkiye'de Tırmanış",
     "siteDescription": "Парк \"Тарутинская степь\" - одна из последних нетронутых степных жемчужин Европы, в которой как в древности обитают дикие куланы, лани, сайгаки и другие животные.",
     "siteHeadline": "Хед лайн sfsdcv ыма ывм ывм ывм ывм ыв м ым ым ы мы м ым м ы мs d",
-    "siteShortName": "Парк \"Тарутинская степь\""
+    "siteShortName": "Türkiye'de Tırmanış"
   }
 }

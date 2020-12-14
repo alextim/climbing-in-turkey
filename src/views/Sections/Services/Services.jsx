@@ -14,7 +14,7 @@ const Services = ({ frontmatter, images }) => {
       <SectionHeader header={rootHeader} subheader={rootSubHeader} content={rootContent} />
       <Row>
         {items.map(({ header, content, alt }, index) => (
-          <ServiceItem key={header} header={header} content={content} image={images[index].xs} alt={alt}  />
+          <ServiceItem key={header} header={header} content={content} image={images[index].sm} alt={alt}  />
         ))}
       </Row>
     </PageSection>
@@ -24,7 +24,7 @@ const Services = ({ frontmatter, images }) => {
 Services.propTypes = {
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
-    xs: PropTypes.object,
+    sm: PropTypes.object,
   })).isRequired,
 };
 

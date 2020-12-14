@@ -6,8 +6,9 @@ import Navbar from 'views/Navbar';
 import Top from 'views/Top';
 import Footer from 'views/Footer';
 import * as Sections from 'views/Sections';
-import SEO from 'components/SEO/SEO';
+import SEO from 'components/SEO';
 import LanguageSelector from 'components/LanguageSelector';
+import i18n from '../i18n/i18n';
 import AppContextProvider from '../context';
 import '../style/main.scss';
 
@@ -18,7 +19,7 @@ export const query = graphql`
   query IndexQuery($langKey: String!) {
     images: yaml(fields: { type: { eq: "images" } }) {
       top {
-        xs {
+        sm {
           childImageSharp {
             fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_noBase64
@@ -34,7 +35,7 @@ export const query = graphql`
         }
       }
       about {
-        xs {
+        sm {
           childImageSharp {
             fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_noBase64
@@ -43,7 +44,7 @@ export const query = graphql`
         }        
       }
       gallery {
-        xs {
+        sm {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64
@@ -60,7 +61,7 @@ export const query = graphql`
         }
       }
       services {
-        xs {
+        sm {
           childImageSharp {
             fluid(maxWidth: 450) {
               ...GatsbyImageSharpFluid_noBase64
@@ -69,7 +70,7 @@ export const query = graphql`
         }
       }
       testimonials {
-        xs {
+        sm {
           childImageSharp {
             fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64
@@ -102,11 +103,6 @@ export const query = graphql`
         jumpToAnchor
         jumpToAnchorText
         alt
-      }
-    }
-    navbar: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "NavBar"} } ) {
-      frontmatter {
-        brand
       }
     }
     footer: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "Footer"} } ) {
@@ -146,12 +142,12 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
     images,
     sections,
     top,
-    navbar,
     footer,
     organization,
     socialLinks,
   } = data;
 
+  const siteMeta = i18n.locales[langKey];
 
   // anchors for NavBar
   const anchors = sections.nodes.map((e) => e.frontmatter.anchor).filter((e) => e);
@@ -168,7 +164,7 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
       <SEO lang={langKey} pathname={path} />
       <Navbar
         anchors={anchors}
-        frontmatter={navbar.frontmatter}
+        siteShortName={siteMeta.siteShortName}
         extraItems={langSelectorPart}
       />
       <Top frontmatter={top.frontmatter} image={images.top} />

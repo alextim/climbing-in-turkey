@@ -7,7 +7,7 @@
     right: 0;
     padding: 13px;
     border: 0;
-    background-color: $primary;
+    // background-color: $primary;
   }
 
   .navbar-toggler:focus,
@@ -67,9 +67,8 @@
     opacity: 0.9;
   }
 
-  .navbar-brand {
+  .navbar-logo {
     color: $primary !important;
-    @include script-font;
 
     &.active,
     &:active,
@@ -77,6 +76,11 @@
     &:hover {
       color: darken($primary, 10%);
     }
+  }
+
+  .navbar-logo {
+    height: 42px;
+    width: 75px;
   }
 }
 

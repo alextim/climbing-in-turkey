@@ -84,10 +84,13 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Frontmatter',
       fields: {
-        brand: {
+        header: {
           type: 'String',
         },
-        copyright: {
+        subheader: {
+          type: 'String',
+        },
+        content: {
           type: 'String',
         },
         anchor: {
@@ -105,13 +108,7 @@ module.exports = ({ actions, schema }) => {
         alt: {
           type: 'String',
         },
-        header: {
-          type: 'String',
-        },
-        subheader: {
-          type: 'String',
-        },
-        content: {
+        copyright: {
           type: 'String',
         },
       },
@@ -162,7 +159,7 @@ module.exports = ({ actions, schema }) => {
     schema.buildObjectType({
       name: 'Image',
       fields: {
-        xs: {
+        sm: {
           type: 'File',
           extensions: {
             fileByRelativePath: {},

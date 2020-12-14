@@ -25,7 +25,7 @@ const Testimonials = ({ frontmatter, images }) => {
       <Row>
         {items.map(({ header, alt, ...rest }, index) => (
           <Col md={4} key={header}>
-            <Testimonial header={header} image={images[index]?.xs?.childImageSharp.fluid} alt={alt} {...rest} />
+            <Testimonial header={header} image={images[index]?.sm?.childImageSharp.fluid} alt={alt} {...rest} />
           </Col>
         ))}
       </Row>
@@ -41,7 +41,7 @@ const Testimonials = ({ frontmatter, images }) => {
 Testimonials.propTypes = {
   frontmatter: PropTypes.object,
   images: PropTypes.arrayOf(PropTypes.shape({
-    xs: PropTypes.object,
+    sm: PropTypes.object,
   })).isRequired,
 };
 
