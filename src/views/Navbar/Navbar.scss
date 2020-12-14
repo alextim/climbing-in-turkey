@@ -5,7 +5,7 @@
   .navbar-toggler {
     position: relative;
     right: 0;
-    padding: 13px;
+    // padding: 13px;
     border: 0;
     // background-color: $primary;
   }
@@ -42,7 +42,7 @@
   .navbar-toggler:not(.collapsed) span:nth-child(1) {
     position: absolute;
     left: 12px;
-    top: 18px;
+    top: 14px;
     -webkit-transform: rotate(135deg);
     -moz-transform: rotate(135deg);
     -o-transform: rotate(135deg);
@@ -59,7 +59,7 @@
   .navbar-toggler:not(.collapsed) span:nth-child(3) {
     position: absolute;
     left: 12px;
-    top: 18px;
+    top: 14px;
     -webkit-transform: rotate(-135deg);
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
