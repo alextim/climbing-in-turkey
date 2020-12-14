@@ -1,12 +1,23 @@
 .image-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
   height: 671px;
 
   .image {
     height: 671px;
   }
 
-  .no-padding {
-    padding: 0;
+  .image-card-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   .intro-text {

@@ -3,15 +3,14 @@ import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
 
 import ArtImage from 'components/ArtImage';
 import './ImageCard.scss';
 
 const ImageCard = ({ className, smImage, xlImage, imageAlt, header, subheader, extraInfo }) => (
-  <Card className={clsx('image-card bg-dark text-white text-center', className)}>
+  <div className={clsx('image-card bg-dark text-white text-center', className)}>
     <ArtImage className="image" smImage={smImage} xlImage={xlImage} alt={imageAlt || header || subheader} fadeIn={false} loading="eager" />
-    <Card.ImgOverlay className="no-padding">
+    <div className="image-card-overlay">
       <Container>
         <div className="intro-text">
           <div className="intro-lead-in">{subheader}</div>
@@ -19,8 +18,8 @@ const ImageCard = ({ className, smImage, xlImage, imageAlt, header, subheader, e
           {extraInfo}
         </div>
       </Container>
-    </Card.ImgOverlay>
-  </Card>
+    </div>
+  </div>
 );
 
 ImageCard.propTypes = {
