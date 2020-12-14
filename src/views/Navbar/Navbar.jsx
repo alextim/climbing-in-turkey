@@ -42,7 +42,7 @@ const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
     >
       <Container>
         <Navbar.Brand className="cursor-pointer pt-0 pb-0" onClick={handleBrandClick}>
-          <img src="/assets/logo.svg" alt={siteShortName} className="navbar-logo" />
+          <img src="/assets/logo.svg" alt={siteShortName} height="42" width="75" />
         </Navbar.Brand>
         <Navbar.Toggle onClick={toggleMenu} aria-label="Toggle navigation">
           <span />
