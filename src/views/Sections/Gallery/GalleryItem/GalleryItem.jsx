@@ -12,7 +12,7 @@ const GalleryItem = ({
   index,
   handleGalleryClick,
 }) => (
-  <Col lg={3} sm={6} className="gallery-item">
+  <Col lg={3} md={6} className="gallery-item">
     <a
       role="button"
       tabIndex={-1}

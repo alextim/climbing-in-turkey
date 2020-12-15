@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Img from "gatsby-image";
+import Img from 'gatsby-image';
 
 const ArtImage = ({ smImage, xlImage, alt, ...restProps }) => {
   if (!smImage || !xlImage) {
@@ -12,7 +12,7 @@ const ArtImage = ({ smImage, xlImage, alt, ...restProps }) => {
     smImage.childImageSharp.fluid,
     {
       ...xlImage.childImageSharp.fluid,
-      media: "(min-width: 500px)",
+      media: '(min-width: 480px)',
     },
   ];
   return <Img alt={alt} fluid={sources} {...restProps} />;

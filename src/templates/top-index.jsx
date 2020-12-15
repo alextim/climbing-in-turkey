@@ -21,9 +21,8 @@ export const query = graphql`
       top {
         sm {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 480) {
               ...GatsbyImageSharpFluid_noBase64
-              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -31,7 +30,6 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
-              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -39,7 +37,7 @@ export const query = graphql`
       about {
         sm {
           childImageSharp {
-            fluid(maxWidth: 500) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
@@ -55,7 +53,7 @@ export const query = graphql`
         }
         xl {
           childImageSharp {
-            fluid(maxWidth: 1200) {
+            fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }                
@@ -65,7 +63,7 @@ export const query = graphql`
       services {
         sm {
           childImageSharp {
-            fluid(maxWidth: 450) {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }

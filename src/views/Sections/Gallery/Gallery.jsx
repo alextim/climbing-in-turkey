@@ -27,7 +27,7 @@ const Gallery = ({ frontmatter, images }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, items } = frontmatter;
 
   return (
-    <PageSection id={anchor} className="gallery-section pb-0" fluid containerClassName="gallery-container">
+    <PageSection id={anchor} className="gallery-section pb-0" fluid containerClassName="gallery-container container-xxl">
       <Row>
         <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
