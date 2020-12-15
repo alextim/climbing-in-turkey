@@ -21,7 +21,7 @@ export const query = graphql`
       top {
         sm {
           childImageSharp {
-            fluid(maxWidth: 500, quality: 100) {
+            fluid(maxWidth: 500) {
               ...GatsbyImageSharpFluid_noBase64
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
@@ -29,7 +29,7 @@ export const query = graphql`
         }
         xl {
           childImageSharp {
-            fluid(maxWidth: 1920, quality: 100) {
+            fluid(maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
               ...GatsbyImageSharpFluidLimitPresentationSize
             }
