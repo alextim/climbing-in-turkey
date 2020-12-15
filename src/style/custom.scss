@@ -1,6 +1,8 @@
+// Required
 /* import what we need to override */
 @import "~bootstrap/scss/functions";
 @import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
 
 /* set the overriding variables */
 $grid-breakpoints: (xs: 0,
@@ -17,3 +19,47 @@ $container-max-widths: (sm: 540px,
   xl: 1140px,
   xxl: 1380px,
   xxxl: 1560px);
+
+// all bootstrap
+// @import "bootstrap";
+
+
+
+// Layout & components
+@import "~bootstrap/scss/root";
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/type";
+// @import "images";
+@import "~bootstrap/scss/grid";
+// @import "tables";
+// @import "forms";
+@import "~bootstrap/scss/buttons";
+@import "~bootstrap/scss/transitions";
+@import "~bootstrap/scss/dropdown";
+// @import "button-group";
+// @import "input-group";
+// @import "custom-forms";
+@import "~bootstrap/scss/nav";
+@import "~bootstrap/scss/navbar";
+// @import "card";
+// @import "breadcrumb";
+// @import "pagination";
+// @import "badge";
+// @import "jumbotron";
+// @import "alert";
+// @import "progress";
+// @import "media";
+
+// @import "list-group";
+// @import "close";
+// @import "toasts";
+@import "~bootstrap/scss/modal";
+// @import "tooltip";
+// @import "popover";
+
+@import "~bootstrap/scss/carousel";
+// @import "spinners";
+
+@import "~bootstrap/scss/utilities";
+
+// @import "print";

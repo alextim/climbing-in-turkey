@@ -77,12 +77,12 @@
   "scripts": {
     "clean": "gatsby clean",
     "build": "gatsby build",
-    "dev": "gatsby develop",
+    "dev": "gatsby develop -o",
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve -o",
     "eslint": "eslint ./src",
     "test": "cross-env NODE_ENV=test yarn run eslint",
     "testbuild": "yarn test && yarn build",
-    "ncu": "ncu -u --timeout 60000"
+    "ncu": "ncu -u -x node-sass --timeout 60000"
   }
 }
