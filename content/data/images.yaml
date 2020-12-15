@@ -1,6 +1,6 @@
 top:
-  sm: ../assets/images/top/sarkit-sm.jpg
-  xl: ../assets/images/top/sarkit-xl.jpg  
+  sm: ../assets/images/top/sarkit-sm-30.jpg
+  xl: ../assets/images/top/sarkit-xl-15.jpg  
 about:
   sm: ../assets/images/about/face.jpg
 gallery:
