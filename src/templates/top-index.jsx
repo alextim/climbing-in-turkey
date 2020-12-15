@@ -23,6 +23,7 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 500, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
@@ -30,6 +31,7 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 1920, quality: 100) {
               ...GatsbyImageSharpFluid_noBase64
+              ...GatsbyImageSharpFluidLimitPresentationSize
             }
           }
         }
