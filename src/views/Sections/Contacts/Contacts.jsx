@@ -51,7 +51,7 @@ const Contacts = ({ frontmatter }) => {
       <Row>
         <ContactItem to={`tel:+${phone[0]}`} icon={<PhoneIcon className={iconClass}  />} text={formatPhoneNumber(phone[0])}/>
         <ContactItem to={`https://wa.me/${whatsapp}`} icon={<WhatsappIcon className={iconClass} />} title="WhatsApp" text={formatPhoneNumber(whatsapp)}/>
-        <ContactItem to={`https://telegram/me/${telegram}`} icon={<TelegramIcon className={iconClass}  />} title="Telegram" text={telegram} />
+        <ContactItem to={`https://telegram.me/${telegram}`} icon={<TelegramIcon className={iconClass}  />} title="Telegram" text={telegram} />
         <ContactItem to={`mailto:${email[0]}`} icon={<EnvelopeIcon className={iconClass} />} text={email[0]}/>
       </Row>
     </PageSection>
