@@ -1,30 +1,56 @@
 {
-  "name": "masha",
+  "name": "climbing-in-turkey",
   "description": "masha",
   "version": "0.1.0",
   "license": "MIT",
   "author": "Oleksii Tymoshenko <buildmnt@gmail.com>",
+  "keywords": [
+    "gatsby",
+    "gatsbyjs",
+    "landing page",
+    "landing",
+    "i18n",
+    "eslint",
+    "bootstrap"
+  ],
+  "main": "n/a",
+  "homepage": "https://github.com/alextim/climbing-in-turkey",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alextim/climbing-in-turkey.git"
+  },
   "bugs": {
-    "url": "https://github.com/alextim/masha/issues"
+    "url": "https://github.com/alextim/climbing-in-turkey/issues"
+  },  
+  "scripts": {
+    "clean": "gatsby clean",
+    "build": "gatsby build",
+    "dev": "gatsby develop -o",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "serve": "gatsby serve -o",
+    "eslint": "eslint ./src",
+    "test": "cross-env NODE_ENV=test yarn run eslint",
+    "testbuild": "yarn test && yarn build",
+    "ncu": "ncu -u -x node-sass --timeout 60000"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
     "clsx": "^1.1.1",
-    "gatsby": "^2.28.2",
-    "gatsby-image": "^2.7.0",
-    "gatsby-plugin-google-analytics": "^2.7.0",
+    "gatsby": "^2.29.1",
+    "gatsby-image": "^2.8.0",
+    "gatsby-plugin-google-analytics": "^2.8.0",
     "gatsby-plugin-i18n": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.8.0",
-    "gatsby-plugin-offline": "^3.6.0",
-    "gatsby-plugin-react-helmet": "^3.6.0",
-    "gatsby-plugin-sass": "^2.7.0",
-    "gatsby-plugin-sharp": "^2.10.1",
-    "gatsby-remark-images": "^3.7.1",
+    "gatsby-plugin-manifest": "^2.9.0",
+    "gatsby-plugin-offline": "^3.7.0",
+    "gatsby-plugin-react-helmet": "^3.7.0",
+    "gatsby-plugin-sass": "^2.8.0",
+    "gatsby-plugin-sharp": "^2.11.1",
+    "gatsby-remark-images": "^3.8.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-filesystem": "^2.7.0",
-    "gatsby-transformer-remark": "^2.12.0",
-    "gatsby-transformer-sharp": "^2.8.0",
-    "gatsby-transformer-yaml": "^2.7.0",
+    "gatsby-source-filesystem": "^2.8.0",
+    "gatsby-transformer-remark": "^2.13.0",
+    "gatsby-transformer-sharp": "^2.9.0",
+    "gatsby-transformer-yaml": "^2.8.0",
     "node-sass": "4.14.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
@@ -40,7 +66,7 @@
     "@babel/preset-react": "^7.12.10",
     "babel-eslint": "^10.1.0",
     "babel-plugin-import": "^1.13.3",
-    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-transform-imports": "^2.0.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "cross-env": "^7.0.3",
@@ -58,31 +84,5 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.18",
     "prettier": "^2.2.1"
-  },
-  "homepage": "https://github.com/alextim/masha",
-  "keywords": [
-    "gatsby",
-    "gatsbyjs",
-    "landing page",
-    "landing",
-    "i18n",
-    "eslint",
-    "bootstrap"
-  ],
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alextim/masha.git"
-  },
-  "scripts": {
-    "clean": "gatsby clean",
-    "build": "gatsby build",
-    "dev": "gatsby develop -o",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "serve": "gatsby serve -o",
-    "eslint": "eslint ./src",
-    "test": "cross-env NODE_ENV=test yarn run eslint",
-    "testbuild": "yarn test && yarn build",
-    "ncu": "ncu -u -x node-sass --timeout 60000"
   }
 }
