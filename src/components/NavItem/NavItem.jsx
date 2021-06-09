@@ -24,6 +24,7 @@ const NavItem = ({ to, onClick, children }) => (
 NavItem.propTypes = {
   to: PropTypes.string,
   onClick: PropTypes.func,
+  // eslint-disable-next-line react/forbid-prop-types
   children: PropTypes.any,
 };
 

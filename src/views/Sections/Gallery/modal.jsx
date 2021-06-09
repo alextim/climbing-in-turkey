@@ -10,13 +10,13 @@ const GalleryModal = ({ show, onHide, children }) => (
     onHide={onHide}
     size="lg"
     aria-labelledby="contained-modal-title-vcenter"
-    centered>
+    centered
+  >
     <Modal.Header closeButton />
-    <Modal.Body>
-      {children}
-    </Modal.Body>
+    <Modal.Body>{children}</Modal.Body>
   </Modal>
 );
+
 GalleryModal.propTypes = {
   show: PropTypes.bool.isRequired,
   onHide: PropTypes.func.isRequired,

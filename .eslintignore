@@ -1,6 +1,7 @@
-# /node_modules/* and /bower_components/* ignored by default
-
-# ignore  settings
-.vscode/*
-
-public/*
+/.git
+/.cache
+/.husky
+/.netlify
+/.vscode
+node_modules
+public

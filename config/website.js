@@ -32,5 +32,5 @@ module.exports = {
 
   /* Manifest */
   themeColor: '#fed136',
-  backgroundColor: '#ffffff'
+  backgroundColor: '#ffffff',
 };

@@ -4,6 +4,8 @@
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins";
 
+// @import "bootstrap";
+
 /* set the overriding variables */
 $grid-breakpoints: (xs: 0,
   sm: 576px,
@@ -22,6 +24,7 @@ $container-max-widths: (sm: 540px,
 
 // all bootstrap
 // @import "bootstrap";
+
 
 // Layout & components
 @import "~bootstrap/scss/root";
@@ -56,11 +59,13 @@ $container-max-widths: (sm: 540px,
 @import "~bootstrap/scss/carousel";
 // @import "spinners";
 
+
 /* *
  *
  * @import "~bootstrap/scss/utilities"; 
  *
  */
+
 @import "~bootstrap/scss/utilities/align";
 @import "~bootstrap/scss/utilities/background";
 @import "~bootstrap/scss/utilities/borders";
@@ -81,3 +86,4 @@ $container-max-widths: (sm: 540px,
 // @import "~bootstrap/scss/utilities/visibility";
 
 // @import "print";
+

@@ -5,14 +5,15 @@ import Col from 'react-bootstrap/Col';
 
 import './SectionHeader.scss';
 
-const SectionHeader = ({ header, subheader, content, className, subClassName, ...rest }) =>  (
-    <Col lg={12} className={clsx('section-header', 'text-center', className)} {...rest}>
-      <h2 className="section-heading text-uppercase divider">{header}</h2>
-      {subheader && <h3 className={clsx('section-subheading', subClassName)}>{subheader}</h3>}
-      {content && <div className={clsx('section-content', 'text-justify', subClassName)}>{content}</div>}
-    </Col>
-  );
-
+const SectionHeader = ({ header, subheader, content, className, subClassName, ...rest }) => (
+  <Col lg={12} className={clsx('section-header', 'text-center', className)} {...rest}>
+    <h2 className="section-heading text-uppercase divider">{header}</h2>
+    {subheader && <h3 className={clsx('section-subheading', subClassName)}>{subheader}</h3>}
+    {content && (
+      <div className={clsx('section-content', 'text-justify', subClassName)}>{content}</div>
+    )}
+  </Col>
+);
 
 SectionHeader.propTypes = {
   header: PropTypes.string,

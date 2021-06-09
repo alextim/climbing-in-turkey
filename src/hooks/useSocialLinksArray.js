@@ -1,7 +1,9 @@
 import { useAppContext } from '../context';
 
 const useSocialLinksArray = () => {
-  const { socialLinks: { nodes } } = useAppContext();
+  const {
+    socialLinks: { nodes },
+  } = useAppContext();
   return nodes;
 };
 

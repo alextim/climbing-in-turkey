@@ -1,13 +1,15 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
-import Navbar from 'views/Navbar';
-import Top from 'views/Top';
-import Footer from 'views/Footer';
-import * as Sections from 'views/Sections';
-import SEO from 'components/SEO';
-import LanguageSelector from 'components/LanguageSelector';
+import Top from '../views/Top';
+import Footer from '../views/Footer';
+import * as Sections from '../views/Sections';
+import Navbar from '../views/Navbar';
+
+import SEO from '../components/SEO';
+import LanguageSelector from '../components/LanguageSelector/LanguageSelector';
 import i18n from '../i18n/i18n';
 import AppContextProvider from '../context';
 import '../style/main.scss';
@@ -17,69 +19,65 @@ import '../style/main.scss';
  */
 export const query = graphql`
   query IndexQuery($langKey: String!) {
+    address: address(locale: { eq: $langKey }) {
+      ...AddressFragment
+    }
     images: yaml(fields: { type: { eq: "images" } }) {
       top {
         sm {
           childImageSharp {
-            fluid(maxWidth: 480) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 480
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
           }
         }
         xl {
           childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 1920
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
           }
         }
       }
       about {
         sm {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 400
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
           }
-        }        
+        }
       }
       gallery {
         sm {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 400
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
           }
         }
         xl {
           childImageSharp {
-            fluid(maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
-          }                
+            # width: 1920
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
+          }
           publicURL
         }
       }
       services {
         sm {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 400
+            gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 0.75, formats: [AUTO, WEBP])
           }
         }
       }
       testimonials {
         sm {
           childImageSharp {
-            fluid(maxWidth: 400) {
-              ...GatsbyImageSharpFluid_noBase64
-            }
+            # width: 400
+            gatsbyImageData(layout: FULL_WIDTH, formats: [AUTO, WEBP])
           }
         }
       }
-    }    
-    organization: yaml(fields: { type: { eq: "contacts" } }) {
+    }
+    organization: contact {
       phone
       email
       voice {
@@ -87,16 +85,14 @@ export const query = graphql`
         telegram
       }
     }
-    socialLinks: allYaml(
-      filter: { fields: { type: { eq: "social-links" } } }
-    ) {
+    socialLinks: allSocialLink(filter: { locale: { eq: $langKey } }) {
       nodes {
         code
         to
         title
       }
-    }    
-    top: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "Top"} } ) {
+    }
+    top: markdownRemark(fields: { langKey: { eq: $langKey }, partName: { eq: "Top" } }) {
       frontmatter {
         header
         subheader
@@ -105,13 +101,8 @@ export const query = graphql`
         alt
       }
     }
-    footer: markdownRemark( fields: { langKey: { eq: $langKey }, partName: {eq: "Footer"} } ) {
-      frontmatter {
-        copyright
-      }
-    }
     sections: allMarkdownRemark(
-      filter: { fields: { langKey: { eq: $langKey }, type: {eq: "section"} } }
+      filter: { fields: { langKey: { eq: $langKey }, type: { eq: "section" } } }
       sort: { order: ASC, fields: [fields___fileName] }
     ) {
       nodes {
@@ -138,14 +129,7 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMap } }) => {
-  const {
-    images,
-    sections,
-    top,
-    footer,
-    organization,
-    socialLinks,
-  } = data;
+  const { images, sections, top, organization, socialLinks, address } = data;
 
   const siteMeta = i18n.locales[langKey];
 
@@ -160,30 +144,33 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
   }
 
   return (
-    <AppContextProvider value={{ organization, socialLinks }}>
+    <AppContextProvider value={{ organization, socialLinks, address }}>
       <SEO lang={langKey} pathname={path} />
       <Navbar
         anchors={anchors}
         siteShortName={siteMeta.siteShortName}
         extraItems={langSelectorPart}
       />
-      <Top frontmatter={top.frontmatter} image={images.top} />
+      <Top frontmatter={top.frontmatter} images={images.top} />
       {
         // dynamically import sections
-        sections.nodes.filter(({ frontmatter }) => frontmatter).map(({ frontmatter, html, fields: { partName } }) => {
-          const SectionComponent = Sections[partName];
+        sections.nodes
+          .filter(({ frontmatter }) => frontmatter)
+          .map(({ frontmatter, html, fields: { partName } }) => {
+            // eslint-disable-next-line import/namespace
+            const SectionComponent = Sections[partName];
 
-          return SectionComponent ? (
-            <SectionComponent
-              key={partName}
-              images={images[partName.toLowerCase()]}
-              frontmatter={frontmatter}
-              html={html}
-            />
-          ) : null;
-        })
+            return SectionComponent ? (
+              <SectionComponent
+                key={partName}
+                images={images[partName.toLowerCase()]}
+                frontmatter={frontmatter}
+                html={html}
+              />
+            ) : null;
+          })
       }
-      <Footer frontmatter={footer.frontmatter} />
+      <Footer />
     </AppContextProvider>
   );
 };

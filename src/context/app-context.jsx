@@ -12,7 +12,7 @@ export function useAppContext() {
 }
 
 AppContextProvider.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   value: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 };
-

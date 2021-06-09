@@ -4,6 +4,7 @@ const i18n = require('../i18n/i18n');
 const getBaseUrl = require('../utils/getBaseUrl');
 
 const langTextMap = i18n.localeCodes.reduce((prev, el) => {
+  // eslint-disable-next-line no-param-reassign
   prev[el] = i18n.locales[el].localName;
   return prev;
 }, {});

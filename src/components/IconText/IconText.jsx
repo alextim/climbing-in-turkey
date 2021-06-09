@@ -4,10 +4,10 @@ import PropTypes from 'prop-types';
 import './IconText.scss';
 
 const IconText = ({ icon, text }) => (
-  <span className="icon-text">
+  <div className="icon-text">
     {icon}
     {text}
-  </span>
+  </div>
 );
 
 IconText.propTypes = {

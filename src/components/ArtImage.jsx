@@ -1,21 +1,21 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image';
 
-const ArtImage = ({ smImage, xlImage, alt, ...restProps }) => {
+const ArtImage = ({ smImage, xlImage, alt, ...rest }) => {
   if (!smImage || !xlImage) {
     return null;
   }
 
-  const sources = [
-    smImage.childImageSharp.fluid,
+  const sources = withArtDirection(getImage(smImage), [
     {
-      ...xlImage.childImageSharp.fluid,
+      image: getImage(xlImage),
       media: '(min-width: 480px)',
     },
-  ];
-  return <Img alt={alt} fluid={sources} {...restProps} />;
+  ]);
+  return <GatsbyImage alt={alt} image={sources} {...rest} />;
 };
 
 ArtImage.propTypes = {

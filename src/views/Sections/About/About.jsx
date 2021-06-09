@@ -1,17 +1,19 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import SectionHeader from '../../../components/SectionHeader';
+import SectionHeader from '../../../components/SectionHeader/SectionHeader';
 import PageSection from '../../../components/PageSection';
 
 import './About.scss';
 
 const About = ({ html, frontmatter, images }) => {
   const { anchor, header: rootHeader, subheader: rootSubHeader, alt } = frontmatter;
+  const image = getImage(images.sm);
 
   return (
     <PageSection className="bg-light" id={anchor}>
@@ -19,7 +21,7 @@ const About = ({ html, frontmatter, images }) => {
       <Row>
         {images && images.sm && (
           <Col lg={4}>
-            <Img fluid={images.sm.childImageSharp.fluid} alt={alt} className="about-image mx-auto mb-3" />
+            <GatsbyImage image={image} alt={alt} className="about-image mx-auto mb-3" />
           </Col>
         )}
         {html && (

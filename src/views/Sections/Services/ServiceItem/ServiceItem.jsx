@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import './ServiceItem.scss';
 
@@ -8,7 +8,9 @@ const ServiceItem = ({ odd, image, header, content }) => {
   return (
     <div className={`service-item service-item-${odd ? 'odd' : 'even'}`}>
       <div className="service-item-image-part">
-        {image && image.src && <Img className="service-item-image" fluid={image.src.childImageSharp.fluid} alt={image.alt} />}
+        {image && image.src && (
+          <GatsbyImage className="service-item-image" image={getImage(image.src)} alt={image.alt} />
+        )}
       </div>
       <div className={`service-item-text-part service-item-text-${odd ? 'odd' : 'even'}`}>
         <div>
@@ -22,6 +24,7 @@ const ServiceItem = ({ odd, image, header, content }) => {
 
 ServiceItem.propTypes = {
   odd: PropTypes.number.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   header: PropTypes.string,
   content: PropTypes.string,

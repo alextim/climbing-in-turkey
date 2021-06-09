@@ -1,29 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import SeoBase from './SeoBase';
+import { SeoBase } from '@alextim/at-seo';
 
 import config from '../../../config/website';
 import i18n from '../../i18n/i18n';
 
 import useSocialLinks from '../../hooks/useSocialLinks';
-import useOrganization from '../../hooks/useOrganization';
+import useOrgContacts from '../../hooks/useOrgContacts';
+import useOrgAddress from '../../hooks/useOrgAddress';
 
 const SEO = ({ lang, pathname }) => {
-  const siteMeta = i18n.locales[lang];
   const socialLinks = useSocialLinks();
-  const organization = useOrganization();
+  const orgAddress = useOrgAddress();
+  const orgContacts = useOrgContacts();
+  const siteMeta = i18n.locales[lang];
 
   return (
     <SeoBase
-      locale={lang}
+      config={config}
       siteMeta={siteMeta}
+      i18n={i18n}
+      orgContacts={orgContacts}
+      orgAddress={orgAddress}
+      socialLinks={socialLinks}
+      locale={lang}
       pathname={pathname}
       noindex
-      config={config}
-      socialLinks={socialLinks}
-      organization={organization}
-      i18n={i18n}
     />
   );
 };

@@ -1,42 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 import './Testimonial.scss';
 
-const Testimonial = ({
-  image,
-  alt,
-  header,
-  subheader,
-  content,
-}) => {
+const Testimonial = ({ image, alt, header, subheader, content }) => {
   return (
     <figure className="team-member">
-      {image && <Img
-        className="mx-auto circle rounded-circle"
-        fluid={image}
-        alt={alt || header || content}
-      />}
+      {image && (
+        <GatsbyImage
+          className="mx-auto circle rounded-circle"
+          image={getImage(image)}
+          alt={alt || header || content}
+        />
+      )}
       <blockquote className="blockquote">
-        <p className="text-muted">
-          {content}
-        </p>
+        <p className="text-muted">{content}</p>
       </blockquote>
       <figcaption className="blockquote-footer text-muted">
         {header}
-        {subheader &&
+        {subheader && (
           <>
-            ,{' '}
-            <cite>{subheader}</cite>
+            , <cite>{subheader}</cite>
           </>
-        }
+        )}
       </figcaption>
     </figure>
   );
 };
 
 Testimonial.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   alt: PropTypes.string,
   header: PropTypes.string,

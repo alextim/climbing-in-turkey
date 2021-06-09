@@ -1,9 +1,7 @@
 const nl2br = (s) => {
-  if (typeof s !== 'string') {
-    s = s.toString();
-  }
+  const r = typeof s === 'string' ? s : s.toString();
 
-  return s.replace(/\r\n/g, '<br />').replace(/\n|\r/g, '<br />');
+  return r.replace(/\r\n/g, '<br />').replace(/\n|\r/g, '<br />');
 };
 
 module.exports = nl2br;

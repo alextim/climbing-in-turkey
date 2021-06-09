@@ -8,11 +8,14 @@ import './PageSection.scss';
 
 const PageSection = ({ children, className, containerClassName, fluid, ...rest }) => (
   <section className={clsx('page-section', className)} {...rest}>
-    <Container fluid={fluid} className={containerClassName}>{children}</Container>
+    <Container fluid={fluid} className={containerClassName}>
+      {children}
+    </Container>
   </section>
 );
 
 PageSection.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   children: PropTypes.any,
   className: PropTypes.string,
   fluid: PropTypes.bool,

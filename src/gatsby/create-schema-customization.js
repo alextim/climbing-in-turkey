@@ -1,178 +1,116 @@
-/**
- * define nullable items
- */
-module.exports = ({ actions, schema }) => {
-  const { createTypes } = actions;
+module.exports = ({ actions: { createTypes } }) => {
   const typeDefs = [
-    schema.buildObjectType({
-      name: 'Yaml',
-      interfaces: ['Node'],
-      extensions: {
-        infer: false,
-      },
-      fields: {
-        code: {
-          type: 'String',
-        },
-        to: {
-          type: 'String',
-        },
-        title: {
-          type: 'String',
-        },
-        phone: {
-          type: '[String]',
-        },
-        email: {
-          type: '[String]',
-        },
-        voice: {
-          type: 'Voice',
-        },
-        top: {
-          type: 'Image',
-        },
-        about: {
-          type: 'Image',
-        },
-        gallery: {
-          type: '[Image]',
-        },
-        testimonials: {
-          type: '[Image]',
-        },
-        services: {
-          type: '[Image]',
-        },
-        fields: {
-          type: 'MdFields',
-        },
-      },
-    }),
+    `
+    type Address implements Node @dontInfer {
+      name: String
+      alternateName: String
+      legalName: String
+      description: String
+      contactPoint: [ContactPoint]
+      postalAddress: PostalAddress
+      locale: String!
+    }
 
-    schema.buildObjectType({
-      name: 'Voice',
-      fields: {
-        whatsapp: {
-          type: 'String',
-        },
-        telegram: {
-          type: 'String',
-        },
-      },
-    }),
+    type Contact implements Node @dontInfer {
+      organizationType: String
+      phone: [String]
+      voice: Voice
+      geo: Geo
+      fax: String
+      email: [String]
+      openingHours: [[String]]
+      hasMap: String
+      embedMap: String
+      foundingDate: Date
+      priceRange: String
+      currenciesAccepted: String
+      paymentAccepted: String
+    }
 
-    schema.buildObjectType({
-      name: 'MarkdownRemark',
-      interfaces: ['Node'],
-      extensions: {
-        infer: false,
-      },
-      fields: {
-        frontmatter: {
-          type: 'Frontmatter',
-        },
-        html: {
-          type: 'String',
-        },
-        fields: {
-          type: 'MdFields',
-        },
-      },
-    }),
+    type ContactPoint {
+      name: String
+      description: String
+      contactType: String
+      contactTypeName: String
+      telephone: [String]
+      email: [String]
+      areaServed: String
+    }
 
-    schema.buildObjectType({
-      name: 'Frontmatter',
-      fields: {
-        header: {
-          type: 'String',
-        },
-        subheader: {
-          type: 'String',
-        },
-        content: {
-          type: 'String',
-        },
-        anchor: {
-          type: 'String',
-        },
-        jumpToAnchor: {
-          type: 'String',
-        },
-        jumpToAnchorText: {
-          type: 'String',
-        },
-        items: {
-          type: '[Item]',
-        },
-        alt: {
-          type: 'String',
-        },
-        copyright: {
-          type: 'String',
-        },
-      },
-    }),
+    type PostalAddress {
+      streetAddress: [String]
+      addressLocality: String
+      addressRegion: String
+      postalCode: String
+      addressCountry: String
+      addressCountryName: String
+    }
 
-    schema.buildObjectType({
-      name: 'Item',
-      fields: {
-        header: {
-          type: 'String',
-        },
-        subheader: {
-          type: 'String',
-        },
-        content: {
-          type: 'String',
-        },
-        image: {
-          type: 'Image',
-        },
-        alt: {
-          type: 'String',
-        },
-      },
-    }),
+    type Geo {
+      latitude: Float!
+      longitude: Float!
+    }
 
-    schema.buildObjectType({
-      name: 'MdFields',
-      fields: {
-        partName: {
-          type: 'String',
-        },
-        fileName: {
-          type: 'String',
-        },
-        directoryName: {
-          type: 'String',
-        },
-        langKey: {
-          type: 'String',
-        },
-        type: {
-          type: 'String',
-        },
-      },
-    }),
+    type Voice {
+      skype: String
+      whatsapp: String
+      telegram: String
+      viber: String
+    }
 
-    schema.buildObjectType({
-      name: 'Image',
-      fields: {
-        sm: {
-          type: 'File',
-          extensions: {
-            fileByRelativePath: {},
-          },
-        },
-        xl: {
-          type: 'File',
-          extensions: {
-            fileByRelativePath: {},
-          },
-        },
-      },
-    }),
+    type Yaml implements Node @dontInfer {
+      code: String
+      to: String
+      title: String
+      top: Image
+      about: Image
+      gallery: [Image]
+      testimonials: [Image]
+      services: [Image]
+      fields: YamlFields
+    }
+
+    type MarkdownRemark implements Node @dontInfer {
+      frontmatter: Frontmatter
+      fields: MdFields
+    }
+
+    type Frontmatter {
+      header: String
+      subheader: String
+      content: String
+      anchor: String
+      jumpToAnchor: String
+      jumpToAnchorText: String
+      items: [Item]
+      alt: String
+    }
+
+    type Item {
+      header: String
+      subheader: String
+      content: String
+      image: String
+      alt: String
+    }
+
+    type MdFields {
+      partName: String
+      fileName: String
+      directoryName: String
+      langKey: String
+      type: String
+    }
+
+    type YamlFields {
+      type: String
+    }
+
+    type Image {
+      sm: File @fileByRelativePath
+      xl: File @fileByRelativePath
+    }
+    `,
   ];
 
   createTypes(typeDefs);

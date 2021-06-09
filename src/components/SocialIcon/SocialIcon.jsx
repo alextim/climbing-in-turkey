@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import CircleIcon from 'components/CircleIcon';
+import CircleIcon from '../CircleIcon/CircleIcon';
 
 import FacebookIcon from '../../assets/fa/brand/facebook-f.svg';
 import InstagramIcon from '../../assets/fa/brand/instagram.svg';

@@ -5,9 +5,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 
-import useWindowOnScroll from 'hooks/useWindowOnScroll';
-import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
-import NavItem from 'components/NavItem';
+import useWindowOnScroll from '../../hooks/useWindowOnScroll';
+import useSmoothScrollTo from '../../hooks/useSmoothScrollTo';
+import NavItem from '../../components/NavItem';
 
 import './Navbar.scss';
 
@@ -35,7 +35,7 @@ const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
 
   return (
     <Navbar
-      className={clsx('navbar-root', { 'navbar-shrink': shrink }, {'navbar-expanded': expanded})}
+      className={clsx('navbar-root', { 'navbar-shrink': shrink }, { 'navbar-expanded': expanded })}
       expand="lg"
       fixed="top"
       expanded={expanded}
@@ -65,6 +65,7 @@ const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
 MyNavbar.propTypes = {
   anchors: PropTypes.arrayOf(PropTypes.string),
   siteShortName: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   extraItems: PropTypes.any,
 };
 

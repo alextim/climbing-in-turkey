@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Img from 'gatsby-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import Col from 'react-bootstrap/Col';
 
 const ServiceItemV = ({ header, content, image, alt }) => (
   <Col lg={4} className="text-center mb-4">
-    {image && <Img className="mb-3" fluid={{ ...image.childImageSharp.fluid, aspectRatio: 3 / 4}} alt={alt} />}
+    {image && <GatsbyImage className="mb-3" image={getImage(image)} alt={alt} />}
     <h4>{header}</h4>
     <p className="text-muted">{content}</p>
   </Col>
 );
 
 ServiceItemV.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   alt: PropTypes.string,
   header: PropTypes.string,

@@ -1,7 +1,6 @@
 import { useAppContext } from '../context';
 
 const useSocialLinks = () => {
-
   const { socialLinks } = useAppContext();
   if (!socialLinks.nodes.length) {
     return undefined;

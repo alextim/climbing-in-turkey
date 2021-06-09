@@ -1,1 +1,8 @@
-*.md
+.git
+.vscode
+.cache
+.netlify
+node_modules
+public
+package.json
+package-lock.json

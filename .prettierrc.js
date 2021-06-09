@@ -6,7 +6,6 @@ module.exports = {
   singleQuote: true,
   printWidth: 100,
   endOfLine: 'auto',
-  bracketSpacing: true,
   overrides: [
     {
       files: '.editorconfig',

@@ -1,12 +1,13 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
 
-import ImageCard from 'components/ImageCard';
-import useSmoothScrollTo from 'hooks/useSmoothScrollTo';
+import ImageCard from '../../components/ImageCard/ImageCard';
+import useSmoothScrollTo from '../../hooks/useSmoothScrollTo';
 
-const Top = ({ image, frontmatter }) => {
-  if (!frontmatter || !image) {
+const Top = ({ images, frontmatter }) => {
+  if (!frontmatter || !images) {
     return null;
   }
 
@@ -25,8 +26,8 @@ const Top = ({ image, frontmatter }) => {
 
   return (
     <ImageCard
-      xlImage={image.xl}
-      smImage={image.sm}
+      xlImage={images.xl}
+      smImage={images.sm}
       imageAlt={alt}
       header={header}
       subheader={subheader}
@@ -37,12 +38,12 @@ const Top = ({ image, frontmatter }) => {
 
 Top.propTypes = {
   frontmatter: PropTypes.object,
-  image: PropTypes.object,
+  images: PropTypes.object,
 };
 
 Top.defaultProps = {
   frontmatter: null,
-  image: null,
+  images: null,
 };
 
 export default Top;

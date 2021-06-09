@@ -1,11 +1,12 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import SectionHeader from 'components/SectionHeader';
-import PageSection from 'components/PageSection';
+import SectionHeader from '../../../components/SectionHeader/SectionHeader';
+import PageSection from '../../../components/PageSection';
 import Testimonial from './Testimonial';
 
 const Testimonials = ({ frontmatter, images }) => {
@@ -20,12 +21,12 @@ const Testimonials = ({ frontmatter, images }) => {
   return (
     <PageSection className="bg-light" id={anchor}>
       <Row>
-        <SectionHeader header={rootHeader} subheader={rootSubHeader}/>
+        <SectionHeader header={rootHeader} subheader={rootSubHeader} />
       </Row>
       <Row>
         {items.map(({ header, alt, ...rest }, index) => (
           <Col md={4} key={header}>
-            <Testimonial header={header} image={images[index]?.sm?.childImageSharp.fluid} alt={alt} {...rest} />
+            <Testimonial header={header} image={images[index]?.sm} alt={alt} {...rest} />
           </Col>
         ))}
       </Row>
@@ -40,9 +41,11 @@ const Testimonials = ({ frontmatter, images }) => {
 
 Testimonials.propTypes = {
   frontmatter: PropTypes.object,
-  images: PropTypes.arrayOf(PropTypes.shape({
-    sm: PropTypes.object,
-  })).isRequired,
+  images: PropTypes.arrayOf(
+    PropTypes.shape({
+      sm: PropTypes.object,
+    }),
+  ).isRequired,
 };
 
 Testimonials.defaultProps = {

@@ -1,15 +1,22 @@
+/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
 
 import Container from 'react-bootstrap/Container';
 
-import ArtImage from 'components/ArtImage';
+import ArtImage from '../ArtImage';
 import './ImageCard.scss';
 
 const ImageCard = ({ className, smImage, xlImage, imageAlt, header, subheader, extraInfo }) => (
   <div className={clsx('image-card bg-dark text-white text-center', className)}>
-    <ArtImage className="image" smImage={smImage} xlImage={xlImage} alt={imageAlt || header || subheader} fadeIn={false} loading="eager" />
+    <ArtImage
+      className="image"
+      smImage={smImage}
+      xlImage={xlImage}
+      alt={imageAlt || header || subheader}
+      loading="eager"
+    />
     <div className="image-card-overlay">
       <Container>
         <div className="intro-text">
