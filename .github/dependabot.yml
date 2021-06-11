@@ -23,3 +23,6 @@ updates:
     schedule:
       interval: daily
     versioning-strategy: increase
+    ignore:
+      - dependency-name: "bootstrap"
+      - dependency-name: "react-bootstrap"
