@@ -1,6 +1,4 @@
-<h1 align="center">
-  Climbing in Turkey
-</h1>
+# Climbing in Turkey
 
 
 ## License
