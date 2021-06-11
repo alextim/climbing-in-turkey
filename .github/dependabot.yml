@@ -3,11 +3,12 @@ registries:
   "@alextim/at-seo":
     type: npm-registry
     url: https://npm.pkg.github.com
-    # token: ${{secrets.NPM_TOKEN}}
+  "@alextim/csp":
+    type: npm-registry
+    url: https://npm.pkg.github.com
   "@alextim/utils":
     type: npm-registry
     url: https://npm.pkg.github.com
-    # token: ${{secrets.NPM_TOKEN}}
 
 updates:
   - package-ecosystem: github-actions
@@ -18,6 +19,7 @@ updates:
   - package-ecosystem: npm
     registries:
       - "@alextim/at-seo"
+      - "@alextim/csp"
       - "@alextim/utils"
     directory: "/"
     schedule:

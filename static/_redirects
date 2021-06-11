@@ -1,0 +1,4 @@
+# http://climbing-in-turkey.netlify.app/*   https://climbing-in-turkey.com/:splat  301!
+# https://climbing-in-turkey.netlify.app/*  https://climbing-in-turkey.com/:splat  301!
+/en/*                   /en/404      404
+/tr/*                   /tr/404      404

@@ -1,8 +1,44 @@
 const path = require('path');
+const getCSP = require('@alextim/csp');
+
 const i18n = require('./src/i18n/i18n');
 const config = require('./config/website');
 
 const manifestIconSrc = `${__dirname}/src/assets/images/icon.png`;
+
+const toBoolean = (x) => {
+  if (!x) {
+    return false;
+  }
+  if (typeof x === 'boolean') {
+    return x;
+  }
+  if (typeof x === 'number') {
+    return !!x;
+  }
+  return typeof x === 'string' && x.trim().toLowerCase() === 'true';
+};
+
+const noIndex = toBoolean(process.env.NO_INDEX);
+
+// eslint-disable-next-line no-console
+console.log(`Robots and indexing: ${noIndex ? 'DISABLED' : 'ENABLED'}`);
+
+const headerForAll = [
+  `Content-Security-Policy: ${getCSP(!!config.googleAnalyticsID, false, false)}`,
+  'Permissions-Policy: interest-cohort=()',
+];
+if (noIndex) {
+  headerForAll.push('X-Robots-Tag: noindex, nofollow');
+}
+
+const headers = {
+  '/*': headerForAll,
+  '/assets/*': ['Cache-Control: public, max-age=31536000, immutable'],
+  '/404.html': ['Cache-Control: max-age=300'],
+  '/tr/404.html': ['Cache-Control: max-age=300'],
+  '/en/404.html': ['Cache - Control: max- age=300'],
+};
 
 const plugins = [
   {
@@ -132,7 +168,15 @@ const plugins = [
       },
     },
   },
-  'gatsby-plugin-webpack-bundle-analyser-v2',
+  // 'gatsby-plugin-webpack-bundle-analyser-v2',
+  {
+    resolve: 'gatsby-plugin-netlify',
+    options: {
+      mergeSecurityHeaders: true,
+      mergeCachingHeaders: true,
+      headers,
+    },
+  },
 ];
 
 if (config.googleAnalyticsID) {
