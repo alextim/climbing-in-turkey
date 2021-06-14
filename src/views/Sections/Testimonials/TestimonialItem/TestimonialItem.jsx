@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
-import './Testimonial.scss';
+import './TestimonialItem.scss';
 
-const Testimonial = ({ image, alt, header, subheader, content }) => {
+const TestimonialItem = ({ image, alt, header, subheader, content }) => {
   return (
     <figure className="team-member">
       {image && (
@@ -29,7 +29,7 @@ const Testimonial = ({ image, alt, header, subheader, content }) => {
   );
 };
 
-Testimonial.propTypes = {
+TestimonialItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   image: PropTypes.object,
   alt: PropTypes.string,
@@ -38,7 +38,7 @@ Testimonial.propTypes = {
   content: PropTypes.string,
 };
 
-Testimonial.defaultProps = {
+TestimonialItem.defaultProps = {
   image: undefined,
   alt: null,
   header: '',
@@ -46,4 +46,4 @@ Testimonial.defaultProps = {
   content: '',
 };
 
-export default Testimonial;
+export default TestimonialItem;

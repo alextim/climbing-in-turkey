@@ -134,7 +134,9 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
   const siteMeta = i18n.locales[langKey];
 
   // anchors for NavBar
-  const anchors = sections.nodes.map((e) => e.frontmatter.anchor).filter((e) => e);
+  const anchors = sections.nodes
+    .filter((e) => e.frontmatter.anchor)
+    .map(({ frontmatter: { anchor, header } }) => ({ anchor, header }));
 
   let langSelectorPart;
   if (langTextMap != null && Object.keys(langTextMap).length > 1) {

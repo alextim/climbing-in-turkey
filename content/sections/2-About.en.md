@@ -1,5 +1,5 @@
 ---
-anchor: About
+anchor: about
 header: About
 subheader: Lorem ipsum dolor sit amet consectetur.
 alt: bla

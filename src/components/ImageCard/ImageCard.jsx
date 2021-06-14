@@ -8,7 +8,16 @@ import Container from 'react-bootstrap/Container';
 import ArtImage from '../ArtImage';
 import './ImageCard.scss';
 
-const ImageCard = ({ className, smImage, xlImage, imageAlt, header, subheader, extraInfo }) => (
+const ImageCard = ({
+  className,
+  smImage,
+  xlImage,
+  imageAlt,
+  header,
+  headerTag,
+  subheader,
+  extraInfo,
+}) => (
   <div className={clsx('image-card bg-dark text-white text-center', className)}>
     <ArtImage
       className="image"
@@ -21,7 +30,11 @@ const ImageCard = ({ className, smImage, xlImage, imageAlt, header, subheader, e
       <Container>
         <div className="intro-text">
           <div className="intro-lead-in">{subheader}</div>
-          <div className="intro-heading text-uppercase">{header}</div>
+          {headerTag === 'h1' ? (
+            <h1 className="intro-heading text-uppercase">{header}</h1>
+          ) : (
+            <div className="intro-heading text-uppercase">{header}</div>
+          )}
           {extraInfo}
         </div>
       </Container>

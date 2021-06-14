@@ -1,9 +1,9 @@
 ---
-anchor: Отзывы
+anchor: testimonials
 header: Отзывы клиентов
 subheader: Лорем ипсум долор сит амет, сит еу бруте мандамус.
 content: Лорем ипсум долор сит амет, сит еу бруте мандамус. Поссе фалли мелиус цу сед, при но семпер сусципиантур.
-items: 
+items:
   - alt: alt1
     header: Kay Garland
     subheader: Москва, Россия

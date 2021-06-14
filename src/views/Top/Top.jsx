@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from 'react-bootstrap/Button';
@@ -30,6 +29,7 @@ const Top = ({ images, frontmatter }) => {
       smImage={images.sm}
       imageAlt={alt}
       header={header}
+      headerTag="h1"
       subheader={subheader}
       extraInfo={extraInfoPart}
     />
@@ -37,7 +37,14 @@ const Top = ({ images, frontmatter }) => {
 };
 
 Top.propTypes = {
-  frontmatter: PropTypes.object,
+  frontmatter: PropTypes.shape({
+    header: PropTypes.string,
+    subheader: PropTypes.string,
+    alt: PropTypes.string,
+    jumpToAnchor: PropTypes.string,
+    jumpToAnchorText: PropTypes.string,
+  }),
+  // eslint-disable-next-line react/forbid-prop-types
   images: PropTypes.object,
 };
 

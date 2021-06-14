@@ -6,7 +6,7 @@ import { Link } from 'react-scroll';
 
 import './NavItem.scss';
 
-const NavItem = ({ to, onClick, children }) => (
+const NavItem = ({ to, title, onClick }) => (
   <Nav.Item>
     <Link
       className="nav-link cursor-pointer"
@@ -16,22 +16,19 @@ const NavItem = ({ to, onClick, children }) => (
       smooth="easeInOutQuart"
       onClick={onClick}
     >
-      {children || to}
+      {title}
     </Link>
   </Nav.Item>
 );
 
 NavItem.propTypes = {
-  to: PropTypes.string,
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  // eslint-disable-next-line react/forbid-prop-types
-  children: PropTypes.any,
 };
 
 NavItem.defaultProps = {
-  to: '',
   onClick: null,
-  children: null,
 };
 
 export default NavItem;

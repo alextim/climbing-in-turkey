@@ -1,5 +1,5 @@
 ---
-anchor: Обо мне
+anchor: about
 header: Обо мне
 subheader: Lorem ipsum dolor sit amet consectetur.
 alt: bla

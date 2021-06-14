@@ -1,5 +1,5 @@
 ---
-anchor: Benim hakkımda
+anchor: about
 header: Benim hakkımda
 subheader: あなたは偶然断然その持通りについて事のためにまかり出ですた
 alt: bla

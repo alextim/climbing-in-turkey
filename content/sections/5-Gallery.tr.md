@@ -1,6 +1,6 @@
 ---
 anchor: gallery
-header: Галерея
+header: Galeri
 subheader: Lorem ipsum dolor sit amet consectetur.
 items:
   - alt: bla

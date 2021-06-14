@@ -7,8 +7,10 @@ import './SectionHeader.scss';
 
 const SectionHeader = ({ header, subheader, content, className, subClassName, ...rest }) => (
   <Col lg={12} className={clsx('section-header', 'text-center', className)} {...rest}>
-    <h2 className="section-heading text-uppercase divider">{header}</h2>
-    {subheader && <h3 className={clsx('section-subheading', subClassName)}>{subheader}</h3>}
+    <div className="d-flex flex-column-reverse">
+      <h2 className={clsx('section-subheading', subClassName)}>{subheader}</h2>
+      <h3 className="section-heading text-uppercase divider">{header}</h3>
+    </div>
     {content && (
       <div className={clsx('section-content', 'text-justify', subClassName)}>{content}</div>
     )}

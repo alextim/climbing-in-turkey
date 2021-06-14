@@ -51,8 +51,8 @@ const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
         </Navbar.Toggle>
         <Navbar.Collapse>
           <Nav className="text-uppercase ml-auto">
-            {anchors.map((anchor) => (
-              <NavItem key={anchor} to={anchor} onClick={closeMenu} />
+            {anchors.map(({ anchor, header }) => (
+              <NavItem key={anchor} to={anchor} title={header} onClick={closeMenu} />
             ))}
           </Nav>
           {extraItems}
@@ -63,7 +63,12 @@ const MyNavbar = ({ anchors, siteShortName, extraItems }) => {
 };
 
 MyNavbar.propTypes = {
-  anchors: PropTypes.arrayOf(PropTypes.string),
+  anchors: PropTypes.arrayOf(
+    PropTypes.shape({
+      anchor: PropTypes.string.isRequired,
+      header: PropTypes.string.isRequired,
+    }),
+  ),
   siteShortName: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   extraItems: PropTypes.any,

@@ -35,7 +35,12 @@ const About = ({ html, frontmatter, images }) => {
 };
 
 About.propTypes = {
-  frontmatter: PropTypes.object,
+  frontmatter: PropTypes.shape({
+    anchor: PropTypes.string,
+    header: PropTypes.string,
+    subheader: PropTypes.string,
+    alt: PropTypes.string,
+  }),
   html: PropTypes.string,
   images: PropTypes.shape({
     sm: PropTypes.object,

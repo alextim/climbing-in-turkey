@@ -3,14 +3,16 @@ import PropTypes from 'prop-types';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import formatPhoneNumber from '../../../utils/formatPhoneNumber';
+import useOrgContacts from '../../../hooks/useOrgContacts';
+
+import SectionHeader from '../../../components/SectionHeader/SectionHeader';
 import PageSection from '../../../components/PageSection';
 
 import PhoneIcon from '../../../assets/fa/solid/phone.svg';
 import EnvelopeIcon from '../../../assets/fa/solid/envelope.svg';
 import WhatsappIcon from '../../../assets/fa/brand/whatsapp.svg';
 import TelegramIcon from '../../../assets/fa/brand/telegram.svg';
-import formatPhoneNumber from '../../../utils/formatPhoneNumber';
-import useOrgContacts from '../../../hooks/useOrgContacts';
 
 const ContactItem = ({ icon, to, title, text }) => (
   <Col lg={3} md={6} className="d-flex flex-column align-items-center mb-4">
@@ -34,23 +36,16 @@ ContactItem.defaultProps = {
 };
 const iconClass = 'text-muted mb-2 fa-x3';
 
-const Contacts = ({ frontmatter }) => {
+const Contacts = ({ frontmatter: { anchor, header, subheader, content } }) => {
   const {
     phone,
     email,
     voice: { whatsapp, telegram },
   } = useOrgContacts();
 
-  const { anchor, header, subheader } = frontmatter;
-
   return (
     <PageSection id={anchor}>
-      <Row className="justify-content-center">
-        <Col lg={8} className="text-center">
-          <h2 className="divider mt-0 mb-4">{header}</h2>
-          <p className="text-muted mb-5">{subheader}</p>
-        </Col>
-      </Row>
+      <SectionHeader header={header} subheader={subheader} content={content} />
       <Row>
         <ContactItem
           to={`tel:+${phone[0]}`}
@@ -80,8 +75,12 @@ const Contacts = ({ frontmatter }) => {
 };
 
 Contacts.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
-  frontmatter: PropTypes.object,
+  frontmatter: PropTypes.shape({
+    anchor: PropTypes.string,
+    header: PropTypes.string,
+    subheader: PropTypes.string,
+    content: PropTypes.string,
+  }),
 };
 
 Contacts.defaultProps = {

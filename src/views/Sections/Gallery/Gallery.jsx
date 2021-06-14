@@ -11,7 +11,10 @@ import GalleryModal from './modal';
 import GalleryCarousel from './carousel';
 import './Gallery.scss';
 
-const Gallery = ({ frontmatter, images }) => {
+const Gallery = ({
+  frontmatter: { anchor, header: rootHeader, subheader: rootSubHeader, items },
+  images,
+}) => {
   const [modalShow, setModalShow] = useState(false);
   const [modalCurrent, setModalCurrent] = useState(0);
 
@@ -24,8 +27,6 @@ const Gallery = ({ frontmatter, images }) => {
     e.preventDefault();
     setModal(true, index);
   };
-
-  const { anchor, header: rootHeader, subheader: rootSubHeader, items } = frontmatter;
 
   return (
     <PageSection
@@ -67,7 +68,18 @@ const Gallery = ({ frontmatter, images }) => {
 };
 
 Gallery.propTypes = {
-  frontmatter: PropTypes.object,
+  frontmatter: PropTypes.shape({
+    anchor: PropTypes.string,
+    header: PropTypes.string,
+    subheader: PropTypes.string,
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        header: PropTypes.string,
+        subheader: PropTypes.string,
+        alt: PropTypes.string,
+      }),
+    ),
+  }),
   images: PropTypes.arrayOf(
     PropTypes.shape({
       sm: PropTypes.object,

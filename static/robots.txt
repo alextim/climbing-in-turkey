@@ -1,4 +1,2 @@
-User-agent: * 
+User-agent: *
 Disallow: /
-
-# sitemap: https://climbing-in-turkey.netlify.app/sitemap.xml
