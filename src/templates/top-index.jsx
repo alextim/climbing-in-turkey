@@ -19,6 +19,9 @@ import '../style/main.scss';
  */
 export const query = graphql`
   query IndexQuery($langKey: String!) {
+    keywords: keyword(locale: { eq: $langKey }) {
+      values
+    }
     address: address(locale: { eq: $langKey }) {
       ...AddressFragment
     }
@@ -128,9 +131,11 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ path, data, pageContext: { langKey, defaultLang, langTextMap } }) => {
-  const { images, sections, top, organization, socialLinks, address } = data;
-
+const IndexPage = ({
+  path,
+  data: { images, sections, top, organization, socialLinks, address, keywords },
+  pageContext: { langKey, defaultLang, langTextMap },
+}) => {
   const siteMeta = i18n.locales[langKey];
 
   // anchors for NavBar
@@ -147,7 +152,7 @@ const IndexPage = ({ path, data, pageContext: { langKey, defaultLang, langTextMa
 
   return (
     <AppContextProvider value={{ organization, socialLinks, address }}>
-      <SEO lang={langKey} pathname={path} />
+      <SEO lang={langKey} pathname={path} keywords={keywords?.values} />
       <Navbar
         anchors={anchors}
         siteShortName={siteMeta.siteShortName}

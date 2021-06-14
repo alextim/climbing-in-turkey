@@ -100,6 +100,14 @@ module.exports = (
       currenciesAccepted: node.currenciesAccepted,
       paymentAccepted: node.paymentAccepted,
     };
+  } else if (type === 'keywords') {
+    nodeType = 'Keyword';
+    fieldData = {
+      values: node.values,
+      locale,
+    };
+    // eslint-disable-next-line no-console
+    console.log(fieldData);
   } else {
     console.warn(`Unsupported YAML type: ${type}`);
     return;

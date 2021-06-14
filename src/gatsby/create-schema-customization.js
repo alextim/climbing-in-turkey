@@ -11,6 +11,11 @@ module.exports = ({ actions: { createTypes } }) => {
       locale: String!
     }
 
+    type Keyword implements Node @dontInfer {
+      values: [String!]
+      locale: String!
+    }
+
     type Contact implements Node @dontInfer {
       organizationType: String
       phone: [String]

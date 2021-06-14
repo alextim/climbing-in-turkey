@@ -9,7 +9,7 @@ import useSocialLinks from '../../hooks/useSocialLinks';
 import useOrgContacts from '../../hooks/useOrgContacts';
 import useOrgAddress from '../../hooks/useOrgAddress';
 
-const SEO = ({ lang, pathname }) => {
+const SEO = ({ lang, pathname, keywords }) => {
   const socialLinks = useSocialLinks();
   const orgAddress = useOrgAddress();
   const orgContacts = useOrgContacts();
@@ -23,6 +23,7 @@ const SEO = ({ lang, pathname }) => {
       orgContacts={orgContacts}
       orgAddress={orgAddress}
       socialLinks={socialLinks}
+      keywords={keywords}
       locale={lang}
       pathname={pathname}
       canonical
@@ -34,10 +35,12 @@ const SEO = ({ lang, pathname }) => {
 SEO.propTypes = {
   lang: PropTypes.string,
   pathname: PropTypes.string.isRequired,
+  keywords: PropTypes.arrayOf(PropTypes.string),
 };
 
 SEO.defaultProps = {
   lang: i18n.defaultLang,
+  keywords: null,
 };
 
 export default SEO;
