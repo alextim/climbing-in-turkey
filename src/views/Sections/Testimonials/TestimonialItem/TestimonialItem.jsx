@@ -9,7 +9,7 @@ const TestimonialItem = ({ image, alt, header, subheader, content }) => {
     <figure className="team-member">
       {image && (
         <GatsbyImage
-          className="mx-auto circle rounded-circle"
+          className="mx-auto mb-3 circle rounded-circle"
           image={getImage(image)}
           alt={alt || header || content}
         />

@@ -45,7 +45,12 @@ const Contacts = ({ frontmatter: { anchor, header, subheader, content } }) => {
 
   return (
     <PageSection id={anchor}>
-      <SectionHeader header={header} subheader={subheader} content={content} />
+      <SectionHeader
+        header={header}
+        subheader={subheader}
+        content={content}
+        subClassName="text-center"
+      />
       <Row>
         <ContactItem
           to={`tel:+${phone[0]}`}

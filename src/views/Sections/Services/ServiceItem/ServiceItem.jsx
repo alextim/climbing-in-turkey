@@ -8,7 +8,11 @@ const ServiceItem = ({ odd, image, header, content }) => (
   <div className={`service-item service-item-${odd ? 'odd' : 'even'}`}>
     <div className="service-item-image-part">
       {image && image.src && (
-        <GatsbyImage className="service-item-image" image={getImage(image.src)} alt={image.alt} />
+        <GatsbyImage
+          className="service-item-image mb-3"
+          image={getImage(image.src)}
+          alt={image.alt}
+        />
       )}
     </div>
     <div className={`service-item-text-part service-item-text-${odd ? 'odd' : 'even'}`}>

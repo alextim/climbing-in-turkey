@@ -25,7 +25,8 @@ const SEO = ({ lang, pathname }) => {
       socialLinks={socialLinks}
       locale={lang}
       pathname={pathname}
-      noindex
+      canonical
+      noindex={false}
     />
   );
 };

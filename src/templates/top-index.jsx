@@ -128,14 +128,14 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMap } }) => {
+const IndexPage = ({ path, data, pageContext: { langKey, defaultLang, langTextMap } }) => {
   const { images, sections, top, organization, socialLinks, address } = data;
 
   const siteMeta = i18n.locales[langKey];
 
   // anchors for NavBar
   const anchors = sections.nodes
-    .filter((e) => e.frontmatter.anchor)
+    .filter(({ frontmatter: { anchor } }) => anchor)
     .map(({ frontmatter: { anchor, header } }) => ({ anchor, header }));
 
   let langSelectorPart;
@@ -179,12 +179,16 @@ const IndexPage = ({ path, data, pathContext: { langKey, defaultLang, langTextMa
 
 IndexPage.propTypes = {
   data: PropTypes.object.isRequired,
-  pathContext: PropTypes.object,
+  pageContext: PropTypes.shape({
+    langKey: PropTypes.string,
+    defaultLang: PropTypes.string,
+    langTextMap: PropTypes.object,
+  }),
   path: PropTypes.string.isRequired,
 };
 
 IndexPage.defaultProps = {
-  pathContext: {
+  pageContext: {
     langKey: 'ru',
     defaultLang: 'ru',
     langTextMap: {},
