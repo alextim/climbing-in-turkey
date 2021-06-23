@@ -1,17 +1,4 @@
 version: 2
-registries:
-  "@alextim/at-seo":
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    # token: ${{secrets.NPM_TOKEN}}
-  "@alextim/csp":
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    # token: ${{secrets.NPM_TOKEN}}
-  "@alextim/utils":
-    type: npm-registry
-    url: https://npm.pkg.github.com
-    # token: ${{secrets.NPM_TOKEN}}
 updates:
   - package-ecosystem: github-actions
     directory: "/"
@@ -19,10 +6,6 @@ updates:
       interval: daily
 
   - package-ecosystem: npm
-    registries:
-      - "@alextim/at-seo"
-      - "@alextim/csp"
-      - "@alextim/utils"
     directory: "/"
     schedule:
       interval: daily
