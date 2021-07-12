@@ -6353,7 +6353,7 @@ gatsby-cli@^3.9.0:
     yoga-layout-prebuilt "^1.9.6"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^2.8.0, gatsby-core-utils@^2.9.0:
+gatsby-core-utils@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-2.9.0.tgz#f1ba30dfa687bdd2c1c5106d29e6491e5376e8c5"
   integrity sha512-LKmkk4B/VnSEYKR9W/C8Lp9lwk/l/qY5jbsoiChc43F67VM667gITWH0noSUdcGzbEsN8xi0Wuc8dMA6BvKkvg==
@@ -6518,18 +6518,19 @@ gatsby-plugin-sass@^4.9.0:
     resolve-url-loader "^3.1.2"
     sass-loader "^10.1.1"
 
-gatsby-plugin-sharp@^3.8.0:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.8.0.tgz#12f7f69e2fec399364fb58f303a7b1d337520815"
-  integrity sha512-SZ++IKq16np583FJqhez322Qz6FlHq6LdkChlR1m4jP1tiuEnsMMOh8R3RAt1qaaozQQeykMTRPUUgHPF4sSwg==
+gatsby-plugin-sharp@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-3.9.0.tgz#4dfa61be3907f6e5abc262e41d55be265e0a225f"
+  integrity sha512-DHaX390FyPVCVzVy+ALrzbMf7hjMHsIhaQu98bzsodOJ+0bispyh/Qohxq+i8Qeexy8+sy2mRrlDR3ahM5Yb6w==
   dependencies:
     "@babel/runtime" "^7.14.0"
     async "^3.2.0"
     bluebird "^3.7.2"
     filenamify "^4.2.0"
     fs-extra "^9.1.0"
-    gatsby-core-utils "^2.8.0"
-    gatsby-telemetry "^2.8.0"
+    gatsby-core-utils "^2.9.0"
+    gatsby-plugin-utils "^1.9.0"
+    gatsby-telemetry "^2.9.0"
     got "^10.7.0"
     imagemin "^7.0.1"
     imagemin-mozjpeg "^9.0.0"
@@ -6690,7 +6691,7 @@ gatsby-source-filesystem@^3.9.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^2.8.0, gatsby-telemetry@^2.9.0:
+gatsby-telemetry@^2.9.0:
   version "2.9.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-2.9.0.tgz#d6763b278bee601dd007a84427bac52e57a28d79"
   integrity sha512-Ji40by9qHm9Zz2vKIBACT77awt0FpqKES9uT9nLmaqyiOZ/7Hs1dKwMrZ2yCkHNBh6S9RplcgfUQLq2LE4oeaA==
