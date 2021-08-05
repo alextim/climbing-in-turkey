@@ -6589,7 +6589,7 @@ gatsby-plugin-typescript@^3.11.0:
     "@babel/runtime" "^7.14.6"
     babel-plugin-remove-graphql-queries "^3.11.0"
 
-gatsby-plugin-utils@^1.10.0, gatsby-plugin-utils@^1.11.0:
+gatsby-plugin-utils@^1.11.0:
   version "1.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-utils/-/gatsby-plugin-utils-1.11.0.tgz#f4c76e991fbda81d3dcafe93beaf37e830331a55"
   integrity sha512-MtWLv/63DRhWrorJFJsjIlwMLvQRMxFS2xbRirTbmlvhfU0YzL3Ax5kiRv673rxt8eaaZ7dHT6Ax/5ZPxNzdeA==
@@ -6675,15 +6675,15 @@ gatsby-recipes@^0.22.0:
     xstate "^4.9.1"
     yoga-layout-prebuilt "^1.9.6"
 
-gatsby-remark-images@^5.7.0:
-  version "5.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-5.7.0.tgz#16f8ddca9f3233c325bf2080e193ba505c59707b"
-  integrity sha512-dLDigJY3kFThGKi41e20CwOWC7ccneM76VFoECIz8YZ6vjMqMYMkB8vojO6hg6jmNRZd2XMnDt/biu/wGe/07A==
+gatsby-remark-images@^5.8.0:
+  version "5.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-5.8.0.tgz#d654e3359de808ff5a01729ad23c454c0e15b567"
+  integrity sha512-yxlynSYsDJJer3U1SYV+Xn1ACP9M4G1KkySZreU369L0/SDzG/a1mHUBVXuVg+0hu7KI0NzkofdhIaxHG6skhw==
   dependencies:
     "@babel/runtime" "^7.14.6"
     chalk "^4.1.1"
     cheerio "^1.0.0-rc.9"
-    gatsby-core-utils "^2.10.0"
+    gatsby-core-utils "^2.11.0"
     is-relative-url "^3.0.0"
     lodash "^4.17.21"
     mdast-util-definitions "^4.0.0"
@@ -6722,7 +6722,7 @@ gatsby-source-filesystem@^3.10.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^2.10.0, gatsby-telemetry@^2.11.0:
+gatsby-telemetry@^2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-2.11.0.tgz#e5d2de76b3bfce6aa787d261830d21bbde8b92cd"
   integrity sha512-6GEcZpsY5N/+K+SGGdDHuOknjer6vsYLJsUuUWkz32t8OK9lE1cLvXIdO2eTHdS4rtWFM324a/yFMlizp59SbA==
