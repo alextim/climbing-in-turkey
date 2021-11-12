@@ -6111,10 +6111,10 @@ gatsby-cli@^4.1.2:
     yoga-layout-prebuilt "^1.10.0"
     yurnalist "^2.1.0"
 
-gatsby-core-utils@^3.1.0, gatsby-core-utils@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.1.1.tgz#ba4ac26c43c803ef7322f8825bc9b94bdf8c9003"
-  integrity sha512-Z7H0UtKct5oukYkyyBMlRi1zpJfD2hhE5+eV6fYpHQCjlzmx2aSdumgFcDuQfJeqcnCSnfhlZM1wcaJ8WxI5Jg==
+gatsby-core-utils@^3.1.0, gatsby-core-utils@^3.1.1, gatsby-core-utils@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-3.1.2.tgz#5e9bff98036ec55714079314ae027d6bcab51cb6"
+  integrity sha512-l3LUdGNDlM3fLrdxRUGnsd/Szu9e8yLEL/pZIV2LuhTHMNwjOStiycEQivezsUhHNPobep1r5t4yWzP6r2cw/Q==
   dependencies:
     "@babel/runtime" "^7.15.4"
     ci-info "2.0.0"
@@ -6209,13 +6209,13 @@ gatsby-plugin-image@^2.1.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.7.2"
 
-gatsby-plugin-manifest@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.1.2.tgz#9b0f117eade4a43bde1c4f81c4d4dbc3dcfc5f7f"
-  integrity sha512-/9+JRlwDbnaRaMz4BNt3JCre39y65fTy28aLE9DXJxosL6OvRfbmFXxpZigDx2g3mcn4K97wyR7qyt/7eG+ppw==
+gatsby-plugin-manifest@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.1.3.tgz#06383e8e4db07e254207464a690aff940f0b292a"
+  integrity sha512-brzMkCqF7vZ3oqGPu6LessBl1o9l3OTxlufSs9FdTGxzcXXaJTb/uGxebOjdBg0vC4o3SRW+sv1VTNvOjCphLA==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^3.1.1"
+    gatsby-core-utils "^3.1.2"
     gatsby-plugin-utils "^2.1.1"
     semver "^7.3.5"
     sharp "^0.29.1"
@@ -6456,7 +6456,7 @@ gatsby-source-filesystem@^4.1.0:
     valid-url "^1.0.9"
     xstate "^4.14.0"
 
-gatsby-telemetry@^3.1.0, gatsby-telemetry@^3.1.1:
+gatsby-telemetry@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-3.1.1.tgz#d60372a58baed088c20cff0ecc27e3462543f1ca"
   integrity sha512-zeHzSDYmVPtsVxHt2/zX9eW+nXRAxpq5ruoET6VO4xe9vaAEBibmR9MKX7VGuxZUiTYZeOT90UX+Mi2L5SiFWQ==
