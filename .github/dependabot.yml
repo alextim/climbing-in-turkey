@@ -3,7 +3,7 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: daily
+      interval: weekly
 
   - package-ecosystem: npm
     open-pull-requests-limit: 10
@@ -14,3 +14,4 @@ updates:
     ignore:
       - dependency-name: bootstrap
       - dependency-name: react-bootstrap
+      - dependency-name: node-sass
