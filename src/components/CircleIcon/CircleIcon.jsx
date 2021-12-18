@@ -8,7 +8,7 @@ const CircleIcon = ({ href, label, children }) => (
     className="circle-icon mx-3"
     href={href}
     target="_blank"
-    rel="me noreferrer"
+    rel="noreferrer"
     aria-label={label}
     title={label}
   >

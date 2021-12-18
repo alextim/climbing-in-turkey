@@ -106,8 +106,6 @@ module.exports = (
       values: node.values,
       locale,
     };
-    // eslint-disable-next-line no-console
-    console.log(fieldData);
   } else {
     console.warn(`Unsupported YAML type: ${type}`);
     return;
