@@ -6145,14 +6145,14 @@ gatsby-plugin-image@^2.9.0:
     objectFitPolyfill "^2.3.5"
     prop-types "^15.7.2"
 
-gatsby-plugin-manifest@^4.8.2:
-  version "4.8.2"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.8.2.tgz#eda7c90cc81a47ef50f90957da0cc1c71f4e4e36"
-  integrity sha512-BunJ93QxHp3VJGWlYLVVRWk08+RZV/vFotrcU57XZuEw/HwAnmL1rQf9E4J8r5xZd/G9AuRJrzupwK27YBImBw==
+gatsby-plugin-manifest@^4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-4.9.0.tgz#ddfd6e8d8597df7bdef07d527b08430508837ecb"
+  integrity sha512-aRoY9pan+7rR1SGoGcm1039A9tWy0w2oS+s7GmNJqqBHJqN2JZUlvJrqjU4ZdyoZ1/DXx9zuzUQDzgiEBFJ2xw==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    gatsby-core-utils "^3.8.2"
-    gatsby-plugin-utils "^3.2.0"
+    gatsby-core-utils "^3.9.0"
+    gatsby-plugin-utils "^3.3.0"
     semver "^7.3.5"
     sharp "^0.30.1"
 
