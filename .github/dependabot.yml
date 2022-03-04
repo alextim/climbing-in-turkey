@@ -3,13 +3,13 @@ updates:
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
-      interval: weekly
+      interval: monthly
 
   - package-ecosystem: npm
     open-pull-requests-limit: 10
     directory: "/"
     schedule:
-      interval: daily
+      interval: monthly
     versioning-strategy: increase
     ignore:
       - dependency-name: bootstrap
