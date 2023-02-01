@@ -56,7 +56,7 @@
     "gatsby-remark-images": "^6.13.0",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-filesystem": "^4.15.0",
-    "gatsby-transformer-remark": "^5.11.1",
+    "gatsby-transformer-remark": "^6.5.0",
     "gatsby-transformer-sharp": "^4.13.0",
     "gatsby-transformer-yaml": "^4.11.0",
     "node-sass": "6.0.1",
